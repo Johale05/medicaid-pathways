@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Container from "@/components/Container";
 import Link from "next/link";
+import { designTokens } from "@/lib/designTokens";
 import { getPathway } from "@/lib/pathways";
 
 type Props = { params: { slug: string } };
@@ -16,13 +17,13 @@ export default function DeeperPage({ params }: Props) {
   const backHref = `/pathways/${pathway.slug}/`;
 
   return (
-    <div className="py-12">
+    <div className="py-14" style={{ backgroundColor: "#fffdfa" }}>
       <Container>
-        <div className="max-w-3xl space-y-8">
-          <header className="space-y-2">
-            <div className="text-sm text-slate-600">Deeper Explanation (Optional)</div>
-            <h1 className="text-4xl font-semibold tracking-tight text-slate-900">{pathway.title}</h1>
-            <p className="text-slate-700">
+        <div className="mx-auto space-y-8" style={{ maxWidth: designTokens.maxReadingWidth }}>
+          <header className="space-y-3">
+            <div className="text-sm" style={{ color: "rgba(45, 41, 36, 0.7)" }}>Deeper Explanation (Optional)</div>
+            <h1 className="font-display text-4xl font-semibold tracking-tight">{pathway.title}</h1>
+            <p>
               This page offers a deeper explanation of why this question is often complicated. It is general educational
               information only.
             </p>
@@ -31,7 +32,7 @@ export default function DeeperPage({ params }: Props) {
             </Link>
           </header>
 
-          <article className="space-y-4 text-slate-700">
+          <article className="space-y-5 leading-relaxed">
             {pathway.layer2Body.map((p, i) => (
               <p key={i}>{p}</p>
             ))}

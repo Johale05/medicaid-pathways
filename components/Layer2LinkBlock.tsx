@@ -8,13 +8,13 @@ export default function Layer2LinkBlock({
   supportingLine: string;
 }) {
   return (
-    <div className="mt-10 text-sm text-slate-700">
+    <div className="mt-10 text-sm">
       <div>
         <Link href={href} className="hover:underline">
           Want a deeper explanation of why this question is complicated?
         </Link>
       </div>
-      <div className="mt-1 text-slate-600">{supportingLine}</div>
+      <div className="mt-1 opacity-80">{supportingLine}</div>
     </div>
   );
 }
