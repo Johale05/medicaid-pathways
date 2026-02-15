@@ -1,0 +1,47 @@
+{
+  "heroTitle": "When Paying for Long-Term Care Feels Unclear",
+  "heroLines": [
+    "Medicaid, Medicare, and long-term care decisions are complex.",
+    "This resource helps families understand their options—one step at a time."
+  ],
+  "startLine": "Start anywhere. Learn at your own pace.",
+  "tiles": [
+    {
+      "title": "Medicare Is Ending—What Happens Next?",
+      "subtitle": "Understanding what changes—and why planning matters.",
+      "slug": "medicare-ending"
+    },
+    {
+      "title": "Do We Have to Spend Everything?",
+      "subtitle": "Why Medicaid planning is often about structure, not less.",
+      "slug": "spend-everything"
+    },
+    {
+      "title": "What If We Have Too Much Income?",
+      "subtitle": "Why income is usually not the barrier people think it is.",
+      "slug": "too-much-income"
+    },
+    {
+      "title": "Do We Actually Qualify Medically?",
+      "subtitle": "Why eligibility involves more than finances.",
+      "slug": "qualify-medically"
+    },
+    {
+      "title": "Do We Have to Sell the Home?",
+      "subtitle": "Why the home is often treated differently under Medicaid rules.",
+      "slug": "sell-the-house"
+    },
+    {
+      "title": "Is It Too Late to Get Help?",
+      "subtitle": "Why many families still have options—even during a crisis.",
+      "slug": "too-late"
+    }
+  ],
+  "whatIsTitle": "What Is Medicaid Pathways?",
+  "whatIsBody": "Medicaid Pathways is an educational resource created to help families understand how long-term care and Medicaid planning actually work.",
+  "whoTitle": "Who This Is For",
+  "whoBody": "Medicaid Pathways is designed to help families understand their situation. When questions become more specific—or when decisions feel urgent—speaking with an experienced Medicaid planning attorney can help bring clarity.",
+  "readyTitle": "When You’re Ready for Help",
+  "readyBody": "Medicaid Pathways is designed to help families understand their situation.",
+  "ctaText": "Talk With a Medicaid Planning Attorney"
+}

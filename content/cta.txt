@@ -1,0 +1,132 @@
+Medicaid Pathways™
+CTA Destination Page — “Talk With a Medicaid Planning Attorney”
+Status: LOCKED COPY & LAYOUT
+Purpose: This page opens after a visitor clicks the primary CTA button from the homepage or pathway pages. It provides reassurance, sets expectations, and introduces the firm in a calm, non-promotional manner.
+This page follows the same structural discipline as the Homepage and Pathway Page templates.
+GLOBAL HEADER (CONSISTENT SITEWIDE)
+Minimal Identity Header Only:
+Medicaid Pathways™
+by The Hale Law Firm
+Rules: - No navigation - No phone number - No buttons - No links
+SECTION 1: PAGE TITLE & ORIENTATION
+Page Title (H1)
+Talk With a Medicaid Planning Attorney
+Subheadline
+You don’t have to figure this out alone.
+Orientation Copy
+If you’re here, it likely means you’re facing a long-term care or Medicaid decision that feels overwhelming—or time-sensitive.
+The purpose of this conversation is not to rush you or pressure you. It’s to help you understand where things stand, what options may exist, and what steps—if any—make sense next.
+SECTION 2: WHAT THIS CONVERSATION IS (AND ISN’T)
+Header
+What This Conversation Is (and Isn’t)
+What it is
+A chance to explain your situation in plain language
+A conversation with an attorney who focuses on Medicaid and long-term care planning
+An opportunity to get clarity before making decisions
+What it isn’t
+A sales call
+A commitment to move forward
+A one-size-fits-all answer
+Every family’s situation is different. The goal is understanding, not assumptions.
+SECTION 3: WHO WE ARE (VIDEO SECTION)
+Header
+Who We Are
+Video Placement
+Embedded video appears directly beneath the header
+Video is the primary visual element in this section
+No autoplay
+Supporting Copy (Below Video)
+Our attorneys focus on Medicaid and long-term care planning. We work with families who are often making decisions during stressful moments and need clear explanations before taking action.
+Our role is to help you understand your situation—not to push you toward a particular outcome.
+SECTION 4: WHAT HAPPENS NEXT
+Header
+What Happens Next
+After you reach out:
+A member of our team will connect with you to understand the basics of your situation
+We’ll help determine whether a Medicaid planning conversation is appropriate
+If it is, we’ll schedule time with an attorney who can walk through your options
+If we’re not the right fit—or if timing matters—we’ll tell you that honestly.
+SECTION 5: WHEN IT MAKES SENSE TO REACH OUT
+Header
+When It Makes Sense to Reach Out
+Families often contact us when: - Medicare coverage is ending
+- A nursing home stay has begun or is imminent
+- Medicaid eligibility feels confusing or unclear
+- Decisions feel rushed or overwhelming
+If that sounds familiar, it may help to talk with someone who does this every day.
+SECTION 6: PRIMARY CALL TO ACTION
+Header
+Take the Next Step (When You’re Ready)
+CTA Button (Single Instance)
+Contact Us to Schedule a Conversation
+Rules: - Button appears once - No urgency language - No secondary CTAs
+SECTION 7: FIRM IDENTITY & FOOTER (CONSISTENT SITEWIDE)
+The Hale Law Firm
+417 W. Main Street
+Waxahachie, Texas 75165
+📞 (214) 446-5080
+Serving families throughout Texas.
+Medicaid Pathways™
+An educational resource for families navigating long-term care and Medicaid planning.
+© 2026 The Hale Law Firm
+Sitemap | Disclaimer | Privacy | Terms of Use
+SECTION: CONTACT FORM LAYOUT & REQUIRED FIELDS
+Purpose
+This form is a first step toward a conversation — not a full intake questionnaire.
+The form must feel: - Simple - Respectful - Low-pressure - Easy to complete
+FORM HEADER
+Request a Conversation
+Subtext: We’ll respond promptly to understand your situation and help determine next steps.
+FORM FIELDS (LOCKED)
+1. Full Name
+Text field — Required
+2. Phone Number
+Text field — Required
+(Primary method of contact)
+3. Email Address
+Text field — Required
+(Used for confirmation and follow-up)
+4. Brief Description (Optional)
+Larger text box
+Label:
+Briefly describe what’s happening (if you’d like).
+No required minimum length.
+FORM DESIGN RULES
+Maximum two columns (single column on mobile)
+Generous spacing
+No aggressive required-field indicators beyond simple asterisk
+No dropdowns
+No conditional logic
+No asset, income, diagnosis, or date-of-birth questions
+No document uploads
+SUBMIT BUTTON
+Contact Us to Schedule a Conversation
+Single button only. No secondary actions.
+LEGAL REASSURANCE (Below Button)
+Submitting this form does not create an attorney-client relationship. We’ll simply begin a conversation.
+OPTIONAL URGENCY LINE (Above Form)
+If your situation is urgent, please call our office at (214) 446-5080.
+DEVELOPER NOTES
+This page follows the same restraint and hierarchy as the Homepage and Pathway Pages
+Copy must be used verbatim
+No additional navigation, banners, or widgets
+Tone must remain calm, explanatory, and non-promotional
+Spam Protection Requirements (Mandatory)
+To preserve user experience while preventing bot submissions, implement the following layered protections:
+Invisible Bot Protection
+Use Cloudflare Turnstile (preferred) or Invisible reCAPTCHA.
+No visible checkbox unless risk triggers it.
+Honeypot Field
+Add a hidden form field not visible to users.
+Automatically reject submissions where this field is populated.
+Rate Limiting / Backend Filtering
+Limit repeated submissions from the same IP (e.g., 5 per hour).
+Apply standard server-side validation and bot filtering.
+Optional small disclosure below the submit button (if needed):
+“For security purposes, this form is protected against spam.”
+No visible puzzles, math questions, or intrusive verification methods should be used.
+Form Submission Routing (Mandatory)
+All form submissions must route to a shared intake inbox.
+Requirements: - Submissions are delivered immediately via secure email to the designated shared intake address: relations@thehalelawfirm.com. - Email subject line format: “New Medicaid Pathways Inquiry – [Full Name]”. - Email body must include all submitted form fields in a clean, readable format. - Include submission timestamp and originating IP address (for internal tracking only). - Implement basic server-side validation before email dispatch.
+No auto-scheduling links should be triggered upon submission.
+This document is authoritative for the CTA destination page.
