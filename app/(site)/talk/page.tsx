@@ -1,5 +1,6 @@
 import Container from "@/components/Container";
 import ContactForm from "@/components/ContactForm";
+import { designTokens } from "@/lib/designTokens";
 
 export const metadata = {
   title: "Talk With a Medicaid Planning Attorney | Medicaid Pathways",
@@ -10,9 +11,9 @@ export default function TalkPage() {
   const turnstileSiteKey = process.env.TURNSTILE_SITE_KEY;
 
   return (
-    <div className="py-12">
+    <div className="py-14" style={{ backgroundColor: "#fffdfa" }}>
       <Container>
-        <div className="max-w-3xl space-y-10">
+        <div className="space-y-10" style={{ maxWidth: designTokens.maxReadingWidth }}>
           <header className="space-y-3">
             <h1 className="text-4xl font-semibold tracking-tight text-slate-900">Talk With a Medicaid Planning Attorney</h1>
             <p className="text-xl text-slate-700">You don’t have to figure this out alone.</p>

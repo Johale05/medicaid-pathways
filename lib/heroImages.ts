@@ -1,13 +1,24 @@
-export const HOMEPAGE_HERO_IMAGE = "/assets/Homepage_Mock-up_revised_visual_example.png";
+export const HOMEPAGE_HERO_IMAGE = "/assets/HomePage_2_15.png";
 
-export const HOMEPAGE_HERO_POSITION_DESKTOP = "50% 42%";
-export const HOMEPAGE_HERO_POSITION_MOBILE = "50% 36%";
+export const HOMEPAGE_HERO_POSITION_DESKTOP = "50% 38%";
+export const HOMEPAGE_HERO_POSITION_MOBILE = "50% 32%";
 export const HOMEPAGE_HERO_SIZE_DESKTOP = "cover";
-export const HOMEPAGE_HERO_SIZE_MOBILE = "190% auto";
+export const HOMEPAGE_HERO_SIZE_MOBILE = "cover";
 
 export const PATHWAY_HERO_IMAGE_BY_SLUG: Record<string, string> = {
-  // Pathway mockup art currently includes baked-in labels, so we intentionally
-  // fall back to the homepage texture until clean source artwork is available.
+  "medicare-ending": "/assets/Pathway_Medicare_Ends_2_15.png",
+  "qualify-medically": "/assets/Pathway_Medically_Qualify_2_15.png",
+  "spend-everything": "/assets/Pathway_Spend_Everything_2_15.png",
+  "too-much-income": "/assets/Pathway_Too_Much_Income_2_15.png",
+  "sell-the-house": "/assets/Pathway_Keep_Home_2_15.png",
+  "too-late": "/assets/Pathway_Too Late_2_15.png",
 };
 
-export const PATHWAY_HERO_POSITION_BY_SLUG: Record<string, string> = {};
+export const PATHWAY_HERO_POSITION_BY_SLUG: Record<string, string> = {
+  "medicare-ending": "50% 34%",
+  "qualify-medically": "50% 34%",
+  "spend-everything": "50% 36%",
+  "too-much-income": "50% 38%",
+  "sell-the-house": "50% 36%",
+  "too-late": "50% 34%",
+};
