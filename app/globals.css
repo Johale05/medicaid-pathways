@@ -12,6 +12,11 @@ html, body {
 
 body {
   @apply bg-white text-slate-900 antialiased;
+  font-family: "Source Sans Pro", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.font-display {
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
 }
 
 a {
