@@ -15,6 +15,27 @@ body {
   font-family: "Source Sans Pro", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.poster-page-bg {
+  background-color: #f2ecdf;
+  background-image:
+    radial-gradient(circle at 20% 0%, rgba(255, 255, 255, 0.45), transparent 52%),
+    radial-gradient(circle at 80% 18%, rgba(235, 224, 203, 0.36), transparent 48%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(242, 236, 223, 0.92));
+}
+
+.poster-hero-bg {
+  background-repeat: no-repeat;
+  background-size: var(--hero-size-mobile, cover);
+  background-position: var(--hero-position-mobile, center);
+}
+
+@media (min-width: 768px) {
+  .poster-hero-bg {
+    background-size: var(--hero-size-desktop, cover);
+    background-position: var(--hero-position-desktop, center);
+  }
+}
+
 .font-display {
   font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
 }

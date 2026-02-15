@@ -8,7 +8,10 @@ import PosterSection from "@/components/PosterSection";
 import { getPathway } from "@/lib/pathways";
 import {
   HOMEPAGE_HERO_IMAGE,
-  HOMEPAGE_HERO_POSITION,
+  HOMEPAGE_HERO_POSITION_DESKTOP,
+  HOMEPAGE_HERO_POSITION_MOBILE,
+  HOMEPAGE_HERO_SIZE_DESKTOP,
+  HOMEPAGE_HERO_SIZE_MOBILE,
   PATHWAY_HERO_IMAGE_BY_SLUG,
   PATHWAY_HERO_POSITION_BY_SLUG,
 } from "@/lib/heroImages";
@@ -30,11 +33,19 @@ export default function PathwayPage({ params }: Props) {
   if (!pathway) return notFound();
 
   const backgroundImage = PATHWAY_HERO_IMAGE_BY_SLUG[pathway.slug] ?? HOMEPAGE_HERO_IMAGE;
-  const backgroundPosition = PATHWAY_HERO_POSITION_BY_SLUG[pathway.slug] ?? HOMEPAGE_HERO_POSITION;
+  const backgroundPositionDesktop = PATHWAY_HERO_POSITION_BY_SLUG[pathway.slug] ?? HOMEPAGE_HERO_POSITION_DESKTOP;
 
   return (
-    <div className="bg-stone-100 pb-14">
-      <PosterHero title={pathway.title} subtitle={pathway.subheadline} backgroundImage={backgroundImage} backgroundPosition={backgroundPosition} />
+    <div className="poster-page-bg pb-14">
+      <PosterHero
+        title={pathway.title}
+        subtitle={pathway.subheadline}
+        backgroundImage={backgroundImage}
+        backgroundPositionDesktop={backgroundPositionDesktop}
+        backgroundPositionMobile={HOMEPAGE_HERO_POSITION_MOBILE}
+        backgroundSizeDesktop={HOMEPAGE_HERO_SIZE_DESKTOP}
+        backgroundSizeMobile={HOMEPAGE_HERO_SIZE_MOBILE}
+      />
 
       <PosterSection>
         <YouTubeEmbed videoId={VIDEO_IDS[pathway.slug]} title={pathway.title} />
@@ -72,7 +83,7 @@ export default function PathwayPage({ params }: Props) {
           <p className="text-slate-700">{pathway.when}</p>
           <Link
             href="/talk/"
-            className="inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white px-6 py-3 no-underline hover:bg-slate-50"
+            className="inline-flex items-center justify-center rounded-xl border border-stone-300 bg-[#f8f3e8] px-6 py-3 no-underline hover:bg-[#f2ead8]"
           >
             Talk With a Medicaid Planning Attorney
           </Link>
@@ -82,7 +93,7 @@ export default function PathwayPage({ params }: Props) {
 
       <section className="pt-0">
         <div className="mx-auto w-full max-w-5xl px-5 sm:px-8">
-          <div className="rounded-3xl border border-stone-200/80 bg-white/90 p-7 shadow-[0_12px_38px_rgba(15,23,42,0.09)] md:p-10">
+          <div className="rounded-[1.75rem] border border-[#ddd3bf] bg-[#fbf7ef]/92 p-7 shadow-[0_14px_36px_rgba(48,34,14,0.08)] md:p-10">
             <PathwayNav currentSlug={pathway.slug} />
           </div>
         </div>

@@ -1,18 +1,32 @@
 import Container from "@/components/Container";
+import type { CSSProperties } from "react";
 
 type PosterHeroProps = {
   title: string;
   subtitle: string;
   backgroundImage?: string;
-  backgroundPosition?: string;
+  backgroundPositionDesktop?: string;
+  backgroundPositionMobile?: string;
+  backgroundSizeDesktop?: string;
+  backgroundSizeMobile?: string;
 };
 
-export default function PosterHero({ title, subtitle, backgroundImage, backgroundPosition = "center" }: PosterHeroProps) {
+export default function PosterHero({
+  title,
+  subtitle,
+  backgroundImage,
+  backgroundPositionDesktop = "center",
+  backgroundPositionMobile = "center",
+  backgroundSizeDesktop = "cover",
+  backgroundSizeMobile = "cover",
+}: PosterHeroProps) {
   const backgroundStyle = backgroundImage
     ? {
-        backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.58), rgba(15, 23, 42, 0.68)), url('${backgroundImage}')`,
-        backgroundSize: "cover",
-        backgroundPosition,
+        backgroundImage: `linear-gradient(180deg, rgba(15, 23, 42, 0.16), rgba(15, 23, 42, 0.24)), url('${backgroundImage}')`,
+        "--hero-position-desktop": backgroundPositionDesktop,
+        "--hero-position-mobile": backgroundPositionMobile,
+        "--hero-size-desktop": backgroundSizeDesktop,
+        "--hero-size-mobile": backgroundSizeMobile,
       }
     : {
         backgroundImage:
@@ -20,7 +34,7 @@ export default function PosterHero({ title, subtitle, backgroundImage, backgroun
       };
 
   return (
-    <section className="w-full text-white" style={backgroundStyle}>
+    <section className="poster-hero-bg w-full text-white" style={backgroundStyle as CSSProperties}>
       <Container>
         <div className="mx-auto flex min-h-[56vh] max-w-3xl flex-col items-center justify-center py-20 text-center">
           <h1 className="font-display text-balance text-4xl font-semibold tracking-tight md:text-6xl">{title}</h1>
