@@ -1,22 +1,31 @@
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import homepage from "@/content/homepage.json";
 import PlacardTile from "@/components/PlacardTile";
 import PosterSection from "@/components/PosterSection";
-import { HOMEPAGE_HERO_IMAGE, HOMEPAGE_HERO_POSITION } from "@/lib/heroImages";
+import {
+  HOMEPAGE_HERO_IMAGE,
+  HOMEPAGE_HERO_POSITION_DESKTOP,
+  HOMEPAGE_HERO_POSITION_MOBILE,
+  HOMEPAGE_HERO_SIZE_DESKTOP,
+  HOMEPAGE_HERO_SIZE_MOBILE,
+} from "@/lib/heroImages";
 
 export default function HomePage() {
   const leftTiles = homepage.tiles.slice(0, 3);
   const rightTiles = homepage.tiles.slice(3);
 
   return (
-    <div className="bg-stone-100">
+    <div className="poster-page-bg">
       <section
-        className="relative w-full overflow-hidden text-white"
+        className="poster-hero-bg relative w-full overflow-hidden text-white"
         style={{
-          backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.52), rgba(15, 23, 42, 0.64)), url('${HOMEPAGE_HERO_IMAGE}')`,
-          backgroundSize: "cover",
-          backgroundPosition: HOMEPAGE_HERO_POSITION,
-        }}
+          backgroundImage: `linear-gradient(180deg, rgba(15, 23, 42, 0.15), rgba(15, 23, 42, 0.24)), url('${HOMEPAGE_HERO_IMAGE}')`,
+          "--hero-position-desktop": HOMEPAGE_HERO_POSITION_DESKTOP,
+          "--hero-position-mobile": HOMEPAGE_HERO_POSITION_MOBILE,
+          "--hero-size-desktop": HOMEPAGE_HERO_SIZE_DESKTOP,
+          "--hero-size-mobile": HOMEPAGE_HERO_SIZE_MOBILE,
+        } as CSSProperties}
       >
         <div className="mx-auto flex min-h-[72vh] w-full max-w-[1200px] flex-col px-5 py-14 sm:px-8 md:py-20">
           <div className="mx-auto max-w-3xl text-center">
@@ -68,7 +77,7 @@ export default function HomePage() {
           <p className="text-slate-700 leading-relaxed">{homepage.readyBody}</p>
           <Link
             href="/talk/"
-            className="inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white px-6 py-3 no-underline hover:bg-slate-50"
+            className="inline-flex items-center justify-center rounded-xl border border-stone-300 bg-[#f8f3e8] px-6 py-3 no-underline hover:bg-[#f2ead8]"
           >
             {homepage.ctaText}
           </Link>
