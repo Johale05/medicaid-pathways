@@ -6,6 +6,12 @@ import Layer2LinkBlock from "@/components/Layer2LinkBlock";
 import PosterHero from "@/components/PosterHero";
 import PosterSection from "@/components/PosterSection";
 import { getPathway } from "@/lib/pathways";
+import {
+  HOMEPAGE_HERO_IMAGE,
+  HOMEPAGE_HERO_POSITION,
+  PATHWAY_HERO_IMAGE_BY_SLUG,
+  PATHWAY_HERO_POSITION_BY_SLUG,
+} from "@/lib/heroImages";
 
 type Props = { params: { slug: string } };
 
@@ -19,15 +25,16 @@ const VIDEO_IDS: Record<string, string> = {
   "too-late": "dQw4w9WgXcQ",
 };
 
-const TEMP_HERO_IMAGE = "/assets/Pathway%20Page%20Mock-Up%20(visual%20example).png";
-
 export default function PathwayPage({ params }: Props) {
   const pathway = getPathway(params.slug);
   if (!pathway) return notFound();
 
+  const backgroundImage = PATHWAY_HERO_IMAGE_BY_SLUG[pathway.slug] ?? HOMEPAGE_HERO_IMAGE;
+  const backgroundPosition = PATHWAY_HERO_POSITION_BY_SLUG[pathway.slug] ?? HOMEPAGE_HERO_POSITION;
+
   return (
     <div className="bg-stone-100 pb-14">
-      <PosterHero title={pathway.title} subtitle={pathway.subheadline} backgroundImage={TEMP_HERO_IMAGE} />
+      <PosterHero title={pathway.title} subtitle={pathway.subheadline} backgroundImage={backgroundImage} backgroundPosition={backgroundPosition} />
 
       <PosterSection>
         <YouTubeEmbed videoId={VIDEO_IDS[pathway.slug]} title={pathway.title} />

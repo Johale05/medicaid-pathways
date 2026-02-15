@@ -1,18 +1,53 @@
 import Link from "next/link";
 import homepage from "@/content/homepage.json";
-import PosterHero from "@/components/PosterHero";
 import PlacardTile from "@/components/PlacardTile";
 import PosterSection from "@/components/PosterSection";
+import { HOMEPAGE_HERO_IMAGE, HOMEPAGE_HERO_POSITION } from "@/lib/heroImages";
 
 export default function HomePage() {
+  const leftTiles = homepage.tiles.slice(0, 3);
+  const rightTiles = homepage.tiles.slice(3);
+
   return (
     <div className="bg-stone-100">
-      <PosterHero title={homepage.heroTitle} subtitle={`${homepage.heroLines[0]} ${homepage.heroLines[1]} ${homepage.startLine}`} />
+      <section
+        className="relative w-full overflow-hidden text-white"
+        style={{
+          backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.52), rgba(15, 23, 42, 0.64)), url('${HOMEPAGE_HERO_IMAGE}')`,
+          backgroundSize: "cover",
+          backgroundPosition: HOMEPAGE_HERO_POSITION,
+        }}
+      >
+        <div className="mx-auto flex min-h-[72vh] w-full max-w-[1200px] flex-col px-5 py-14 sm:px-8 md:py-20">
+          <div className="mx-auto max-w-3xl text-center">
+            <h1 className="font-display text-balance text-4xl font-semibold tracking-tight md:text-6xl">{homepage.heroTitle}</h1>
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-100 md:text-xl">
+              {homepage.heroLines[0]} {homepage.heroLines[1]} {homepage.startLine}
+            </p>
+          </div>
 
-      <section className="py-12 md:py-16">
+          <div className="mt-10 hidden flex-1 items-center md:flex">
+            <div className="grid w-full grid-cols-[minmax(0,1fr)_minmax(220px,0.75fr)_minmax(0,1fr)] gap-6">
+              <div className="grid gap-4">
+                {leftTiles.map((tile) => (
+                  <PlacardTile key={tile.slug} href={`/pathways/${tile.slug}/`} title={tile.title} subtitle={tile.subtitle} />
+                ))}
+              </div>
+              <div aria-hidden="true" />
+              <div className="grid gap-4">
+                {rightTiles.map((tile) => (
+                  <PlacardTile key={tile.slug} href={`/pathways/${tile.slug}/`} title={tile.title} subtitle={tile.subtitle} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-10 md:hidden">
         <div className="mx-auto w-full max-w-5xl px-5 sm:px-8">
-          <h2 className="text-center text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl">Start with a question</h2>
-          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <h2 className="font-display text-center text-2xl font-semibold tracking-tight text-slate-900">Start with a question</h2>
+          <div className="mt-6 grid gap-4">
             {homepage.tiles.map((tile) => (
               <PlacardTile key={tile.slug} href={`/pathways/${tile.slug}/`} title={tile.title} subtitle={tile.subtitle} />
             ))}
