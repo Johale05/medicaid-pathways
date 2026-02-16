@@ -6,6 +6,19 @@ import { designTokens } from "@/lib/designTokens";
 import { HOMEPAGE_HERO_IMAGE } from "@/lib/heroImages";
 
 export default function HomePage() {
+  const tileOrder = [
+    "medicare-ending",
+    "qualify-medically",
+    "spend-everything",
+    "sell-the-house",
+    "too-much-income",
+    "too-late",
+  ];
+
+  const orderedTiles = tileOrder
+    .map((slug) => homepage.tiles.find((tile) => tile.slug === slug))
+    .filter((tile): tile is (typeof homepage.tiles)[number] => Boolean(tile));
+
   return (
     <div style={{ background: "#f1e9dc" }}>
       <section
@@ -37,9 +50,9 @@ export default function HomePage() {
             <p className="mt-8 font-display text-lg italic text-[#454545] md:text-[1.35rem]">{homepage.startLine}</p>
           </div>
 
-          <div className="mx-auto mt-10 w-full max-w-5xl md:mt-14">
+          <div className="mx-auto mt-14 w-full max-w-5xl md:mt-20">
             <div className="grid grid-cols-1 justify-items-center gap-y-6 sm:grid-cols-2 sm:gap-x-16 lg:gap-x-20">
-              {homepage.tiles.map((tile, index) => (
+              {orderedTiles.map((tile, index) => (
                 <PlacardTile
                   key={tile.slug}
                   href={`/pathways/${tile.slug}/`}

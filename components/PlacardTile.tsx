@@ -13,7 +13,7 @@ export default function PlacardTile({ href, title, subtitle, className }: Placar
   return (
     <Link
       href={href}
-      className={`rounded-[1rem] border px-7 py-7 no-underline transition duration-200 hover:-translate-y-[4px] hover:shadow-[var(--hover-shadow)] ${className ?? ""}`}
+      className={`flex min-h-[140px] w-full flex-col justify-start rounded-[1rem] border p-6 no-underline transition duration-200 hover:-translate-y-[4px] hover:shadow-[var(--hover-shadow)] sm:w-[360px] ${className ?? ""}`}
       style={
         {
           backgroundColor: "#f9f3e8",
