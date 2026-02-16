@@ -30,7 +30,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-[#f7f1e6]/[0.08]" aria-hidden="true" />
 
         <div className="relative mx-auto flex min-h-[88vh] w-full max-w-[1200px] flex-col px-5 py-14 sm:px-8 md:min-h-[96vh] md:py-20">
-          <div className="mx-auto w-full max-w-[calc(100vw-32px)] px-4 pt-2 text-center md:absolute md:left-1/2 md:top-20 md:w-fit md:max-w-[1100px] md:-translate-x-1/2 md:px-0 md:pt-0">
+          <div className="mx-auto w-full max-w-[calc(100vw-32px)] px-4 pt-2 pb-8 text-center sm:pb-10 lg:pb-12 md:w-fit md:max-w-[1100px] md:px-0 md:pt-0">
             <div className="mt-2 flex w-full items-center gap-4 md:gap-6" aria-hidden="true">
               <span className="h-px flex-1 bg-[rgba(43,43,43,0.42)]" />
               <span className="h-px flex-1 bg-[rgba(43,43,43,0.42)]" />
@@ -50,17 +50,19 @@ export default function HomePage() {
             <p className="mt-8 font-display text-lg italic text-[#454545] md:text-[1.35rem]">{homepage.startLine}</p>
           </div>
 
-          <div className="mx-auto mt-12 w-full max-w-5xl md:mt-20">
-            <div className="grid grid-cols-1 justify-items-center gap-y-6 md:grid-cols-2 md:gap-x-16 lg:gap-x-20">
-              {orderedTiles.map((tile, index) => (
-                <PlacardTile
-                  key={tile.slug}
-                  href={`/pathways/${tile.slug}/`}
-                  title={tile.title}
-                  subtitle={tile.subtitle}
-                  className={index % 2 === 0 ? "md:justify-self-end" : "md:justify-self-start"}
-                />
-              ))}
+          <div className="mt-8 w-full sm:mt-10 lg:mt-12">
+            <div className="mx-auto w-full max-w-4xl">
+              <div className="grid grid-cols-1 items-stretch gap-y-6 px-4 sm:grid-cols-2 sm:gap-x-12 sm:gap-y-7 lg:gap-x-16 lg:gap-y-8">
+                {orderedTiles.map((tile, index) => (
+                  <PlacardTile
+                    key={tile.slug}
+                    href={`/pathways/${tile.slug}/`}
+                    title={tile.title}
+                    subtitle={tile.subtitle}
+                    className={index % 2 === 0 ? "md:justify-self-end" : "md:justify-self-start"}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
