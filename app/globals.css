@@ -53,16 +53,13 @@ a {
 }
 
 .heroTitleGroup {
-  position: absolute;
-  left: 50%;
-  top: 3.5rem;
-  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: fit-content;
+  width: 100%;
   max-width: min(1100px, 92vw);
+  margin: 0 auto;
 }
 
 .heroTitleHeading {
@@ -73,6 +70,10 @@ a {
 
 @media (min-width: 768px) {
   .heroTitleGroup {
+    position: absolute;
+    left: 50%;
     top: 5rem;
+    transform: translateX(-50%);
+    width: fit-content;
   }
 }
