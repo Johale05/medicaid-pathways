@@ -31,7 +31,7 @@ export default function HomePage() {
 
         <div className="relative py-14 sm:py-16 lg:py-20">
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
-            <div className="w-full max-w-4xl pb-6 sm:pb-8 lg:pb-10">
+            <div className="w-full max-w-4xl pb-6 sm:pb-8 lg:pb-7">
               <div className="mt-2 flex w-full items-center gap-4 md:gap-6" aria-hidden="true">
                 <span className="h-px flex-1 bg-[rgba(43,43,43,0.42)]" />
                 <span className="h-px flex-1 bg-[rgba(43,43,43,0.42)]" />
@@ -51,7 +51,7 @@ export default function HomePage() {
               <p className="mt-8 font-display text-lg italic text-[#454545] md:text-[1.35rem]">{homepage.startLine}</p>
             </div>
 
-            <div className="mt-6 sm:mt-8 lg:mt-10 w-full max-w-4xl mx-auto">
+            <div className="mt-6 sm:mt-8 lg:mt-5 lg:translate-y-4 w-full max-w-4xl mx-auto">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10 lg:gap-x-16 lg:gap-y-10 items-stretch">
                 {orderedTiles.map((tile, index) => (
                   <div key={tile.slug} className={index % 2 === 0 ? "md:justify-self-end" : "md:justify-self-start"}>
