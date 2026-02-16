@@ -22,7 +22,7 @@ export default function HomePage() {
   return (
     <div style={{ background: "#f1e9dc" }}>
       <section
-        className="relative isolate overflow-hidden bg-[center_24%] bg-cover md:bg-[center_18%] lg:bg-[center_15%]"
+        className="relative isolate bg-[center_24%] bg-cover md:overflow-hidden md:bg-[center_18%] lg:bg-[center_15%]"
         style={{
           backgroundImage: `url('${HOMEPAGE_HERO_IMAGE}')`,
         }}
