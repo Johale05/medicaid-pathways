@@ -30,13 +30,13 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-[#f7f1e6]/[0.08]" aria-hidden="true" />
 
         <div className="relative mx-auto flex min-h-[88vh] w-full max-w-[1200px] flex-col px-5 py-14 sm:px-8 md:min-h-[96vh] md:py-20">
-          <div className="heroTitleGroup pt-2 md:pt-0">
+          <div className="mx-auto w-full max-w-[calc(100vw-32px)] px-4 pt-2 text-center md:absolute md:left-1/2 md:top-20 md:w-fit md:max-w-[1100px] md:-translate-x-1/2 md:px-0 md:pt-0">
             <div className="mt-2 flex w-full items-center gap-4 md:gap-6" aria-hidden="true">
               <span className="h-px flex-1 bg-[rgba(43,43,43,0.42)]" />
               <span className="h-px flex-1 bg-[rgba(43,43,43,0.42)]" />
             </div>
-            <h1 className="heroTitleHeading mt-5 font-display text-balance text-4xl font-semibold leading-[1.05] tracking-[-0.01em] text-[#2b2b2b] [text-shadow:0_1px_10px_rgba(255,255,255,0.42)] md:text-6xl md:font-bold">
-              <span className="inline-block whitespace-nowrap">When Paying for Long-Term Care</span>
+            <h1 className="mt-5 font-display text-balance text-3xl font-semibold leading-[1.05] tracking-[-0.01em] text-[#2b2b2b] [text-shadow:0_1px_10px_rgba(255,255,255,0.42)] sm:text-4xl md:text-5xl md:font-bold lg:text-6xl">
+              <span className="inline-block">When Paying for Long-Term Care</span>
               <br />
               <span className="inline-block">Feels Unclear</span>
             </h1>
