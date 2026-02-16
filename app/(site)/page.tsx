@@ -17,7 +17,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-[#f7f1e6]/[0.08]" aria-hidden="true" />
 
         <div className="relative mx-auto flex min-h-[88vh] w-full max-w-[1200px] flex-col px-5 py-14 sm:px-8 md:min-h-[96vh] md:py-20">
-          <div className="mt-2 flex w-full justify-center pt-2 -translate-y-6 md:-translate-y-10 lg:-translate-y-14">
+          <div className="flex w-full justify-center">
             <div className="mx-auto inline-flex w-full max-w-4xl flex-col items-center text-center">
               <div className="mt-2 flex w-full max-w-3xl items-center gap-4 md:gap-6" aria-hidden="true">
                 <span className="h-px flex-1 bg-[rgba(43,43,43,0.42)]" />
