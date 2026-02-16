@@ -52,7 +52,7 @@ export default function HomePage() {
             </div>
 
             <div className="mt-6 sm:mt-8 lg:mt-5 lg:translate-y-4 w-full max-w-6xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-8 lg:gap-x-24 xl:gap-x-32 2xl:gap-x-40 items-stretch justify-center lg:mx-auto lg:justify-items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-8 lg:w-fit lg:gap-x-24 xl:gap-x-32 2xl:gap-x-40 items-stretch justify-center lg:mx-auto lg:justify-items-center">
                 {orderedTiles.map((tile) => (
                   <div
                     key={tile.slug}
