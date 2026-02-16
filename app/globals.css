@@ -51,29 +51,3 @@ a {
   outline: 3px solid rgba(37, 99, 235, 0.65);
   outline-offset: 3px;
 }
-
-.heroTitleGroup {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  max-width: min(1100px, 92vw);
-  margin: 0 auto;
-}
-
-.heroTitleHeading {
-  display: inline-block;
-  width: fit-content;
-  margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-  .heroTitleGroup {
-    position: absolute;
-    left: 50%;
-    top: 5rem;
-    transform: translateX(-50%);
-    width: fit-content;
-  }
-}
