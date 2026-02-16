@@ -1,66 +1,44 @@
 import Link from "next/link";
-import type { CSSProperties } from "react";
 import homepage from "@/content/homepage.json";
 import PlacardTile from "@/components/PlacardTile";
 import PosterSection from "@/components/PosterSection";
 import { designTokens } from "@/lib/designTokens";
-import {
-  HOMEPAGE_HERO_IMAGE,
-  HOMEPAGE_HERO_POSITION_DESKTOP,
-  HOMEPAGE_HERO_POSITION_MOBILE,
-  HOMEPAGE_HERO_SIZE_DESKTOP,
-  HOMEPAGE_HERO_SIZE_MOBILE,
-} from "@/lib/heroImages";
+import { HOMEPAGE_HERO_IMAGE } from "@/lib/heroImages";
 
 export default function HomePage() {
   return (
-    <div className="poster-page-bg">
+    <div style={{ background: "#f1e9dc" }}>
       <section
-        className="poster-hero-bg relative w-full overflow-hidden"
-        style={
-          {
-            backgroundImage: `${designTokens.overlays.heroOverlayLight}, url('${HOMEPAGE_HERO_IMAGE}')`,
-            "--hero-position-desktop": HOMEPAGE_HERO_POSITION_DESKTOP,
-            "--hero-position-mobile": HOMEPAGE_HERO_POSITION_MOBILE,
-            "--hero-size-desktop": HOMEPAGE_HERO_SIZE_DESKTOP,
-            "--hero-size-mobile": HOMEPAGE_HERO_SIZE_MOBILE,
-          } as CSSProperties
-        }
+        className="relative isolate overflow-hidden"
+        style={{
+          backgroundImage: `url('${HOMEPAGE_HERO_IMAGE}')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center 36%",
+        }}
       >
-        <div className="mx-auto flex min-h-[82vh] w-full max-w-[1200px] flex-col px-5 py-14 sm:px-8 md:py-20" style={{ color: designTokens.colors.ink }}>
+        <div className="absolute inset-0 bg-[#f7f1e6]/[0.08]" aria-hidden="true" />
+
+        <div className="relative mx-auto flex min-h-[85vh] w-full max-w-[1200px] flex-col px-5 py-14 sm:px-8 md:py-20">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="font-display text-balance text-4xl font-semibold tracking-tight md:text-6xl">{homepage.heroTitle}</h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed md:text-xl" style={{ color: "rgba(45, 41, 36, 0.88)" }}>
+            <h1 className="font-display text-balance text-4xl font-semibold tracking-tight text-[#231f1b] [text-shadow:0_2px_12px_rgba(255,255,255,0.5)] md:text-6xl">
+              {homepage.heroTitle}
+            </h1>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-[#2a251f] [text-shadow:0_1px_10px_rgba(255,255,255,0.55)] md:text-xl">
               {homepage.heroLines[0]} {homepage.heroLines[1]} {homepage.startLine}
             </p>
           </div>
 
-          <div className="mt-12 hidden flex-1 items-start md:flex">
-            <div className="grid w-full grid-cols-3 gap-6 px-4">
+          <div className="mx-auto mt-10 w-full max-w-6xl md:mt-14">
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {homepage.tiles.map((tile) => (
-                <div key={tile.slug}>
-                  <PlacardTile href={`/pathways/${tile.slug}/`} title={tile.title} subtitle={tile.subtitle} />
-                </div>
+                <PlacardTile key={tile.slug} href={`/pathways/${tile.slug}/`} title={tile.title} subtitle={tile.subtitle} />
               ))}
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-12 md:hidden">
-        <div className="mx-auto w-full max-w-5xl px-5 sm:px-8">
-          <h2 className="font-display text-center text-3xl font-semibold tracking-tight" style={{ color: designTokens.colors.ink }}>
-            Start with a question
-          </h2>
-          <div className="mt-6 grid gap-4">
-            {homepage.tiles.map((tile) => (
-              <PlacardTile key={tile.slug} href={`/pathways/${tile.slug}/`} title={tile.title} subtitle={tile.subtitle} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <div style={{ background: `linear-gradient(180deg, ${designTokens.colors.warmPaper}, ${designTokens.colors.warmPaper2})` }}>
+      <div style={{ background: "linear-gradient(180deg, #efe7da, #f7f1e6)" }}>
         <PosterSection title={homepage.whatIsTitle}>
           <p className="leading-relaxed">{homepage.whatIsBody}</p>
         </PosterSection>
