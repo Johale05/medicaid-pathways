@@ -52,11 +52,11 @@ export default function HomePage() {
             </div>
 
             <div className="mt-6 sm:mt-8 lg:mt-5 lg:translate-y-4 w-full max-w-6xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-8 lg:gap-x-20 xl:gap-x-28 items-stretch justify-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-8 lg:gap-x-28 xl:gap-x-36 items-stretch justify-center">
                 {orderedTiles.map((tile, index) => (
                   <div
                     key={tile.slug}
-                    className={`w-full max-w-[440px] ${index % 2 === 0 ? "lg:justify-self-end" : "lg:justify-self-start"}`}
+                    className={`w-full max-w-[420px] ${index % 2 === 0 ? "lg:justify-self-end" : "lg:justify-self-start"}`}
                   >
                     <PlacardTile
                       href={`/pathways/${tile.slug}/`}
