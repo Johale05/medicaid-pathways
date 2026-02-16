@@ -51,15 +51,18 @@ export default function HomePage() {
               <p className="mt-8 font-display text-lg italic text-[#454545] md:text-[1.35rem]">{homepage.startLine}</p>
             </div>
 
-            <div className="mt-6 sm:mt-8 lg:mt-5 lg:translate-y-4 w-full max-w-4xl mx-auto">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10 lg:gap-x-16 lg:gap-y-10 items-stretch">
+            <div className="mt-6 sm:mt-8 lg:mt-5 lg:translate-y-4 w-full max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-8 lg:gap-x-20 xl:gap-x-28 items-stretch justify-center">
                 {orderedTiles.map((tile, index) => (
-                  <div key={tile.slug} className={index % 2 === 0 ? "md:justify-self-end" : "md:justify-self-start"}>
+                  <div
+                    key={tile.slug}
+                    className={`w-full max-w-[440px] ${index % 2 === 0 ? "lg:justify-self-end" : "lg:justify-self-start"}`}
+                  >
                     <PlacardTile
                       href={`/pathways/${tile.slug}/`}
                       title={tile.title}
                       subtitle={tile.subtitle}
-                      className="h-full min-h-[140px]"
+                      className="h-full min-h-[150px]"
                     />
                   </div>
                 ))}
