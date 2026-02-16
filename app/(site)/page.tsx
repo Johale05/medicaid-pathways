@@ -29,38 +29,40 @@ export default function HomePage() {
       >
         <div className="absolute inset-0 bg-[#f7f1e6]/[0.08]" aria-hidden="true" />
 
-        <div className="relative mx-auto flex min-h-[88vh] w-full max-w-[1200px] flex-col px-5 py-14 sm:px-8 md:min-h-[96vh] md:py-20">
-          <div className="mx-auto w-full max-w-[calc(100vw-32px)] px-4 pt-2 text-center md:absolute md:left-1/2 md:top-20 md:w-fit md:max-w-[1100px] md:-translate-x-1/2 md:px-0 md:pt-0">
-            <div className="mt-2 flex w-full items-center gap-4 md:gap-6" aria-hidden="true">
-              <span className="h-px flex-1 bg-[rgba(43,43,43,0.42)]" />
-              <span className="h-px flex-1 bg-[rgba(43,43,43,0.42)]" />
+        <div className="relative py-14 sm:py-16 lg:py-20">
+          <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+            <div className="w-full max-w-4xl pb-6 sm:pb-8 lg:pb-10">
+              <div className="mt-2 flex w-full items-center gap-4 md:gap-6" aria-hidden="true">
+                <span className="h-px flex-1 bg-[rgba(43,43,43,0.42)]" />
+                <span className="h-px flex-1 bg-[rgba(43,43,43,0.42)]" />
+              </div>
+              <h1 className="mt-5 font-display text-balance text-3xl font-semibold leading-[1.05] tracking-[-0.01em] text-[#2b2b2b] [text-shadow:0_1px_10px_rgba(255,255,255,0.42)] sm:text-4xl md:text-5xl md:font-bold lg:text-6xl">
+                <span className="inline-block">When Paying for Long-Term Care</span>
+                <br />
+                <span className="inline-block">Feels Unclear</span>
+              </h1>
+              <div className="mt-5 flex w-full items-center gap-4 md:gap-6" aria-hidden="true">
+                <span className="h-px flex-1 bg-[rgba(43,43,43,0.42)]" />
+                <span className="h-px flex-1 bg-[rgba(43,43,43,0.42)]" />
+              </div>
+              <p className="mt-7 max-w-2xl mx-auto font-display text-lg leading-relaxed text-[#4a4a4a] [text-shadow:0_1px_10px_rgba(255,255,255,0.48)] md:text-xl">
+                {homepage.heroLines[0]} <em>{homepage.heroLines[1]}</em>
+              </p>
+              <p className="mt-8 font-display text-lg italic text-[#454545] md:text-[1.35rem]">{homepage.startLine}</p>
             </div>
-            <h1 className="mt-5 font-display text-balance text-3xl font-semibold leading-[1.05] tracking-[-0.01em] text-[#2b2b2b] [text-shadow:0_1px_10px_rgba(255,255,255,0.42)] sm:text-4xl md:text-5xl md:font-bold lg:text-6xl">
-              <span className="inline-block">When Paying for Long-Term Care</span>
-              <br />
-              <span className="inline-block">Feels Unclear</span>
-            </h1>
-            <div className="mt-5 flex w-full items-center gap-4 md:gap-6" aria-hidden="true">
-              <span className="h-px flex-1 bg-[rgba(43,43,43,0.42)]" />
-              <span className="h-px flex-1 bg-[rgba(43,43,43,0.42)]" />
-            </div>
-            <p className="mt-7 max-w-2xl font-display text-lg leading-relaxed text-[#4a4a4a] [text-shadow:0_1px_10px_rgba(255,255,255,0.48)] md:text-xl">
-              {homepage.heroLines[0]} <em>{homepage.heroLines[1]}</em>
-            </p>
-            <p className="mt-8 font-display text-lg italic text-[#454545] md:text-[1.35rem]">{homepage.startLine}</p>
-          </div>
 
-          <div className="mx-auto mt-12 w-full max-w-5xl md:mt-20">
-            <div className="grid grid-cols-1 justify-items-center gap-y-6 md:grid-cols-2 md:gap-x-16 lg:gap-x-20">
-              {orderedTiles.map((tile, index) => (
-                <PlacardTile
-                  key={tile.slug}
-                  href={`/pathways/${tile.slug}/`}
-                  title={tile.title}
-                  subtitle={tile.subtitle}
-                  className={index % 2 === 0 ? "md:justify-self-end" : "md:justify-self-start"}
-                />
-              ))}
+            <div className="mt-6 sm:mt-8 lg:mt-10 w-full max-w-4xl">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 items-stretch">
+                {orderedTiles.map((tile) => (
+                  <PlacardTile
+                    key={tile.slug}
+                    href={`/pathways/${tile.slug}/`}
+                    title={tile.title}
+                    subtitle={tile.subtitle}
+                    className="h-full min-h-[140px]"
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
