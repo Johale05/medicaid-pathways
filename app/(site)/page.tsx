@@ -17,29 +17,27 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-[#f7f1e6]/[0.08]" aria-hidden="true" />
 
         <div className="relative mx-auto flex min-h-[88vh] w-full max-w-[1200px] flex-col px-5 py-14 sm:px-8 md:min-h-[96vh] md:py-20">
-          <div className="flex w-full justify-center">
-            <div className="mx-auto inline-flex w-full max-w-4xl flex-col items-center text-center">
-              <div className="mt-2 flex w-full max-w-3xl items-center gap-4 md:gap-6" aria-hidden="true">
-                <span className="h-px flex-1 bg-[rgba(43,43,43,0.42)]" />
-                <span className="h-px flex-1 bg-[rgba(43,43,43,0.42)]" />
-              </div>
-              <h1 className="mt-5 max-w-3xl font-display text-balance text-4xl font-semibold leading-[1.05] tracking-[-0.01em] text-[#2b2b2b] [text-shadow:0_1px_10px_rgba(255,255,255,0.42)] md:text-6xl md:font-bold">
-                <span className="whitespace-nowrap">When Paying for Long-Term Care</span>
-                <br />
-                <span>Feels Unclear</span>
-              </h1>
-              <div className="mt-5 flex w-full max-w-3xl items-center gap-4 md:gap-6" aria-hidden="true">
-                <span className="h-px flex-1 bg-[rgba(43,43,43,0.42)]" />
-                <span className="h-px flex-1 bg-[rgba(43,43,43,0.42)]" />
-              </div>
-              <p className="mt-7 max-w-2xl font-display text-lg leading-relaxed text-[#4a4a4a] [text-shadow:0_1px_10px_rgba(255,255,255,0.48)] md:text-xl">
-                {homepage.heroLines[0]} <em>{homepage.heroLines[1]}</em>
-              </p>
-              <p className="mt-8 font-display text-lg italic text-[#454545] md:text-[1.35rem]">{homepage.startLine}</p>
+          <div className="heroTitleGroup">
+            <div className="mt-2 flex w-full items-center gap-4 md:gap-6" aria-hidden="true">
+              <span className="h-px flex-1 bg-[rgba(43,43,43,0.42)]" />
+              <span className="h-px flex-1 bg-[rgba(43,43,43,0.42)]" />
             </div>
+            <h1 className="heroTitleHeading mt-5 font-display text-balance text-4xl font-semibold leading-[1.05] tracking-[-0.01em] text-[#2b2b2b] [text-shadow:0_1px_10px_rgba(255,255,255,0.42)] md:text-6xl md:font-bold">
+              <span className="inline-block whitespace-nowrap">When Paying for Long-Term Care</span>
+              <br />
+              <span className="inline-block">Feels Unclear</span>
+            </h1>
+            <div className="mt-5 flex w-full items-center gap-4 md:gap-6" aria-hidden="true">
+              <span className="h-px flex-1 bg-[rgba(43,43,43,0.42)]" />
+              <span className="h-px flex-1 bg-[rgba(43,43,43,0.42)]" />
+            </div>
+            <p className="mt-7 max-w-2xl font-display text-lg leading-relaxed text-[#4a4a4a] [text-shadow:0_1px_10px_rgba(255,255,255,0.48)] md:text-xl">
+              {homepage.heroLines[0]} <em>{homepage.heroLines[1]}</em>
+            </p>
+            <p className="mt-8 font-display text-lg italic text-[#454545] md:text-[1.35rem]">{homepage.startLine}</p>
           </div>
 
-          <div className="mx-auto mt-10 w-full max-w-6xl md:mt-14">
+          <div className="mx-auto mt-auto w-full max-w-6xl pt-10 md:pt-14">
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {homepage.tiles.map((tile) => (
                 <PlacardTile key={tile.slug} href={`/pathways/${tile.slug}/`} title={tile.title} subtitle={tile.subtitle} />
