@@ -11,7 +11,7 @@ export const designTokens = {
     hoverShadow: "0 16px 34px rgba(52, 41, 25, 0.16)",
   },
   overlays: {
-    heroOverlayLight: "linear-gradient(180deg, rgba(247, 241, 230, 0.36), rgba(247, 241, 230, 0.5))",
+    heroOverlayLight: "linear-gradient(180deg, rgba(247, 241, 230, 0.1), rgba(247, 241, 230, 0.14))",
   },
 } as const;
 
