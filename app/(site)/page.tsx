@@ -9,23 +9,30 @@ export default function HomePage() {
   return (
     <div style={{ background: "#f1e9dc" }}>
       <section
-        className="relative isolate overflow-hidden"
+        className="relative isolate overflow-hidden bg-[center_24%] bg-cover md:bg-[center_18%] lg:bg-[center_15%]"
         style={{
           backgroundImage: `url('${HOMEPAGE_HERO_IMAGE}')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center 36%",
         }}
       >
         <div className="absolute inset-0 bg-[#f7f1e6]/[0.08]" aria-hidden="true" />
 
-        <div className="relative mx-auto flex min-h-[85vh] w-full max-w-[1200px] flex-col px-5 py-14 sm:px-8 md:py-20">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="font-display text-balance text-4xl font-semibold tracking-tight text-[#231f1b] [text-shadow:0_2px_12px_rgba(255,255,255,0.5)] md:text-6xl">
+        <div className="relative mx-auto flex min-h-[88vh] w-full max-w-[1200px] flex-col px-5 py-14 sm:px-8 md:min-h-[96vh] md:py-20">
+          <div className="mx-auto mt-6 w-full max-w-4xl pt-10 text-center md:pt-20 lg:pt-24">
+            <div className="mx-auto flex max-w-3xl items-center gap-4 md:gap-6" aria-hidden="true">
+              <span className="h-px flex-1 bg-[rgba(43,43,43,0.42)]" />
+              <span className="h-px flex-1 bg-[rgba(43,43,43,0.42)]" />
+            </div>
+            <h1 className="mx-auto mt-5 max-w-3xl font-display text-balance text-4xl font-semibold leading-[1.05] tracking-[-0.01em] text-[#2b2b2b] [text-shadow:0_1px_10px_rgba(255,255,255,0.42)] md:text-6xl md:font-bold">
               {homepage.heroTitle}
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-[#2a251f] [text-shadow:0_1px_10px_rgba(255,255,255,0.55)] md:text-xl">
-              {homepage.heroLines[0]} {homepage.heroLines[1]} {homepage.startLine}
+            <div className="mx-auto mt-5 flex max-w-3xl items-center gap-4 md:gap-6" aria-hidden="true">
+              <span className="h-px flex-1 bg-[rgba(43,43,43,0.42)]" />
+              <span className="h-px flex-1 bg-[rgba(43,43,43,0.42)]" />
+            </div>
+            <p className="mx-auto mt-7 max-w-2xl font-display text-lg leading-relaxed text-[#4a4a4a] [text-shadow:0_1px_10px_rgba(255,255,255,0.48)] md:text-xl">
+              {homepage.heroLines[0]} <em>{homepage.heroLines[1]}</em>
             </p>
+            <p className="mt-8 font-display text-lg italic text-[#454545] md:text-[1.35rem]">{homepage.startLine}</p>
           </div>
 
           <div className="mx-auto mt-10 w-full max-w-6xl md:mt-14">
