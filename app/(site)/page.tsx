@@ -17,13 +17,15 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-[#f7f1e6]/[0.08]" aria-hidden="true" />
 
         <div className="relative mx-auto flex min-h-[88vh] w-full max-w-[1200px] flex-col px-5 py-14 sm:px-8 md:min-h-[96vh] md:py-20">
-          <div className="mx-auto mt-6 w-full max-w-4xl pt-10 text-center md:pt-20 lg:pt-24">
+          <div className="mx-auto mt-2 w-full max-w-4xl pt-2 text-center -translate-y-6 md:-translate-y-10 lg:-translate-y-14">
             <div className="mx-auto flex max-w-3xl items-center gap-4 md:gap-6" aria-hidden="true">
               <span className="h-px flex-1 bg-[rgba(43,43,43,0.42)]" />
               <span className="h-px flex-1 bg-[rgba(43,43,43,0.42)]" />
             </div>
             <h1 className="mx-auto mt-5 max-w-3xl font-display text-balance text-4xl font-semibold leading-[1.05] tracking-[-0.01em] text-[#2b2b2b] [text-shadow:0_1px_10px_rgba(255,255,255,0.42)] md:text-6xl md:font-bold">
-              {homepage.heroTitle}
+              <span className="whitespace-nowrap">{homepage.heroTitleLines[0]}</span>
+              <br />
+              <span>{homepage.heroTitleLines[1]}</span>
             </h1>
             <div className="mx-auto mt-5 flex max-w-3xl items-center gap-4 md:gap-6" aria-hidden="true">
               <span className="h-px flex-1 bg-[rgba(43,43,43,0.42)]" />
