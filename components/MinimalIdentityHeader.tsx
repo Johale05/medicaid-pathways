@@ -9,7 +9,7 @@ export default function MinimalIdentityHeader() {
         <div className="py-6 flex items-center gap-4">
           <Link href="/" aria-label="Medicaid Pathways home" className="no-underline hover:underline">
             <div className="flex items-center gap-3">
-              <Image src="/assets/logo.png" alt="Medicaid Pathways" width={180} height={60} priority />
+              <Image src="/assets/Medicaid Pathways Logo -- Transparent2.png" alt="Medicaid Pathways" width={180} height={60} priority />
               <div className="text-sm text-slate-700">
                 <div className="font-semibold">Medicaid Pathways™</div>
                 <div>by The Hale Law Firm</div>

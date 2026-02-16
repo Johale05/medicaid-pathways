@@ -10,12 +10,12 @@ export default function SiteHeader() {
         <div className="flex flex-col gap-5 py-4 md:flex-row md:items-center md:justify-between">
           <Link href="/" className="inline-flex no-underline" aria-label="Medicaid Pathways home">
             <Image
-              src="/assets/logo.png"
+              src="/assets/Medicaid Pathways Logo -- Transparent2.png"
               alt="Medicaid Pathways"
               width={420}
               height={140}
               priority
-              className="h-auto w-[290px] sm:w-[360px]"
+              className="h-[44px] w-auto md:h-[60px]"
             />
           </Link>
 
