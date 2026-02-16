@@ -1,5 +1,4 @@
 import Link from "next/link";
-import type { CSSProperties } from "react";
 import { designTokens } from "@/lib/designTokens";
 
 type PlacardTileProps = {
@@ -13,15 +12,7 @@ export default function PlacardTile({ href, title, subtitle, className }: Placar
   return (
     <Link
       href={href}
-      className={`flex min-h-[140px] w-full flex-col justify-start rounded-[1rem] border p-6 no-underline transition duration-200 hover:-translate-y-[4px] hover:shadow-[var(--hover-shadow)] sm:w-[360px] ${className ?? ""}`}
-      style={
-        {
-          backgroundColor: "#f9f3e8",
-          borderColor: "#d7cab4",
-          boxShadow: designTokens.shadows.softShadow,
-          "--hover-shadow": "0 18px 36px rgba(52, 41, 25, 0.2)",
-        } as CSSProperties
-      }
+      className={`flex min-h-[140px] w-full flex-col justify-start rounded-[1rem] border border-[#d9ccb7]/40 bg-[#f5ede0]/95 p-6 no-underline shadow-[0_8px_20px_rgba(0,0,0,0.08)] transition-all duration-200 hover:-translate-y-[1px] hover:shadow-[0_10px_26px_rgba(0,0,0,0.10)] sm:w-[360px] ${className ?? ""}`}
     >
       <h3 className="font-display text-[1.45rem] font-semibold leading-tight tracking-tight" style={{ color: designTokens.colors.ink }}>
         {title}
