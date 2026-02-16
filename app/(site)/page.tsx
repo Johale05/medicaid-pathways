@@ -12,15 +12,6 @@ import {
   HOMEPAGE_HERO_SIZE_MOBILE,
 } from "@/lib/heroImages";
 
-const tilePlacementClasses = [
-  "md:translate-x-2 md:translate-y-2",
-  "md:-translate-x-10 md:translate-y-16",
-  "md:translate-x-6 md:translate-y-8",
-  "md:-translate-x-4 md:translate-y-10",
-  "md:translate-x-10 md:translate-y-1",
-  "md:-translate-x-3 md:translate-y-14",
-];
-
 export default function HomePage() {
   return (
     <div className="poster-page-bg">
@@ -39,15 +30,15 @@ export default function HomePage() {
         <div className="mx-auto flex min-h-[82vh] w-full max-w-[1200px] flex-col px-5 py-14 sm:px-8 md:py-20" style={{ color: designTokens.colors.ink }}>
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="font-display text-balance text-4xl font-semibold tracking-tight md:text-6xl">{homepage.heroTitle}</h1>
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed md:text-xl" style={{ color: "rgba(45, 41, 36, 0.88)" }}>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed md:text-xl" style={{ color: "rgba(45, 41, 36, 0.88)" }}>
               {homepage.heroLines[0]} {homepage.heroLines[1]} {homepage.startLine}
             </p>
           </div>
 
           <div className="mt-12 hidden flex-1 items-start md:flex">
-            <div className="grid w-full grid-cols-3 gap-5 px-4">
-              {homepage.tiles.map((tile, index) => (
-                <div key={tile.slug} className={tilePlacementClasses[index]}>
+            <div className="grid w-full grid-cols-3 gap-6 px-4">
+              {homepage.tiles.map((tile) => (
+                <div key={tile.slug}>
                   <PlacardTile href={`/pathways/${tile.slug}/`} title={tile.title} subtitle={tile.subtitle} />
                 </div>
               ))}
@@ -58,7 +49,7 @@ export default function HomePage() {
 
       <section className="py-12 md:hidden">
         <div className="mx-auto w-full max-w-5xl px-5 sm:px-8">
-          <h2 className="font-display text-center text-2xl font-semibold tracking-tight" style={{ color: designTokens.colors.ink }}>
+          <h2 className="font-display text-center text-3xl font-semibold tracking-tight" style={{ color: designTokens.colors.ink }}>
             Start with a question
           </h2>
           <div className="mt-6 grid gap-4">
