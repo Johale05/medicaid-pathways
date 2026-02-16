@@ -6,13 +6,14 @@ type PlacardTileProps = {
   href: string;
   title: string;
   subtitle: string;
+  className?: string;
 };
 
-export default function PlacardTile({ href, title, subtitle }: PlacardTileProps) {
+export default function PlacardTile({ href, title, subtitle, className }: PlacardTileProps) {
   return (
     <Link
       href={href}
-      className="rounded-[1rem] border px-7 py-7 no-underline transition duration-200 hover:-translate-y-[4px] hover:shadow-[var(--hover-shadow)]"
+      className={`rounded-[1rem] border px-7 py-7 no-underline transition duration-200 hover:-translate-y-[4px] hover:shadow-[var(--hover-shadow)] ${className ?? ""}`}
       style={
         {
           backgroundColor: "#f9f3e8",

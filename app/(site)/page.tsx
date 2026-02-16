@@ -37,10 +37,16 @@ export default function HomePage() {
             <p className="mt-8 font-display text-lg italic text-[#454545] md:text-[1.35rem]">{homepage.startLine}</p>
           </div>
 
-          <div className="mx-auto mt-auto w-full max-w-6xl pt-10 md:pt-14">
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {homepage.tiles.map((tile) => (
-                <PlacardTile key={tile.slug} href={`/pathways/${tile.slug}/`} title={tile.title} subtitle={tile.subtitle} />
+          <div className="mx-auto mt-10 w-full max-w-5xl md:mt-14">
+            <div className="grid grid-cols-1 justify-items-center gap-y-6 sm:grid-cols-2 sm:gap-x-16 lg:gap-x-20">
+              {homepage.tiles.map((tile, index) => (
+                <PlacardTile
+                  key={tile.slug}
+                  href={`/pathways/${tile.slug}/`}
+                  title={tile.title}
+                  subtitle={tile.subtitle}
+                  className={index % 2 === 0 ? "sm:justify-self-end" : "sm:justify-self-start"}
+                />
               ))}
             </div>
           </div>
