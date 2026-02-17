@@ -67,9 +67,6 @@ export default function HomePage() {
                   </div>
                 ))}
               </div>
-              <p className="mt-6 text-center font-display text-sm text-[#4a4a4a] lg:mt-8 md:text-base">
-                Choose the question that feels closest to your situation.
-              </p>
             </div>
           </div>
         </div>
