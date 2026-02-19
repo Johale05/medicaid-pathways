@@ -19,6 +19,6 @@ export const PATHWAY_HERO_POSITION_BY_SLUG: Record<string, string> = {
   "qualify-medically": "50% 34%",
   "spend-everything": "50% 36%",
   "too-much-income": "50% 38%",
-  "sell-the-house": "50% 36%",
+  "sell-the-house": "70% 20%",
   "too-late": "50% 34%",
 };
