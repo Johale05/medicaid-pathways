@@ -23,7 +23,7 @@ export default function PosterHero({
 }: PosterHeroProps) {
   const backgroundStyle = backgroundImage
     ? {
-        backgroundImage: `${designTokens.overlays.heroOverlayLight}, url('${backgroundImage}')`,
+        backgroundImage: `linear-gradient(rgba(255,250,240,0.75), rgba(255,250,240,0.75)), url('${backgroundImage}')`,
         "--hero-position-desktop": backgroundPositionDesktop,
         "--hero-position-mobile": backgroundPositionMobile,
         "--hero-size-desktop": backgroundSizeDesktop,
