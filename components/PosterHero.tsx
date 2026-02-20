@@ -5,6 +5,7 @@ import type { CSSProperties } from "react";
 type PosterHeroProps = {
   title: string;
   subtitle: string;
+  useMedicareEndingOverlay?: boolean;
   backgroundImage?: string;
   backgroundPositionDesktop?: string;
   backgroundPositionMobile?: string;
@@ -15,15 +16,25 @@ type PosterHeroProps = {
 export default function PosterHero({
   title,
   subtitle,
+  useMedicareEndingOverlay = false,
   backgroundImage,
   backgroundPositionDesktop = "center",
   backgroundPositionMobile = "center",
   backgroundSizeDesktop = "cover",
   backgroundSizeMobile = "cover",
 }: PosterHeroProps) {
+  const baseHeroOverlay =
+    "linear-gradient(180deg, rgba(45, 41, 36, 0.1) 0%, rgba(45, 41, 36, 0.06) 55%, rgba(45, 41, 36, 0.1) 100%)";
+  const medicareEndingOverlay =
+    "linear-gradient(180deg, rgba(45, 41, 36, 0.08) 0%, rgba(45, 41, 36, 0.045) 55%, rgba(45, 41, 36, 0.08) 100%)";
+  const medicareReadabilityZone =
+    "radial-gradient(circle at 50% 40%, rgba(255, 250, 240, 0.78) 0%, rgba(255, 250, 240, 0.52) 38%, rgba(255, 250, 240, 0) 65%)";
+
   const backgroundStyle = backgroundImage
     ? {
-        backgroundImage: `linear-gradient(180deg, rgba(45, 41, 36, 0.1) 0%, rgba(45, 41, 36, 0.06) 55%, rgba(45, 41, 36, 0.1) 100%), ${designTokens.overlays.heroOverlayLight}, url('${backgroundImage}')`,
+        backgroundImage: useMedicareEndingOverlay
+          ? `${medicareEndingOverlay}, ${medicareReadabilityZone}, ${designTokens.overlays.heroOverlayLight}, url('${backgroundImage}')`
+          : `${baseHeroOverlay}, ${designTokens.overlays.heroOverlayLight}, url('${backgroundImage}')`,
         "--hero-position-desktop": backgroundPositionDesktop,
         "--hero-position-mobile": backgroundPositionMobile,
         "--hero-size-desktop": backgroundSizeDesktop,
