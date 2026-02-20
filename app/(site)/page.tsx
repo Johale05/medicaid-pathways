@@ -49,35 +49,24 @@ export default function HomePage() {
                 {homepage.heroLines[0]} <em>{homepage.heroLines[1]}</em>
               </p>
               <p className="mt-8 font-display text-lg italic text-[#454545] md:text-[1.35rem]">{homepage.startLine}</p>
-              <p className="mt-4 max-w-2xl mx-auto font-display text-lg leading-relaxed text-[#4a4a4a] [text-shadow:0_1px_10px_rgba(255,255,255,0.48)] md:text-xl">
-                Not sure where to begin? If care has already started, you may want to{" "}
-                <Link href="/pathways/too-late/" className="underline underline-offset-2">
-                  start here
-                </Link>
-                .
-              </p>
             </div>
-          </div>
-        </div>
-      </section>
 
-      <section className="pt-5 pb-8 sm:pt-6 sm:pb-10 lg:pt-7 lg:pb-12">
-        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto w-full max-w-6xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-8 lg:w-fit lg:gap-x-24 xl:gap-x-32 2xl:gap-x-40 items-stretch justify-center lg:mx-auto lg:justify-items-center">
-              {orderedTiles.map((tile) => (
-                <div
-                  key={tile.slug}
-                  className="w-full max-w-[420px] lg:max-w-[360px]"
-                >
-                  <PlacardTile
-                    href={`/pathways/${tile.slug}/`}
-                    title={tile.title}
-                    subtitle={tile.subtitle}
-                    className="h-full min-h-[150px]"
-                  />
-                </div>
-              ))}
+            <div className="mt-6 sm:mt-8 lg:mt-5 lg:translate-y-4 w-full max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-8 lg:w-fit lg:gap-x-24 xl:gap-x-32 2xl:gap-x-40 items-stretch justify-center lg:mx-auto lg:justify-items-center">
+                {orderedTiles.map((tile) => (
+                  <div
+                    key={tile.slug}
+                    className="w-full max-w-[420px] lg:max-w-[360px]"
+                  >
+                    <PlacardTile
+                      href={`/pathways/${tile.slug}/`}
+                      title={tile.title}
+                      subtitle={tile.subtitle}
+                      className="h-full min-h-[150px]"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
