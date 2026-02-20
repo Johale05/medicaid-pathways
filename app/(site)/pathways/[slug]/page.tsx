@@ -38,7 +38,6 @@ export default function PathwayPage({ params }: Props) {
       <PosterHero
         title={pathway.title}
         subtitle={pathway.subheadline}
-        useMedicareEndingOverlay={pathway.slug === "medicare-ending"}
         backgroundImage={backgroundImage}
         backgroundPositionDesktop={backgroundPositionDesktop}
         backgroundPositionMobile={HOMEPAGE_HERO_POSITION_MOBILE}
