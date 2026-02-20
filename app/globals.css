@@ -66,3 +66,20 @@ a {
   outline: 3px solid rgba(37, 99, 235, 0.65);
   outline-offset: 3px;
 }
+
+.tooLateCue {
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+  outline: 1px solid rgba(120, 90, 50, 0.22);
+  outline-offset: -1px;
+  background-color: rgba(255, 246, 232, 0.72);
+}
+
+.tooLateCue:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .tooLateCue {
+    background-color: rgba(255, 246, 232, 0.92);
+  }
+}
