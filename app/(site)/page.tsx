@@ -60,11 +60,16 @@ export default function HomePage() {
                     key={tile.slug}
                     className="w-full max-w-[420px] lg:max-w-[360px]"
                   >
+                    {/* Crisis off-ramp cue: subtly emphasize this tile so urgent visitors can find help faster. */}
                     <PlacardTile
                       href={`/pathways/${tile.slug}/`}
                       title={tile.title}
                       subtitle={tile.subtitle}
-                      className="h-full min-h-[150px]"
+                      className={`h-full min-h-[150px] ${
+                        tile.slug === "too-late"
+                          ? "bg-[rgba(238,227,212,0.90)] [@supports(backdrop-filter:blur(1px))]:bg-[rgba(238,227,212,0.86)] border-[#bda487]/60 shadow-[0_12px_30px_rgba(65,47,31,0.24)] hover:shadow-[0_14px_32px_rgba(65,47,31,0.28)] focus-visible:shadow-[0_0_0_2px_rgba(122,90,58,0.28),0_14px_32px_rgba(65,47,31,0.28)]"
+                          : ""
+                      }`}
                     />
                   </div>
                 ))}
