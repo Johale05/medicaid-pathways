@@ -27,8 +27,6 @@ export default function HomePage() {
           backgroundImage: `url('${HOMEPAGE_HERO_IMAGE}')`,
         }}
       >
-        <div className="absolute inset-0 bg-[#f7f1e6]/[0.08]" aria-hidden="true" />
-
         <div className="relative py-14 sm:py-16 lg:py-20">
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
             <div className="w-full max-w-4xl pb-6 sm:pb-8 lg:pb-7">
@@ -51,7 +49,11 @@ export default function HomePage() {
               <p className="mt-8 font-display text-lg italic text-[#454545] md:text-[1.35rem]">{homepage.startLine}</p>
             </div>
 
-            <div className="mt-6 sm:mt-8 lg:mt-5 lg:translate-y-4 w-full max-w-6xl mx-auto">
+            <div className="relative mt-6 sm:mt-8 lg:mt-5 lg:translate-y-4 w-full max-w-6xl mx-auto">
+              <div
+                className="pointer-events-none absolute inset-x-2 top-2 bottom-1 -z-10 rounded-[2rem] bg-gradient-to-b from-[#f6ede1]/45 via-[#f6ede1]/28 to-transparent blur-xl sm:inset-x-6 lg:inset-x-16"
+                aria-hidden="true"
+              />
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-8 lg:w-fit lg:gap-x-24 xl:gap-x-32 2xl:gap-x-40 items-stretch justify-center lg:mx-auto lg:justify-items-center">
                 {orderedTiles.map((tile) => (
                   <div
