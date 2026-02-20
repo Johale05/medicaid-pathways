@@ -9,7 +9,7 @@ export const PATHWAY_HERO_IMAGE_BY_SLUG: Record<string, string> = {
   "medicare-ending": "/assets/Pathway_Medicare_Ends_2_15.png",
   "qualify-medically": "/assets/Pathway_Medically_Qualify_2_15.png",
   "spend-everything": "/assets/Pathway_Spend_Everything_Kitchen_Table_NoText.png",
-  "too-much-income": "/assets/Pathway_Too_Much_Income_2_15.png",
+  "too-much-income": "/assets/Pathway_Too_Much_Income_Mailbox_NoText.png",
   "sell-the-house": "/assets/Pathway_Keep_Home_2_15.png",
   "too-late": "/assets/Pathway_Too Late_2_15.png",
 };
@@ -18,7 +18,7 @@ export const PATHWAY_HERO_POSITION_BY_SLUG: Record<string, string> = {
   "medicare-ending": "50% 34%",
   "qualify-medically": "50% 34%",
   "spend-everything": "center 30%",
-  "too-much-income": "50% 38%",
+  "too-much-income": "25% 60%",
   "sell-the-house": "70% 20%",
   "too-late": "50% 34%",
 };
