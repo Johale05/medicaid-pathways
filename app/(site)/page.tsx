@@ -54,10 +54,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-10 sm:py-12 lg:py-14">
+      <section className="pt-5 pb-8 sm:pt-6 sm:pb-10 lg:pt-7 lg:pb-12">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto w-full max-w-6xl">
-            <div className="mb-8 text-center text-sm leading-relaxed text-[#4a4a4a] sm:mb-10 sm:text-[0.95rem]">
+            <div className="mb-5 text-center font-display text-lg leading-relaxed text-[#4a4a4a] [text-shadow:0_1px_10px_rgba(255,255,255,0.48)] md:text-xl lg:mb-6">
               Not sure where to begin? If care has already started, you may want to{" "}
               <Link href="/pathways/too-late" className="underline underline-offset-2">
                 start here
