@@ -27,9 +27,24 @@ body {
 }
 
 .poster-hero-bg {
+  position: relative;
+  isolation: isolate;
+  background-image: var(--hero-image);
   background-repeat: no-repeat;
   background-size: var(--hero-size-mobile, cover);
   background-position: var(--hero-position-mobile, center);
+}
+
+.poster-hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(180deg, rgba(251, 244, 231, 0.42) 0%, rgba(247, 238, 223, 0.26) 54%, rgba(239, 228, 210, 0.38) 100%),
+    radial-gradient(115% 78% at 50% 38%, rgba(33, 29, 25, 0.2) 0%, rgba(33, 29, 25, 0.1) 34%, rgba(33, 29, 25, 0) 62%),
+    linear-gradient(180deg, rgba(45, 41, 36, 0.11) 0%, rgba(45, 41, 36, 0.05) 56%, rgba(45, 41, 36, 0.1) 100%);
 }
 
 @media (min-width: 768px) {
