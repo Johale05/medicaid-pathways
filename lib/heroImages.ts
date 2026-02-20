@@ -18,7 +18,7 @@ export const PATHWAY_HERO_POSITION_BY_SLUG: Record<string, string> = {
   "medicare-ending": "50% 34%",
   "qualify-medically": "50% 34%",
   "spend-everything": "center 30%",
-  "too-much-income": "25% 60%",
+  "too-much-income": "18% 55%",
   "sell-the-house": "70% 20%",
   "too-late": "50% 34%",
 };
