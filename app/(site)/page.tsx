@@ -83,6 +83,13 @@ export default function HomePage() {
       <section className="py-10 sm:py-12 lg:py-14">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto mt-6 sm:mt-8 lg:mt-5 w-full max-w-6xl">
+            <div className="mb-8 text-center text-sm leading-relaxed text-[#4a4a4a] sm:mb-10 sm:text-[0.95rem]">
+              Not sure where to begin? If care has already started, you may want to{" "}
+              <Link href="/pathways/too-late" className="underline underline-offset-2">
+                start here
+              </Link>
+              .
+            </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-8 lg:w-fit lg:gap-x-24 xl:gap-x-32 2xl:gap-x-40 items-stretch justify-center lg:mx-auto lg:justify-items-center">
               {orderedTiles.map((tile) => (
                 <div
