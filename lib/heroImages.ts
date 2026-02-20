@@ -16,7 +16,7 @@ export const PATHWAY_HERO_IMAGE_BY_SLUG: Record<string, string> = {
 
 export const PATHWAY_HERO_POSITION_BY_SLUG: Record<string, string> = {
   "medicare-ending": "50% 34%",
-  "qualify-medically": "center 35%",
+  "qualify-medically": "center 25%",
   "spend-everything": "center 30%",
   "too-much-income": "18% 55%",
   "sell-the-house": "70% 20%",
