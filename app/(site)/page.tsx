@@ -64,6 +64,7 @@ export default function HomePage() {
                       href={`/pathways/${tile.slug}/`}
                       title={tile.title}
                       subtitle={tile.subtitle}
+                      dataSlug={tile.slug === "too-late" ? "too-late" : undefined}
                       className={`h-full min-h-[150px] ${tile.slug === "too-late" ? "homePathwayTile--tooLate" : ""}`}
                     />
                   </div>
