@@ -193,6 +193,14 @@
       }
     ],
     "when": "When a short conversation may help: you are being told Medicaid is not an option, you feel pressure to make financial decisions quickly, you are unsure which documents require immediate action, you are worried you will have to spend everything or sell the home, or you are being told there is “no time” to explore alternatives. A brief conversation can help clarify what is urgent, what is not, and what flexibility still exists.",
+    "talkHelpLead": "When a short conversation may help:",
+    "talkHelpBullets": [
+      "You are being told that Medicaid is not an option.",
+      "You are feeling pressure to make financial decisions quickly.",
+      "You are unsure which documents require immediate action.",
+      "You are worried you will have to spend everything or sell the home.",
+      "You are being told there is “no time” to explore alternatives."
+    ],
     "layer2Title": "Is It Too Late to Get Help?",
     "layer2Body": [
       "Care is starting or a discharge is happening quickly",

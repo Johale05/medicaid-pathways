@@ -29,6 +29,7 @@ const VIDEO_IDS: Record<string, string> = {
 export default function PathwayPage({ params }: Props) {
   const pathway = getPathway(params.slug);
   if (!pathway) return notFound();
+  const talkHelp = pathway as typeof pathway & { talkHelpLead?: string; talkHelpBullets?: string[] };
 
   const backgroundImage = PATHWAY_HERO_IMAGE_BY_SLUG[pathway.slug];
   const backgroundPositionDesktop = PATHWAY_HERO_POSITION_BY_SLUG[pathway.slug] ?? "center";
@@ -113,21 +114,46 @@ export default function PathwayPage({ params }: Props) {
       )}
 
       <PosterSection title="When It Helps to Talk With Someone" className={pathway.slug === "too-late" ? "pt-6 md:pt-8" : "pt-0"}>
-        <div className="space-y-5">
-          <p>{pathway.when}</p>
-          <Link
-            href="/talk/"
-            className="inline-flex items-center justify-center rounded-xl border px-6 py-3 no-underline"
-            style={{
-              backgroundColor: designTokens.colors.warmPaper,
-              borderColor: designTokens.colors.subtleBorder,
-              color: designTokens.colors.ink,
-            }}
-          >
-            Talk With a Medicaid Planning Attorney
-          </Link>
-          <Layer2LinkBlock href={`/pathways/${pathway.slug}/deeper/`} supportingLine={pathway.supportingLine} />
-        </div>
+        {pathway.slug === "too-late" && talkHelp.talkHelpBullets ? (
+          <div className="space-y-6">
+            <p className="text-sm font-medium">{talkHelp.talkHelpLead}</p>
+            <ul className="list-disc space-y-2 pl-6 leading-relaxed">
+              {talkHelp.talkHelpBullets.map((bullet, i) => (
+                <li key={i}>{bullet}</li>
+              ))}
+            </ul>
+            <div className="space-y-4 pt-2">
+              <Link
+                href="/talk/"
+                className="inline-flex items-center justify-center rounded-xl border px-6 py-3 no-underline"
+                style={{
+                  backgroundColor: designTokens.colors.warmPaper,
+                  borderColor: designTokens.colors.subtleBorder,
+                  color: designTokens.colors.ink,
+                }}
+              >
+                Talk With a Medicaid Planning Attorney
+              </Link>
+              <Layer2LinkBlock href={`/pathways/${pathway.slug}/deeper/`} supportingLine={pathway.supportingLine} />
+            </div>
+          </div>
+        ) : (
+          <div className="space-y-5">
+            <p>{pathway.when}</p>
+            <Link
+              href="/talk/"
+              className="inline-flex items-center justify-center rounded-xl border px-6 py-3 no-underline"
+              style={{
+                backgroundColor: designTokens.colors.warmPaper,
+                borderColor: designTokens.colors.subtleBorder,
+                color: designTokens.colors.ink,
+              }}
+            >
+              Talk With a Medicaid Planning Attorney
+            </Link>
+            <Layer2LinkBlock href={`/pathways/${pathway.slug}/deeper/`} supportingLine={pathway.supportingLine} />
+          </div>
+        )}
       </PosterSection>
 
       <section className="pt-0">
