@@ -125,6 +125,8 @@ export default function DeeperPage({ params }: Props) {
                 ))}
               </div>
 
+              <div className="my-20 border-t" style={{ borderColor: designTokens.colors.subtleBorder }} />
+
               <PosterSection title="Before You Act, Consider This" className="pt-0">
                 <ul className="list-disc space-y-2 pl-6">
                   <li>Don’t move money without understanding how it will be categorized.</li>
@@ -134,7 +136,7 @@ export default function DeeperPage({ params }: Props) {
                 </ul>
               </PosterSection>
 
-              <PosterSection title="When Talking With Someone Helps" className="pt-0">
+              <PosterSection title="When Talking With Someone Helps" className="pt-0 mt-6">
                 <div className="space-y-6 pt-2">
                   <p>
                     If you’re hearing any of the situations above and feeling pressure to decide quickly, a short
