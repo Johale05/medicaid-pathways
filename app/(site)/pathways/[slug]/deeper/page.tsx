@@ -106,14 +106,11 @@ export default function DeeperPage({ params }: Props) {
 
           {pathway.slug === "too-late" ? (
             <div className="mx-auto space-y-6">
-              <p
-                className="mt-3 border-l-2 pl-3 font-semibold"
-                style={{ borderColor: "rgba(45, 41, 36, 0.35)", color: "rgba(45, 41, 36, 0.8)" }}
-              >
+              <p className="font-medium" style={{ color: "rgba(45, 41, 36, 0.8)" }}>
                 Choose the situation below that sounds closest to what you’re hearing right now.
               </p>
 
-              <div className="grid gap-10 md:grid-cols-2">
+              <div className="space-y-6">
                 {TOO_LATE_SCENARIOS.map((scenario) => (
                   <PosterSection key={scenario.title} title={scenario.title} className="pt-0">
                     <div className="space-y-4">
@@ -126,38 +123,36 @@ export default function DeeperPage({ params }: Props) {
                     </div>
                   </PosterSection>
                 ))}
-
-                <div className="mt-6 md:col-span-2 space-y-10">
-                  <PosterSection title="Before You Act, Consider This" className="pt-0">
-                    <ul className="list-disc space-y-1.5 pl-6 leading-relaxed">
-                      <li>Don’t move money without understanding how it will be categorized.</li>
-                      <li>Don’t assume a statement from staff is the final word on eligibility.</li>
-                      <li>Don’t treat time pressure as the same thing as a legal deadline.</li>
-                      <li>Don’t assume one missed step eliminates all remaining options.</li>
-                    </ul>
-                  </PosterSection>
-
-                  <PosterSection title="When Talking With Someone Helps" className="pt-0">
-                    <div className="space-y-6 pt-2">
-                      <p>
-                        If you’re hearing any of the situations above and feeling pressure to decide quickly, a short
-                        conversation can help clarify what is urgent, what is not, and what flexibility still exists.
-                      </p>
-                      <Link
-                        href="/talk/"
-                        className="inline-flex items-center justify-center rounded-xl border px-6 py-3 no-underline"
-                        style={{
-                          backgroundColor: designTokens.colors.warmPaper,
-                          borderColor: designTokens.colors.subtleBorder,
-                          color: designTokens.colors.ink,
-                        }}
-                      >
-                        Talk With a Medicaid Planning Attorney
-                      </Link>
-                    </div>
-                  </PosterSection>
-                </div>
               </div>
+
+              <PosterSection title="Before You Act, Consider This" className="pt-0">
+                <ul className="list-disc space-y-2 pl-6">
+                  <li>Don’t move money without understanding how it will be categorized.</li>
+                  <li>Don’t assume a statement from staff is the final word on eligibility.</li>
+                  <li>Don’t treat time pressure as the same thing as a legal deadline.</li>
+                  <li>Don’t assume one missed step eliminates all remaining options.</li>
+                </ul>
+              </PosterSection>
+
+              <PosterSection title="When Talking With Someone Helps" className="pt-0">
+                <div className="space-y-6 pt-2">
+                  <p>
+                    If you’re hearing any of the situations above and feeling pressure to decide quickly, a short
+                    conversation can help clarify what is urgent, what is not, and what flexibility still exists.
+                  </p>
+                  <Link
+                    href="/talk/"
+                    className="inline-flex items-center justify-center rounded-xl border px-6 py-3 no-underline"
+                    style={{
+                      backgroundColor: designTokens.colors.warmPaper,
+                      borderColor: designTokens.colors.subtleBorder,
+                      color: designTokens.colors.ink,
+                    }}
+                  >
+                    Talk With a Medicaid Planning Attorney
+                  </Link>
+                </div>
+              </PosterSection>
             </div>
           ) : (
             <article className="space-y-5 leading-relaxed">
