@@ -70,12 +70,36 @@ export default function PathwayPage({ params }: Props) {
         </ul>
       </PosterSection>
 
-      <PosterSection title="What This Means for Your Family" className="pt-0">
-        <div className="space-y-3">
-          {pathway.means.map((p, i) => (
-            <p key={i}>{p}</p>
-          ))}
-        </div>
+      <PosterSection
+        title="What This Means for Your Family"
+        className={pathway.slug === "too-late" ? "pt-4 md:pt-6" : "pt-0"}
+      >
+        {pathway.slug === "too-late" ? (
+          <div
+            className="mx-auto rounded-[1.5rem] border p-7 md:p-10"
+            style={{
+              maxWidth: designTokens.maxReadingWidth,
+              borderColor: designTokens.colors.subtleBorder,
+              backgroundColor: designTokens.colors.warmPaper,
+              boxShadow: designTokens.shadows.softShadow,
+            }}
+          >
+            <div className="space-y-8">
+              {pathway.means.map((p, i) => (
+                <div key={i} className="space-y-3">
+                  <h3>Step {i + 1}</h3>
+                  <p>{p}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div className="space-y-3">
+            {pathway.means.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
+          </div>
+        )}
       </PosterSection>
 
       {pathway.slug === "too-late" && (
@@ -84,7 +108,7 @@ export default function PathwayPage({ params }: Props) {
         </PosterSection>
       )}
 
-      <PosterSection title="When It Helps to Talk With Someone" className="pt-0">
+      <PosterSection title="When It Helps to Talk With Someone" className={pathway.slug === "too-late" ? "pt-6 md:pt-8" : "pt-0"}>
         <div className="space-y-5">
           <p>{pathway.when}</p>
           <Link
