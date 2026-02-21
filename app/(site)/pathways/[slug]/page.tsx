@@ -122,6 +122,7 @@ export default function PathwayPage({ params }: Props) {
                 <li key={i}>{bullet}</li>
               ))}
             </ul>
+            <p>A brief conversation can help clarify what is urgent, what is not, and what flexibility still exists.</p>
             <div className="space-y-4 pt-2">
               <Link
                 href="/talk/"
