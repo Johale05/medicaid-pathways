@@ -106,7 +106,7 @@ export default function DeeperPage({ params }: Props) {
 
           {pathway.slug === "too-late" ? (
             <div className="mx-auto space-y-6">
-              <p className="font-medium" style={{ color: "rgba(45, 41, 36, 0.8)" }}>
+              <p className="font-medium text-xl" style={{ color: "rgba(45, 41, 36, 0.8)" }}>
                 Choose the situation below that sounds closest to what you’re hearing right now.
               </p>
 
