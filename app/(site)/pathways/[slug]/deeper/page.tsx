@@ -85,40 +85,45 @@ export default function DeeperPage({ params }: Props) {
         <div className="mx-auto space-y-10" style={{ maxWidth: designTokens.maxReadingWidth }}>
           <header className="space-y-2">
             <h1 className="font-display text-4xl font-semibold tracking-tight leading-snug">{pathway.title}</h1>
-            <p>This page offers a deeper explanation of why this question is often complicated.</p>
-            <p>
-              It is general educational information only.
-            </p>
+            {pathway.slug === "too-late" ? (
+              <>
+                <p>
+                  If you’re here, something has likely changed quickly — a health event, a facility admission, or a
+                  coverage transition.
+                </p>
+                <p>
+                  These are common moments when families feel pressure. The goal is not to do everything at once — it
+                  is to understand what’s happening and what decisions truly matter first.
+                </p>
+              </>
+            ) : (
+              <>
+                <p>This page offers a deeper explanation of why this question is often complicated.</p>
+                <p>It is general educational information only.</p>
+              </>
+            )}
           </header>
 
           {pathway.slug === "too-late" ? (
-            <>
-              <PosterSection title="Common Situations Where Families Worry It’s Too Late" className="pt-0">
-                <div className="space-y-3">
-                  <p>
-                    If you’re here, something has likely changed quickly — a health event, a facility admission, or a
-                    coverage transition.
-                  </p>
-                  <p>
-                    These are common moments when families feel pressure. The goal is not to do everything at once — it
-                    is to understand what’s happening and what decisions truly matter first.
-                  </p>
-                  <p>Choose the situation below that sounds closest to what you’re hearing right now.</p>
-                </div>
-              </PosterSection>
+            <div className="mx-auto space-y-6">
+              <p className="font-medium" style={{ color: "rgba(45, 41, 36, 0.8)" }}>
+                Choose the situation below that sounds closest to what you’re hearing right now.
+              </p>
 
-              {TOO_LATE_SCENARIOS.map((scenario) => (
-                <PosterSection key={scenario.title} title={scenario.title} className="pt-0">
-                  <div className="space-y-4">
-                    <p>{scenario.paragraph}</p>
-                    <ul className="list-disc space-y-2 pl-6">
-                      {scenario.bullets.map((bullet) => (
-                        <li key={bullet}>{bullet}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </PosterSection>
-              ))}
+              <div className="space-y-6">
+                {TOO_LATE_SCENARIOS.map((scenario) => (
+                  <PosterSection key={scenario.title} title={scenario.title} className="pt-0">
+                    <div className="space-y-4">
+                      <p>{scenario.paragraph}</p>
+                      <ul className="list-disc space-y-2 pl-6">
+                        {scenario.bullets.map((bullet) => (
+                          <li key={bullet}>{bullet}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </PosterSection>
+                ))}
+              </div>
 
               <PosterSection title="Before You Act, Consider This" className="pt-0">
                 <ul className="list-disc space-y-2 pl-6">
@@ -132,8 +137,8 @@ export default function DeeperPage({ params }: Props) {
               <PosterSection title="When Talking With Someone Helps" className="pt-0">
                 <div className="space-y-6 pt-2">
                   <p>
-                    If you’re under pressure to make decisions quickly, a short conversation can help clarify what is
-                    urgent, what is not, and what flexibility still exists.
+                    If you’re hearing any of the situations above and feeling pressure to decide quickly, a short
+                    conversation can help clarify what is urgent, what is not, and what flexibility still exists.
                   </p>
                   <Link
                     href="/talk/"
@@ -148,7 +153,7 @@ export default function DeeperPage({ params }: Props) {
                   </Link>
                 </div>
               </PosterSection>
-            </>
+            </div>
           ) : (
             <article className="space-y-5 leading-relaxed">
               {pathway.layer2Body.map((p, i) => (
