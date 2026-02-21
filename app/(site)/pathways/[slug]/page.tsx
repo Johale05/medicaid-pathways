@@ -45,9 +45,11 @@ export default function PathwayPage({ params }: Props) {
         backgroundSizeMobile={HOMEPAGE_HERO_SIZE_MOBILE}
       />
 
-      <PosterSection>
-        <YouTubeEmbed videoId={VIDEO_IDS[pathway.slug]} title={pathway.title} />
-      </PosterSection>
+      {pathway.slug !== "too-late" && (
+        <PosterSection>
+          <YouTubeEmbed videoId={VIDEO_IDS[pathway.slug]} title={pathway.title} />
+        </PosterSection>
+      )}
 
       <PosterSection title="Core Concept" className="pt-0">
         <div className="space-y-3">
@@ -75,6 +77,12 @@ export default function PathwayPage({ params }: Props) {
           ))}
         </div>
       </PosterSection>
+
+      {pathway.slug === "too-late" && (
+        <PosterSection>
+          <YouTubeEmbed videoId={VIDEO_IDS[pathway.slug]} title={pathway.title} />
+        </PosterSection>
+      )}
 
       <PosterSection title="When It Helps to Talk With Someone" className="pt-0">
         <div className="space-y-5">
