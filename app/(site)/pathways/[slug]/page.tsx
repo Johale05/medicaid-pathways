@@ -135,7 +135,18 @@ export default function PathwayPage({ params }: Props) {
               >
                 Talk With a Medicaid Planning Attorney
               </Link>
-              <Layer2LinkBlock href={`/pathways/${pathway.slug}/deeper/`} supportingLine={pathway.supportingLine} />
+              {pathway.slug === "too-late" ? (
+                <div className="mt-10 text-sm">
+                  <div>
+                    <Link href={`/pathways/${pathway.slug}/deeper/`} className="hover:underline">
+                      Want to see the most common situations behind this question?
+                    </Link>
+                  </div>
+                  <div className="mt-1 opacity-80">{pathway.supportingLine}</div>
+                </div>
+              ) : (
+                <Layer2LinkBlock href={`/pathways/${pathway.slug}/deeper/`} supportingLine={pathway.supportingLine} />
+              )}
             </div>
           </div>
         ) : (
