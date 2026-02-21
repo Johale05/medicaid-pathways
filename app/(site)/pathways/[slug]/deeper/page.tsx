@@ -125,6 +125,12 @@ export default function DeeperPage({ params }: Props) {
                 ))}
               </div>
 
+              <div className="mx-auto mt-16" style={{ maxWidth: designTokens.maxReadingWidth }}>
+                <p className="text-center font-display text-lg font-semibold tracking-tight">
+                  A Few Guardrails Before You Decide
+                </p>
+              </div>
+
               <div className="my-20 border-t" style={{ borderColor: designTokens.colors.subtleBorder }} />
 
               <PosterSection title="Before You Act, Consider This" className="pt-0">
