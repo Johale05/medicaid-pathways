@@ -82,13 +82,13 @@ export default function DeeperPage({ params }: Props) {
   return (
     <div className="py-14" style={{ backgroundColor: "#fffdfa" }}>
       <Container>
-        <div className="mx-auto space-y-8" style={{ maxWidth: designTokens.maxReadingWidth }}>
-          <header className="space-y-3">
+        <div className="mx-auto space-y-10" style={{ maxWidth: designTokens.maxReadingWidth }}>
+          <header className="space-y-2">
             <div className="text-sm" style={{ color: "rgba(45, 41, 36, 0.7)" }}>Deeper Explanation (Optional)</div>
-            <h1 className="font-display text-4xl font-semibold tracking-tight">{pathway.title}</h1>
+            <h1 className="font-display text-4xl font-semibold tracking-tight leading-snug">{pathway.title}</h1>
+            <p>This page offers a deeper explanation of why this question is often complicated.</p>
             <p>
-              This page offers a deeper explanation of why this question is often complicated. It is general educational
-              information only.
+              It is general educational information only.
             </p>
             <Link href={backHref} className="text-sm hover:underline">
               Back to the short video page
@@ -107,12 +107,13 @@ export default function DeeperPage({ params }: Props) {
                     These are common moments when families feel pressure. The goal is not to do everything at once — it
                     is to understand what’s happening and what decisions truly matter first.
                   </p>
+                  <p>Choose the situation below that sounds closest to what you’re hearing right now.</p>
                 </div>
               </PosterSection>
 
               {TOO_LATE_SCENARIOS.map((scenario) => (
                 <PosterSection key={scenario.title} title={scenario.title} className="pt-0">
-                  <div className="space-y-3">
+                  <div className="space-y-4">
                     <p>{scenario.paragraph}</p>
                     <ul className="list-disc space-y-2 pl-6">
                       {scenario.bullets.map((bullet) => (
@@ -133,7 +134,7 @@ export default function DeeperPage({ params }: Props) {
               </PosterSection>
 
               <PosterSection title="When Talking With Someone Helps" className="pt-0">
-                <div className="space-y-5">
+                <div className="space-y-6 pt-2">
                   <p>
                     If you’re under pressure to make decisions quickly, a short conversation can help clarify what is
                     urgent, what is not, and what flexibility still exists.
@@ -160,9 +161,11 @@ export default function DeeperPage({ params }: Props) {
             </article>
           )}
 
-          <Link href={backHref} className="text-sm hover:underline">
-            Back to the short video page
-          </Link>
+          <div className="pt-2">
+            <Link href={backHref} className="text-sm hover:underline">
+              Back to the short video page
+            </Link>
+          </div>
         </div>
       </Container>
     </div>
