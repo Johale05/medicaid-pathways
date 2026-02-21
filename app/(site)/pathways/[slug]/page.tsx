@@ -75,23 +75,13 @@ export default function PathwayPage({ params }: Props) {
         className={pathway.slug === "too-late" ? "pt-4 md:pt-6" : "pt-0"}
       >
         {pathway.slug === "too-late" ? (
-          <div
-            className="mx-auto rounded-[1.5rem] border p-7 md:p-10"
-            style={{
-              maxWidth: designTokens.maxReadingWidth,
-              borderColor: designTokens.colors.subtleBorder,
-              backgroundColor: designTokens.colors.warmPaper,
-              boxShadow: designTokens.shadows.softShadow,
-            }}
-          >
-            <div className="space-y-8">
-              {pathway.means.map((p, i) => (
-                <div key={i} className="space-y-3">
-                  <h3>Step {i + 1}</h3>
-                  <p>{p}</p>
-                </div>
-              ))}
-            </div>
+          <div className="space-y-10">
+            {pathway.means.map((p, i) => (
+              <div key={i} className="space-y-3">
+                <h3>Step {i + 1}</h3>
+                <p>{p}</p>
+              </div>
+            ))}
           </div>
         ) : (
           <div className="space-y-3">
