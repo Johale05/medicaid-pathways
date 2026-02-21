@@ -7,6 +7,7 @@ export type Pathway = {
   core: string[];
   why: string[];
   means: string[];
+  steps?: { label: string; bullets: string[] }[];
   when: string;
   layer2Title: string;
   layer2Body: string[];

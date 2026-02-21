@@ -164,9 +164,33 @@
       "That pressure is common — and it is often based on incomplete information"
     ],
     "means": [
-      "Confirm the current care status and discharge plan. Understand when coverage is ending and what payment source is being discussed. Ask whether medical eligibility for Medicaid has been evaluated. Confirm whether the facility has a Medicaid-certified bed available, if applicable. Identify which decisions truly require immediate action — and which can wait.",
-      "Avoid major financial changes until eligibility rules are understood. Pause significant transfers or restructuring until timing is clear. Confirm that the person making decisions has proper legal authority and understands the financial commitments involved. Some financial moves can limit future flexibility. Others simply require careful timing and documentation.",
-      "Eligibility depends on specific facts, not general rules. Broad statements about “five-year rules” often oversimplify how eligibility actually works. Early guidance frequently prevents unnecessary financial harm."
+      "Even during a fast-moving transition, there are practical steps that can protect flexibility and reduce avoidable mistakes."
+    ],
+    "steps": [
+      {
+        "label": "Step 1",
+        "bullets": [
+          "Confirm the current care status, discharge plan, and when coverage may end.",
+          "Clarify which decisions are truly urgent now and which can wait.",
+          "Ask whether medical eligibility has been evaluated and whether a Medicaid-certified bed is available, if applicable."
+        ]
+      },
+      {
+        "label": "Step 2",
+        "bullets": [
+          "Avoid major financial changes until eligibility rules and timing are clear.",
+          "Pause significant transfers or restructuring until legal authority and commitments are confirmed.",
+          "Remember that some moves reduce flexibility, while others require careful timing and documentation."
+        ]
+      },
+      {
+        "label": "Step 3",
+        "bullets": [
+          "Base decisions on your family’s specific facts, not broad assumptions.",
+          "Treat statements about “five-year rules” as starting points that may oversimplify eligibility.",
+          "Get early guidance to help prevent unnecessary financial harm."
+        ]
+      }
     ],
     "when": "When a short conversation may help: you are being told Medicaid is not an option, you feel pressure to make financial decisions quickly, you are unsure which documents require immediate action, you are worried you will have to spend everything or sell the home, or you are being told there is “no time” to explore alternatives. A brief conversation can help clarify what is urgent, what is not, and what flexibility still exists.",
     "layer2Title": "Is It Too Late to Get Help?",

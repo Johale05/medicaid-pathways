@@ -51,7 +51,10 @@ export default function PathwayPage({ params }: Props) {
         </PosterSection>
       )}
 
-      <PosterSection title="Core Concept" className="pt-0">
+      <PosterSection
+        title={pathway.slug === "too-late" ? "What “Too Late” Usually Means" : "Core Concept"}
+        className="pt-0"
+      >
         <div className="space-y-3">
           {pathway.core.map((p, i) => (
             <p key={i}>{p}</p>
@@ -74,12 +77,23 @@ export default function PathwayPage({ params }: Props) {
         title="What This Means for Your Family"
         className={pathway.slug === "too-late" ? "pt-4 md:pt-6" : "pt-0"}
       >
-        {pathway.slug === "too-late" ? (
+        {pathway.slug === "too-late" && pathway.steps ? (
           <div className="space-y-10">
-            {pathway.means.map((p, i) => (
+            {pathway.means.length > 0 && (
+              <div className="space-y-3">
+                {pathway.means.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </div>
+            )}
+            {pathway.steps.map((step, i) => (
               <div key={i} className="space-y-3">
-                <h3>Step {i + 1}</h3>
-                <p>{p}</p>
+                <h3>{step.label}</h3>
+                <ul className="list-disc space-y-2 pl-6">
+                  {step.bullets.map((bullet, j) => (
+                    <li key={j}>{bullet}</li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
