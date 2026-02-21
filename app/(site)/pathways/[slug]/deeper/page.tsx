@@ -84,15 +84,11 @@ export default function DeeperPage({ params }: Props) {
       <Container>
         <div className="mx-auto space-y-10" style={{ maxWidth: designTokens.maxReadingWidth }}>
           <header className="space-y-2">
-            <div className="text-sm" style={{ color: "rgba(45, 41, 36, 0.7)" }}>Deeper Explanation (Optional)</div>
             <h1 className="font-display text-4xl font-semibold tracking-tight leading-snug">{pathway.title}</h1>
             <p>This page offers a deeper explanation of why this question is often complicated.</p>
             <p>
               It is general educational information only.
             </p>
-            <Link href={backHref} className="text-sm hover:underline">
-              Back to the short video page
-            </Link>
           </header>
 
           {pathway.slug === "too-late" ? (
@@ -163,7 +159,7 @@ export default function DeeperPage({ params }: Props) {
 
           <div className="pt-2">
             <Link href={backHref} className="text-sm hover:underline">
-              Back to the short video page
+              Back to the main pathway page
             </Link>
           </div>
         </div>
