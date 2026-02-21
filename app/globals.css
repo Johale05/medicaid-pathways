@@ -67,19 +67,35 @@ a {
   outline-offset: 3px;
 }
 
-.tooLateCue {
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
-  outline: 1px solid rgba(120, 90, 50, 0.22);
-  outline-offset: -1px;
-  background-color: rgba(255, 246, 232, 0.72);
+.homePathwayTile {
+  background-color: rgba(246, 238, 227, 0.84);
+  box-shadow: 0 12px 28px rgba(74, 58, 41, 0.16);
 }
 
-.tooLateCue:hover {
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+@supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .homePathwayTile {
+    background-color: rgba(246, 238, 227, 0.8);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+  }
+}
+
+.homePathwayTile:hover {
+  box-shadow: 0 14px 30px rgba(74, 58, 41, 0.2);
+}
+
+.homePathwayTile--tooLate {
+  box-shadow: inset 0 0 0 1px rgba(120, 90, 50, 0.24), 0 12px 28px rgba(74, 58, 41, 0.16);
+}
+
+.homePathwayTile--tooLate:hover {
+  box-shadow: inset 0 0 0 1px rgba(120, 90, 50, 0.24), 0 14px 30px rgba(74, 58, 41, 0.2);
 }
 
 @media (prefers-reduced-transparency: reduce) {
-  .tooLateCue {
-    background-color: rgba(255, 246, 232, 0.92);
+  .homePathwayTile {
+    background-color: rgba(246, 238, 227, 0.93);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
   }
 }
