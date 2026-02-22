@@ -136,6 +136,8 @@ export default function PathwayPage({ params }: Props) {
                 ? "Before You Assume You Don’t Qualify"
                 : pathway.slug === "qualify-medically"
                   ? "Before You Move Forward Financially"
+                  : pathway.slug === "too-late"
+                    ? "Even Urgent Situations Can Be Managed"
                   : "When It Helps to Talk With Someone"
         }
         className={pathway.slug === "too-late" ? "pt-6 md:pt-8" : "pt-0"}
@@ -148,7 +150,11 @@ export default function PathwayPage({ params }: Props) {
                 <li key={i}>{bullet}</li>
               ))}
             </ul>
-            <p>A brief conversation can help clarify what is urgent, what is not, and what flexibility still exists.</p>
+            <p>
+              When a loved one is already in a facility or private funds are running low, decisions can feel
+              immediate. With coordinated legal and planning guidance, families can move forward thoughtfully rather
+              than react under pressure.
+            </p>
             <div className="space-y-4 pt-2">
               <Link
                 href="/talk/"
