@@ -41,10 +41,18 @@ export default function PosterHero({
           className="relative z-10 mx-auto flex min-h-[56vh] max-w-3xl flex-col items-center justify-center py-20 text-center"
           style={{ color: designTokens.colors.ink }}
         >
-          <h1 className="font-display text-balance text-4xl font-semibold tracking-tight md:text-6xl">{title}</h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed md:text-xl" style={{ color: "rgba(45, 41, 36, 0.88)" }}>
-            {subtitle}
-          </p>
+          <div className="relative isolate">
+            <div
+              className="pointer-events-none absolute -inset-x-4 -inset-y-3 z-0 rounded-3xl md:-inset-x-6 md:-inset-y-4"
+              style={{ backgroundColor: designTokens.colors.warmPaper, opacity: 0.68 }}
+            />
+            <div className="relative z-10">
+              <h1 className="font-display text-balance text-4xl font-semibold tracking-tight md:text-6xl">{title}</h1>
+              <p className="mt-6 max-w-2xl text-lg leading-relaxed md:text-xl" style={{ color: "rgba(45, 41, 36, 0.88)" }}>
+                {subtitle}
+              </p>
+            </div>
+          </div>
         </div>
       </Container>
     </section>
