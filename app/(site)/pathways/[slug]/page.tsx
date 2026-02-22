@@ -135,7 +135,7 @@ export default function PathwayPage({ params }: Props) {
               : pathway.slug === "too-much-income"
                 ? "Before You Assume You Don’t Qualify"
                 : pathway.slug === "medicare-ending"
-                  ? "When It Helps to Talk With Someone"
+                  ? "Before Medicare Coverage Ends"
                 : pathway.slug === "qualify-medically"
                   ? "Before You Move Forward Financially"
                   : pathway.slug === "too-late"
@@ -193,7 +193,7 @@ export default function PathwayPage({ params }: Props) {
                   : pathway.slug === "too-much-income"
                     ? "Income limits are often misunderstood. In many situations, there are lawful strategies that allow families to move forward even when income appears too high at first glance."
                     : pathway.slug === "medicare-ending"
-                      ? pathway.when
+                      ? "As rehabilitation days run out, families often face quick decisions about next steps. Reviewing options in advance can help you plan thoughtfully rather than react under pressure."
                     : pathway.slug === "qualify-medically"
                       ? "Medical necessity is not automatic. Financial planning and medical eligibility must be aligned to avoid unintended consequences. A brief review can help ensure both sides of the process are coordinated properly."
                   : pathway.when}
