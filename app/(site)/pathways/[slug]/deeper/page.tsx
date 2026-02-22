@@ -126,7 +126,7 @@ export default function DeeperPage({ params }: Props) {
               </div>
 
               <div className="mx-auto mt-16" style={{ maxWidth: designTokens.maxReadingWidth }}>
-                <p className="text-center font-display text-lg font-semibold tracking-tight">
+                <p className="text-center font-display text-xl !text-xl font-semibold tracking-tight">
                   A Few Guardrails Before You Decide
                 </p>
               </div>
