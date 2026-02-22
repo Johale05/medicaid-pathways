@@ -132,7 +132,9 @@ export default function PathwayPage({ params }: Props) {
             ? "Before You Make a Financial Decision"
             : pathway.slug === "sell-the-house"
               ? "Before You Sell or Transfer the House"
-              : "When It Helps to Talk With Someone"
+              : pathway.slug === "too-much-income"
+                ? "Before You Assume You Don’t Qualify"
+                : "When It Helps to Talk With Someone"
         }
         className={pathway.slug === "too-late" ? "pt-6 md:pt-8" : "pt-0"}
       >
@@ -178,6 +180,8 @@ export default function PathwayPage({ params }: Props) {
                 ? "Decisions about spending down assets can have long-term consequences. A brief conversation can clarify your options and help you avoid steps that limit flexibility later."
                 : pathway.slug === "sell-the-house"
                   ? "Selling or transferring property can permanently affect Medicaid eligibility and family finances. A short conversation can help you understand your options before taking steps that may limit flexibility later."
+                  : pathway.slug === "too-much-income"
+                    ? "Income limits are often misunderstood. In many situations, there are lawful strategies that allow families to move forward even when income appears too high at first glance."
                   : pathway.when}
             </p>
             <Link
