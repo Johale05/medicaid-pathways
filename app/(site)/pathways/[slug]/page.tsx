@@ -126,7 +126,10 @@ export default function PathwayPage({ params }: Props) {
         </PosterSection>
       )}
 
-      <PosterSection title="When It Helps to Talk With Someone" className={pathway.slug === "too-late" ? "pt-6 md:pt-8" : "pt-0"}>
+      <PosterSection
+        title={pathway.slug === "spend-everything" ? "Before You Make a Financial Decision" : "When It Helps to Talk With Someone"}
+        className={pathway.slug === "too-late" ? "pt-6 md:pt-8" : "pt-0"}
+      >
         {pathway.slug === "too-late" && talkHelp.talkHelpBullets ? (
           <div className="space-y-6">
             <p className="text-sm font-medium">{talkHelp.talkHelpLead}</p>
@@ -164,7 +167,11 @@ export default function PathwayPage({ params }: Props) {
           </div>
         ) : (
           <div className="space-y-5">
-            <p>{pathway.when}</p>
+            <p>
+              {pathway.slug === "spend-everything"
+                ? "Decisions about spending down assets can have long-term consequences. A brief conversation can clarify your options and help you avoid steps that limit flexibility later."
+                : pathway.when}
+            </p>
             <Link
               href="/talk/"
               className="inline-flex items-center justify-center rounded-xl border px-6 py-3 no-underline"
