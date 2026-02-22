@@ -134,6 +134,8 @@ export default function PathwayPage({ params }: Props) {
               ? "Before You Sell or Transfer the House"
               : pathway.slug === "too-much-income"
                 ? "Before You Assume You Don’t Qualify"
+                : pathway.slug === "medicare-ending"
+                  ? "Before Medicare Coverage Ends"
                 : "When It Helps to Talk With Someone"
         }
         className={pathway.slug === "too-late" ? "pt-6 md:pt-8" : "pt-0"}
@@ -182,7 +184,9 @@ export default function PathwayPage({ params }: Props) {
                   ? "Selling or transferring property can permanently affect Medicaid eligibility and family finances. A short conversation can help you understand your options before taking steps that may limit flexibility later."
                   : pathway.slug === "too-much-income"
                     ? "Income limits are often misunderstood. In many situations, there are lawful strategies that allow families to move forward even when income appears too high at first glance."
-                  : pathway.when}
+                    : pathway.slug === "medicare-ending"
+                      ? "As rehabilitation days run out, families often face quick decisions about next steps. Reviewing options in advance can help you plan thoughtfully rather than react under pressure."
+                    : pathway.when}
             </p>
             <Link
               href="/talk/"
