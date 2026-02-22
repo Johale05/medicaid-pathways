@@ -45,13 +45,6 @@ export default function PathwayPage({ params }: Props) {
         backgroundSizeDesktop={HOMEPAGE_HERO_SIZE_DESKTOP}
         backgroundSizeMobile={HOMEPAGE_HERO_SIZE_MOBILE}
       />
-
-      {pathway.slug !== "too-late" && (
-        <PosterSection>
-          <YouTubeEmbed videoId={VIDEO_IDS[pathway.slug]} title={pathway.title} />
-        </PosterSection>
-      )}
-
       <PosterSection
         title={pathway.slug === "too-late" ? "What “Too Late” Usually Means" : "Core Concept"}
         className="pt-0"
@@ -62,6 +55,12 @@ export default function PathwayPage({ params }: Props) {
           ))}
         </div>
       </PosterSection>
+
+      {pathway.slug !== "too-late" && (
+        <PosterSection>
+          <YouTubeEmbed videoId={VIDEO_IDS[pathway.slug]} title={pathway.title} />
+        </PosterSection>
+      )}
 
       <PosterSection
         title={pathway.slug === "medicare-ending" ? "Why This Is Often Confusing" : "Why This Is Often Misunderstood"}

@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Container from "@/components/Container";
 import Link from "next/link";
 import PosterSection from "@/components/PosterSection";
+import YouTubeEmbed from "@/components/YouTubeEmbed";
 import { designTokens } from "@/lib/designTokens";
 import { getPathway } from "@/lib/pathways";
 
@@ -73,6 +74,15 @@ const TOO_LATE_SCENARIOS = [
   },
 ];
 
+const VIDEO_IDS: Record<string, string> = {
+  "medicare-ending": "dQw4w9WgXcQ",
+  "spend-everything": "dQw4w9WgXcQ",
+  "too-much-income": "dQw4w9WgXcQ",
+  "qualify-medically": "dQw4w9WgXcQ",
+  "sell-the-house": "dQw4w9WgXcQ",
+  "too-late": "dQw4w9WgXcQ",
+};
+
 export default function DeeperPage({ params }: Props) {
   const pathway = getPathway(params.slug);
   if (!pathway) return notFound();
@@ -103,6 +113,12 @@ export default function DeeperPage({ params }: Props) {
               </>
             )}
           </header>
+
+          {pathway.slug !== "too-late" && (
+            <PosterSection>
+              <YouTubeEmbed videoId={VIDEO_IDS[pathway.slug]} title={pathway.title} />
+            </PosterSection>
+          )}
 
           {pathway.slug === "too-late" ? (
             <div className="mx-auto space-y-6">
