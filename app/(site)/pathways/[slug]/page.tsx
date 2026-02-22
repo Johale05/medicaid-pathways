@@ -112,6 +112,20 @@ export default function PathwayPage({ params }: Props) {
         </PosterSection>
       )}
 
+      {pathway.slug === "spend-everything" && (
+        <PosterSection>
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="font-display text-2xl font-semibold tracking-tight md:text-3xl">
+              You don’t have to spend everything.
+            </h2>
+            <p className="mt-4 text-lg leading-relaxed">
+              Medicaid planning is rarely as simple as it sounds online. The right strategy depends on timing, assets,
+              income, and family goals.
+            </p>
+          </div>
+        </PosterSection>
+      )}
+
       <PosterSection title="When It Helps to Talk With Someone" className={pathway.slug === "too-late" ? "pt-6 md:pt-8" : "pt-0"}>
         {pathway.slug === "too-late" && talkHelp.talkHelpBullets ? (
           <div className="space-y-6">
