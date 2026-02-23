@@ -54,6 +54,9 @@ export default function SiteHeader() {
             <Link href="/talk/" className="rounded-2xl border border-[#d8ccb7] px-4 py-2 no-underline hover:bg-[#efe2ce]">
               Talk With a Medicaid Planning Attorney
             </Link>
+            <Link href="/facility-resources/" className="no-underline hover:underline">
+              Facility Resources
+            </Link>
           </nav>
         </div>
       </Container>
@@ -102,6 +105,13 @@ export default function SiteHeader() {
           onClick={closeMobileMenu}
         >
           Talk With a Medicaid Planning Attorney
+        </Link>
+        <Link
+          href="/facility-resources/"
+          className="mt-4 block rounded-xl px-3 py-2 no-underline hover:bg-[#f7f1e6]"
+          onClick={closeMobileMenu}
+        >
+          <div className="font-medium text-[#2d2924]">Facility Resources</div>
         </Link>
       </nav>
     </header>
