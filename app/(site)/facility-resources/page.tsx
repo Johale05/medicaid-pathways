@@ -1,9 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/Container";
 import PosterHero from "@/components/PosterHero";
 import PosterSection from "@/components/PosterSection";
 import {
-  HOMEPAGE_HERO_IMAGE,
   HOMEPAGE_HERO_POSITION_MOBILE,
   HOMEPAGE_HERO_SIZE_DESKTOP,
   HOMEPAGE_HERO_SIZE_MOBILE,
@@ -15,7 +15,7 @@ export default function FacilityResourcesPage() {
       <PosterHero
         title="Facility Resources"
         subtitle="Supporting clearer conversations around Medicaid eligibility."
-        backgroundImage={HOMEPAGE_HERO_IMAGE}
+        backgroundImage="/assets/Facility_Resources_hero.png"
         backgroundPositionDesktop="center"
         backgroundPositionMobile={HOMEPAGE_HERO_POSITION_MOBILE}
         backgroundSizeDesktop={HOMEPAGE_HERO_SIZE_DESKTOP}
@@ -67,6 +67,15 @@ export default function FacilityResourcesPage() {
       </PosterSection>
 
       <PosterSection title="Pathway Reference Poster" className="pt-0">
+        <div className="mx-auto max-w-xl pb-4">
+          <Image
+            src="/assets/Poster.png"
+            alt="Pathway reference poster"
+            width={1100}
+            height={1400}
+            className="mx-auto h-auto w-full max-w-md"
+          />
+        </div>
         <p>
           We provide a printed reference poster with QR codes linked to the main pathway questions on the site. It is
           intended to give families quick access to clear explanations when the same concerns arise repeatedly. We are
