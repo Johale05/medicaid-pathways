@@ -51,11 +51,14 @@ export default function SiteHeader() {
                 ))}
               </div>
             </div>
-            <Link href="/talk/" className="rounded-2xl border border-[#d8ccb7] px-4 py-2 no-underline hover:bg-[#efe2ce]">
-              Talk With a Medicaid Planning Attorney
-            </Link>
             <Link href="/facility-resources/" className="no-underline hover:underline">
               Facility Resources
+            </Link>
+            <Link href="/about/" className="no-underline hover:underline">
+              About The Hale Law Firm
+            </Link>
+            <Link href="/talk/" className="rounded-2xl border border-[#d8ccb7] px-4 py-2 no-underline hover:bg-[#efe2ce]">
+              Talk With a Medicaid Planning Attorney
             </Link>
           </nav>
         </div>
@@ -100,18 +103,25 @@ export default function SiteHeader() {
           ))}
         </div>
         <Link
-          href="/talk/"
-          className="mt-6 inline-flex rounded-2xl border border-[#d8ccb7] px-4 py-2 no-underline hover:bg-[#efe2ce]"
-          onClick={closeMobileMenu}
-        >
-          Talk With a Medicaid Planning Attorney
-        </Link>
-        <Link
           href="/facility-resources/"
           className="mt-4 block rounded-xl px-3 py-2 no-underline hover:bg-[#f7f1e6]"
           onClick={closeMobileMenu}
         >
           <div className="font-medium text-[#2d2924]">Facility Resources</div>
+        </Link>
+        <Link
+          href="/about/"
+          className="mt-2 block rounded-xl px-3 py-2 no-underline hover:bg-[#f7f1e6]"
+          onClick={closeMobileMenu}
+        >
+          <div className="font-medium text-[#2d2924]">About The Hale Law Firm</div>
+        </Link>
+        <Link
+          href="/talk/"
+          className="mt-6 inline-flex rounded-2xl border border-[#d8ccb7] px-4 py-2 no-underline hover:bg-[#efe2ce]"
+          onClick={closeMobileMenu}
+        >
+          Talk With a Medicaid Planning Attorney
         </Link>
       </nav>
     </header>
