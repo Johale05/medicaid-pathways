@@ -11,8 +11,7 @@ export const metadata = {
     "Learn about The Hale Law Firm and the team behind Medicaid Pathways, supporting families through Medicaid and long-term care decisions.",
 };
 
-// TODO: Swap to the finalized historic Waxahachie office image when available.
-const ABOUT_HERO_IMAGE = "/assets/Facility_Resources_hero.png";
+const ABOUT_HERO_IMAGE = "/assets/about-hero-hale-law-office.png";
 const ABOUT_STORY_VIDEO_ID: string | null = null;
 
 const proofItems = [
@@ -75,17 +74,16 @@ const processSteps = [
 ];
 
 const teamMembers = [
-  // TODO: replace image paths as finalized team photos are added under /public/assets/team/.
-  { name: "John D. Hale", title: "Attorney / Founder", image: "/assets/Poster.png" },
-  { name: "Jacob A. Hale", title: "Attorney", image: "/assets/Poster.png" },
-  { name: "Lindsey Cantu-Hughes", title: "Attorney", image: "/assets/Poster.png" },
-  { name: "Reagan M. Smith", title: "Attorney", image: "/assets/Poster.png" },
+  { name: "John D. Hale", title: "Attorney / Founder", image: "/assets/john-d-hale.png" },
+  { name: "Jacob A. Hale", title: "Attorney", image: "/assets/jacob-a-hale.png" },
+  { name: "Lindsey Cantu-Hughes", title: "Attorney", image: "/assets/lindsey-cantu-hughes.png" },
+  { name: "Reagan M. Smith", title: "Attorney", image: "/assets/reagan-m-smith.png" },
   {
     name: "Debbie Jones",
     title: "Elder Care Coordinator / Licensed Social Worker",
-    image: "/assets/Poster.png",
+    image: "/assets/debbie-jones.png",
   },
-  { name: "Tammie Dooley", title: "Elder Care Coordinator", image: "/assets/Poster.png" },
+  { name: "Tammie Dooley", title: "Elder Care Coordinator", image: "/assets/tammie-dooley.png" },
 ];
 
 export default function AboutPage() {
