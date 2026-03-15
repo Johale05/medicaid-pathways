@@ -43,13 +43,16 @@ const processSteps = [
 export default function ClientResourcesPage() {
   return (
     <div className="poster-page-bg pb-14">
-      <section className="pt-14 md:pt-[4.5rem]">
+      <section className="pt-16 md:pt-20">
         <Container>
-          <header className="mx-auto space-y-5 md:space-y-6" style={{ maxWidth: designTokens.maxReadingWidth }}>
+          <header className="mx-auto space-y-6 md:space-y-7" style={{ maxWidth: designTokens.maxReadingWidth }}>
             <h1 className="max-w-[20ch] font-display text-4xl font-semibold leading-tight tracking-tight text-slate-900 md:text-5xl">
               Client Resources and Next Steps
             </h1>
-            <div className="space-y-4 text-slate-700">
+            <p className="text-lg leading-relaxed text-slate-700 md:text-xl">
+              A clearer way to understand what often begins after first contact.
+            </p>
+            <div className="space-y-4 text-[1.02rem] leading-relaxed text-slate-700 md:space-y-5">
               <p>
                 This page is designed to help families understand what often begins after first contact, what the
                 process may look like over time, and how this site may continue to support both public orientation and
@@ -62,7 +65,7 @@ export default function ClientResourcesPage() {
       </section>
 
       <PosterSection title="What This Page Is For" className="pt-6 md:pt-8">
-        <div className="space-y-4">
+        <div className="space-y-4 text-[1.02rem] leading-relaxed md:space-y-5">
           <p>
             This page is meant to give families a clearer sense of what often begins before and after an attorney
             meeting. It is not case-specific legal advice, but it can help you understand the general path ahead.
@@ -76,14 +79,14 @@ export default function ClientResourcesPage() {
       </PosterSection>
 
       <PosterSection title="What Usually Begins Right Away" className="pt-0">
-        <div className="space-y-5">
+        <div className="space-y-6 text-[1.02rem] leading-relaxed">
           <p>
             In many situations, the process begins helping families before the attorney meeting itself. Early intake
             and coordination can help clarify urgency, reduce delay, and make better use of time while the next steps
             are being scheduled.
           </p>
 
-          <div className="space-y-2">
+          <div className="space-y-2.5">
             <h3 className="font-display text-xl font-semibold tracking-tight">Initial intake may begin gathering:</h3>
             <ul className="list-disc space-y-2 pl-6">
               <li>contact information</li>
@@ -97,7 +100,7 @@ export default function ClientResourcesPage() {
             </ul>
           </div>
 
-          <div className="space-y-2">
+          <div className="space-y-2.5">
             <h3 className="font-display text-xl font-semibold tracking-tight">Early preparation may also begin:</h3>
             <ul className="list-disc space-y-2 pl-6">
               <li>document collection</li>
@@ -114,17 +117,17 @@ export default function ClientResourcesPage() {
       </PosterSection>
 
       <PosterSection title="What the Process Usually Looks Like" className="pt-0">
-        <div className="space-y-5">
+        <div className="space-y-6 text-[1.02rem] leading-relaxed">
           <p>
             Every family’s situation is different, but many matters move through a recognizable set of stages. The
             process is structured, but not rigid, and some planning may begin early and continue alongside the case.
           </p>
 
-          <ol className="list-decimal space-y-4 pl-6">
+          <ol className="list-decimal space-y-5 pl-6">
             {processSteps.map((step) => (
               <li key={step.title}>
                 <p className="font-semibold">{step.title}</p>
-                <p className="mt-1">{step.copy}</p>
+                <p className="mt-1.5">{step.copy}</p>
               </li>
             ))}
           </ol>
@@ -137,7 +140,7 @@ export default function ClientResourcesPage() {
       </PosterSection>
 
       <PosterSection title="What Families Are Often Asked to Gather" className="pt-0">
-        <div className="space-y-4">
+        <div className="space-y-4 text-[1.02rem] leading-relaxed md:space-y-5">
           <p>
             Families are often asked to gather documents and information that help the full picture come into focus.
             Most people do not have everything immediately, and that is normal.
@@ -159,7 +162,7 @@ export default function ClientResourcesPage() {
       </PosterSection>
 
       <PosterSection title="Optional Preparation Before the Attorney Meeting" className="pt-0">
-        <div className="space-y-4">
+        <div className="space-y-4 text-[1.02rem] leading-relaxed md:space-y-5">
           <p>
             Some families may choose to organize information in advance through a short online preparation tool or
             similar intake resource. Others may simply speak with the team by phone.
@@ -172,15 +175,15 @@ export default function ClientResourcesPage() {
       </PosterSection>
 
       <PosterSection title="Where Planning Often Continues Alongside the Case" className="pt-0">
-        <div className="space-y-5">
+        <div className="space-y-6 text-[1.02rem] leading-relaxed">
           <p>
             In many matters, planning continues before, during, and after the application process. The work is often
             about more than filing. It may involve protecting important assets, avoiding preventable mistakes, and
             preparing for outcomes that are not always obvious at the beginning.
           </p>
 
-          <div className="space-y-4">
-            <div className="space-y-1">
+          <div className="space-y-5">
+            <div className="space-y-2">
               <h3 className="font-display text-xl font-semibold tracking-tight">Protecting Important Assets Where Appropriate</h3>
               <p>
                 This can include the home, retirement accounts, family businesses, working farms or ranches, and other
@@ -188,7 +191,7 @@ export default function ClientResourcesPage() {
               </p>
             </div>
 
-            <div className="space-y-1">
+            <div className="space-y-2">
               <h3 className="font-display text-xl font-semibold tracking-tight">Addressing Difficult or Prior Transactions</h3>
               <p>
                 Some situations involve gifting issues, transfer penalties, reversals, or problem assets that do not
@@ -196,7 +199,7 @@ export default function ClientResourcesPage() {
               </p>
             </div>
 
-            <div className="space-y-1">
+            <div className="space-y-2">
               <h3 className="font-display text-xl font-semibold tracking-tight">Guidance About What Not to Do</h3>
               <p>
                 Families often need clear direction not only about what steps may help, but also about what actions
@@ -204,7 +207,7 @@ export default function ClientResourcesPage() {
               </p>
             </div>
 
-            <div className="space-y-1">
+            <div className="space-y-2">
               <h3 className="font-display text-xl font-semibold tracking-tight">Planning for What May Change</h3>
               <p>
                 Good planning also looks ahead, including possible HHSC responses, changing care needs, and changes in
@@ -221,14 +224,17 @@ export default function ClientResourcesPage() {
       </PosterSection>
 
       <PosterSection title="Public Resources Now, Secure Resources Later" className="pt-0">
-        <div className="space-y-5">
+        <div className="space-y-6 text-[1.02rem] leading-relaxed">
           <p>
             Some guidance on this site is meant to be public and broadly helpful. Other materials will make more sense
             as client-only resources over time.
           </p>
 
-          <div className="space-y-4">
-            <div className="space-y-2">
+          <div className="grid gap-4 md:grid-cols-2">
+            <div
+              className="space-y-2 rounded-xl border p-4 md:p-5"
+              style={{ borderColor: designTokens.colors.subtleBorder, backgroundColor: "rgba(255, 255, 255, 0.44)" }}
+            >
               <h3 className="font-display text-xl font-semibold tracking-tight">Public resources now</h3>
               <ul className="list-disc space-y-1.5 pl-6">
                 <li>Pathways and general orientation materials</li>
@@ -239,7 +245,10 @@ export default function ClientResourcesPage() {
               </ul>
             </div>
 
-            <div className="space-y-2">
+            <div
+              className="space-y-2 rounded-xl border p-4 md:p-5"
+              style={{ borderColor: designTokens.colors.subtleBorder, backgroundColor: "rgba(255, 255, 255, 0.44)" }}
+            >
               <h3 className="font-display text-xl font-semibold tracking-tight">Secure resources later</h3>
               <ul className="list-disc space-y-1.5 pl-6">
                 <li>client login</li>
@@ -256,8 +265,8 @@ export default function ClientResourcesPage() {
       </PosterSection>
 
       <PosterSection title="For Current Clients and Families Still Deciding" className="pt-0">
-        <div className="space-y-4">
-          <div className="space-y-1">
+        <div className="space-y-5 text-[1.02rem] leading-relaxed">
+          <div className="space-y-2">
             <h3 className="font-display text-xl font-semibold tracking-tight">For current clients</h3>
             <p>
               Over time, this part of the site may become a more useful home for secure tools, deeper educational
@@ -265,7 +274,7 @@ export default function ClientResourcesPage() {
             </p>
           </div>
 
-          <div className="space-y-1">
+          <div className="space-y-2">
             <h3 className="font-display text-xl font-semibold tracking-tight">For families still deciding</h3>
             <p>
               If you are still trying to understand the issue itself, Medicaid Pathways, the{" "}
@@ -283,7 +292,7 @@ export default function ClientResourcesPage() {
       </PosterSection>
 
       <PosterSection title="When You’re Ready for the Next Step" className="pt-0">
-        <div className="space-y-5">
+        <div className="space-y-6 text-[1.02rem] leading-relaxed">
           <p>
             This site is meant to support families before, during, and after important Medicaid-related decisions. When
             the time comes for legal guidance, coordinated planning, or a clearer next step, The Hale Law Firm is here
