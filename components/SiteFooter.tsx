@@ -26,6 +26,8 @@ export default function SiteFooter() {
             <span aria-hidden="true">|</span>
             <Link href="/about/" className="hover:underline">About The Hale Law Firm</Link>
             <span aria-hidden="true">|</span>
+            <Link href="/client-resources/" className="hover:underline">Client Resources and Next Steps</Link>
+            <span aria-hidden="true">|</span>
             <Link href="/disclaimer/" className="hover:underline">Disclaimer</Link>
             <span aria-hidden="true">|</span>
             <Link href="/privacy/" className="hover:underline">Privacy</Link>

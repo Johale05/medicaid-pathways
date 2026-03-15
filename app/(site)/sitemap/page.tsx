@@ -15,6 +15,7 @@ export default function SitemapPage() {
             <li><Link href="/" className="hover:underline">Home</Link></li>
             <li><Link href="/facility-resources/" className="hover:underline">Facility Resources</Link></li>
             <li><Link href="/about/" className="hover:underline">About The Hale Law Firm</Link></li>
+            <li><Link href="/client-resources/" className="hover:underline">Client Resources and Next Steps</Link></li>
             <li><Link href="/talk/" className="hover:underline">Talk With a Medicaid Planning Attorney</Link></li>
             <li>
               <span className="font-semibold">Pathways</span>
