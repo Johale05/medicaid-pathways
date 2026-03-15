@@ -13,11 +13,11 @@ export default function TalkPage() {
   const turnstileSiteKey = process.env.TURNSTILE_SITE_KEY;
 
   return (
-    <div className="poster-page-bg pb-12 md:pb-14">
-      <section className="pt-16 md:pt-20">
+    <div className="poster-page-bg pb-10 md:pb-12">
+      <section className="pt-14 md:pt-[4.5rem]">
         <Container>
           <header className="mx-auto space-y-5 md:space-y-6" style={{ maxWidth: designTokens.maxReadingWidth }}>
-            <h1 className="font-display text-4xl font-semibold tracking-tight text-slate-900 md:text-5xl">
+            <h1 className="max-w-[19ch] font-display text-4xl font-semibold leading-tight tracking-tight text-slate-900 md:max-w-[20ch] md:text-5xl">
               Talk With a Medicaid Planning Attorney
             </h1>
             <p className="text-xl leading-relaxed text-slate-700">You don’t have to figure this out alone.</p>
@@ -35,10 +35,10 @@ export default function TalkPage() {
         </Container>
       </section>
 
-      <PosterSection title="What This Conversation Is (and Isn’t)" className="pt-7 md:pt-9">
+      <PosterSection title="What This Conversation Is (and Isn’t)" className="pt-6 pb-11 md:pt-8 md:pb-[3.25rem]">
         <div className="grid gap-5 md:grid-cols-2 md:items-stretch">
           <div
-            className="rounded-2xl border p-6"
+            className="flex h-full flex-col rounded-2xl border p-6"
             style={{
               borderColor: designTokens.colors.subtleBorder,
               backgroundColor: designTokens.colors.warmPaper,
@@ -54,7 +54,7 @@ export default function TalkPage() {
           </div>
 
           <div
-            className="rounded-2xl border p-6"
+            className="flex h-full flex-col rounded-2xl border p-6"
             style={{
               borderColor: designTokens.colors.subtleBorder,
               backgroundColor: designTokens.colors.warmPaper,
@@ -72,7 +72,7 @@ export default function TalkPage() {
         </div>
       </PosterSection>
 
-      <PosterSection title="When It Makes Sense to Reach Out" className="pt-0">
+      <PosterSection title="When It Makes Sense to Reach Out" className="pt-0 pb-11 md:pb-[3.25rem]">
         <div className="space-y-4">
           <p>Families often contact us when:</p>
           <ul className="list-disc space-y-2 pl-6">
@@ -85,7 +85,7 @@ export default function TalkPage() {
         </div>
       </PosterSection>
 
-      <PosterSection title="What Happens Next" className="pt-0">
+      <PosterSection title="What Happens Next" className="pt-0 pb-11 md:pb-[3.25rem]">
         <div className="space-y-4">
           <ul className="list-disc space-y-2 pl-6">
             <li>A member of our team will connect with you to understand the basics of your situation</li>
@@ -96,7 +96,7 @@ export default function TalkPage() {
         </div>
       </PosterSection>
 
-      <PosterSection title="Take the Next Step (When You’re Ready)" className="pt-0">
+      <PosterSection title="Take the Next Step (When You’re Ready)" className="pt-0 pb-11 md:pb-12">
         <div className="space-y-4 md:space-y-5">
           <p>If your situation is urgent, please call our office at (214) 446-5080.</p>
           <p>Use the form below to begin the conversation.</p>
