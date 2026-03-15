@@ -13,15 +13,15 @@ export default function TalkPage() {
   const turnstileSiteKey = process.env.TURNSTILE_SITE_KEY;
 
   return (
-    <div className="poster-page-bg pb-14">
-      <section className="pt-14 md:pt-16">
+    <div className="poster-page-bg pb-12 md:pb-14">
+      <section className="pt-16 md:pt-20">
         <Container>
-          <header className="mx-auto space-y-4" style={{ maxWidth: designTokens.maxReadingWidth }}>
+          <header className="mx-auto space-y-5 md:space-y-6" style={{ maxWidth: designTokens.maxReadingWidth }}>
             <h1 className="font-display text-4xl font-semibold tracking-tight text-slate-900 md:text-5xl">
               Talk With a Medicaid Planning Attorney
             </h1>
-            <p className="text-xl text-slate-700">You don’t have to figure this out alone.</p>
-            <div className="space-y-3 text-slate-700">
+            <p className="text-xl leading-relaxed text-slate-700">You don’t have to figure this out alone.</p>
+            <div className="space-y-4 text-slate-700">
               <p>
                 If you’re here, it likely means you’re facing a long-term care or Medicaid decision that feels
                 overwhelming, urgent, or both.
@@ -35,8 +35,8 @@ export default function TalkPage() {
         </Container>
       </section>
 
-      <PosterSection title="What This Conversation Is (and Isn’t)" className="pt-8 md:pt-10">
-        <div className="grid gap-6 md:grid-cols-2">
+      <PosterSection title="What This Conversation Is (and Isn’t)" className="pt-7 md:pt-9">
+        <div className="grid gap-5 md:grid-cols-2 md:items-stretch">
           <div
             className="rounded-2xl border p-6"
             style={{
@@ -46,7 +46,7 @@ export default function TalkPage() {
             }}
           >
             <h3 className="font-display text-xl font-semibold tracking-tight">What it is</h3>
-            <ul className="mt-3 list-disc space-y-2 pl-6">
+            <ul className="mt-3 list-disc space-y-2.5 pl-6">
               <li>A chance to explain your situation in plain language</li>
               <li>A conversation with an attorney who focuses on Medicaid and long-term care planning</li>
               <li>An opportunity to get clarity before making decisions</li>
@@ -62,7 +62,7 @@ export default function TalkPage() {
             }}
           >
             <h3 className="font-display text-xl font-semibold tracking-tight">What it isn’t</h3>
-            <ul className="mt-3 list-disc space-y-2 pl-6">
+            <ul className="mt-3 list-disc space-y-2.5 pl-6">
               <li>A sales call</li>
               <li>A commitment to move forward</li>
               <li>A one-size-fits-all answer</li>
@@ -97,13 +97,13 @@ export default function TalkPage() {
       </PosterSection>
 
       <PosterSection title="Take the Next Step (When You’re Ready)" className="pt-0">
-        <div className="space-y-5">
+        <div className="space-y-4 md:space-y-5">
           <p>If your situation is urgent, please call our office at (214) 446-5080.</p>
           <p>Use the form below to begin the conversation.</p>
           <ContactForm turnstileSiteKey={turnstileSiteKey} />
           <div>
             <p className="text-sm text-[#5a5144]">Want to learn more about the firm behind Medicaid Pathways?</p>
-            <Link href="/about/" className="mt-1 inline-block text-sm text-[#5a5144] underline-offset-2 hover:underline">
+            <Link href="/about/" className="mt-1 inline-block text-sm font-medium text-[#4a4135] underline underline-offset-2 hover:text-[#3f372c]">
               Learn more about The Hale Law Firm
             </Link>
           </div>
