@@ -153,7 +153,7 @@
   {
     "slug": "too-late",
     "title": "Is It Too Late to Get Help?",
-    "subheadline": "If you\u2019re facing a care or payment crisis right now, you are not alone. This is often a pressure moment, and a calm triage approach can help your family regain footing one decision at a time.",
+    "subheadline": "If you\u2019re facing a care or payment crisis right now, you are not alone. This is a pressure moment, not a panic moment, and a calm triage approach can help your family regain footing one decision at a time.",
     "core": [
       "Most families do not begin Medicaid planning years in advance. This question usually appears when care is changing quickly and decisions feel immediate.",
       "\u201cToo late\u201d often means pressure, not finality. Discharge conversations, admission decisions, and payment demands can collide at once \u2014 but pressure and no options are not the same thing."
@@ -171,8 +171,8 @@
         "label": "Step 1: Clarify the immediate care transition",
         "bullets": [
           "Confirm where your family member is now and whether discharge or transfer is actually happening.",
-          "Clarify which care setting is being discussed next and whether returning home is realistic and safe.",
-          "Identify what coverage or payor source is ending, changing, or being requested right now, including any move to private pay."
+          "Clarify the next care setting being discussed and whether returning home is realistic and safe right now.",
+          "Identify which coverage or payor source is ending, changing, or being requested now, including any move to private pay."
         ]
       },
       {
@@ -217,7 +217,7 @@
       "The important question is not whether a rule exists, but how the person\u2019s actual history, assets, and timing interact with that rule. Practical guidance can help families understand what can still be improved and what documentation will matter most.",
       "When families get clear information, it becomes easier to tell what needs attention now and what can wait. That clarity can reduce pressure and help prevent avoidable financial mistakes during an already difficult transition."
     ],
-    "supportingLine": "Choose the common crisis situation that sounds closest to yours and start with what to clarify first.",
+    "supportingLine": "Recognize the scenario that sounds closest to your situation, then start with what to clarify first.",
     "whatNotToDo": [
       "Do not assume \u201ctoo late\u201d means no lawful options remain.",
       "Do not confuse institutional pressure with a final legal answer.",

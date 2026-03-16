@@ -120,7 +120,7 @@ export default function PathwayPage({ params }: Props) {
           <YouTubeEmbed
             videoId={VIDEO_IDS[pathway.slug]}
             title={pathway.title}
-            placeholderText="A brief Too Late overview video will be added here. For now, use the triage steps above to steady the immediate care and payment decisions in front of you."
+            placeholderText="Short overview of this situation. This video will walk through how to steady immediate care and payment decisions without panic."
           />
         </PosterSection>
       )}
@@ -185,7 +185,7 @@ export default function PathwayPage({ params }: Props) {
                 <div className="mt-10">
                   <div>
                     <Link href={`/pathways/${pathway.slug}/deeper/`} className="text-base font-medium hover:underline md:text-lg">
-                      Choose the situation that sounds closest to yours
+                      Choose the scenario that sounds closest to your situation
                     </Link>
                   </div>
                   <div className="mt-1 text-sm text-muted-foreground md:text-base">{pathway.supportingLine}</div>
