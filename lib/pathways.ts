@@ -12,6 +12,9 @@ export type Pathway = {
   layer2Title: string;
   layer2Body: string[];
   supportingLine: string;
+  talkHelpLead?: string;
+  talkHelpBullets?: string[];
+  whatNotToDo?: string[];
 };
 
 export const allPathways = pathways as Pathway[];
