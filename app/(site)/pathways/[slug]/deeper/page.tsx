@@ -139,6 +139,7 @@ export default function DeeperPage({ params }: Props) {
   if (!pathway) return notFound();
 
   const backHref = `/pathways/${pathway.slug}/`;
+  const isMedicareEnding = pathway.slug === "medicare-ending";
 
   return (
     <div className="py-14" style={{ backgroundColor: "#fffdfa" }}>
@@ -156,6 +157,11 @@ export default function DeeperPage({ params }: Props) {
                   Families often feel everything must be decided immediately. The goal is not to solve everything at
                   once. The goal is to identify what needs attention first.
                 </p>
+              </>
+            ) : isMedicareEnding ? (
+              <>
+                <p>Families ask “what happens when Medicare ends?” at different points: before coverage changes, when a last covered day is mentioned, when discharge is being discussed, or when phrases like plateaued, not participating, or no longer skilled are used.</p>
+                <p>This page helps you sort what those conversations usually mean and what to clarify first.</p>
               </>
             ) : (
               <>
@@ -245,6 +251,109 @@ export default function DeeperPage({ params }: Props) {
                     If you’re hearing any of the situations above, a short conversation can help sort what is urgent,
                     what is not, and what coordinated next steps make sense.
                   </p>
+                  <Link
+                    href="/talk/"
+                    className="inline-flex items-center justify-center rounded-xl border px-6 py-3 no-underline"
+                    style={{
+                      backgroundColor: designTokens.colors.warmPaper,
+                      borderColor: designTokens.colors.subtleBorder,
+                      color: designTokens.colors.ink,
+                    }}
+                  >
+                    Talk With a Medicaid Planning Attorney
+                  </Link>
+                </div>
+              </PosterSection>
+            </div>
+          ) : isMedicareEnding ? (
+            <div className="mx-auto space-y-8">
+              <PosterSection title="What to Clarify First" className="pt-0">
+                <ul className="list-disc space-y-2 pl-6">
+                  <li>Is Medicare rehab coverage still active right now?</li>
+                  <li>Has a last covered day been given?</li>
+                  <li>Is discharge being discussed?</li>
+                  <li>Is home being presented as the next setting?</li>
+                  <li>Is long-term nursing care being discussed instead?</li>
+                  <li>Is private pay being discussed next?</li>
+                  <li>Is an appeal being mentioned?</li>
+                  <li>Is plan type or coverage structure part of the conversation?</li>
+                </ul>
+              </PosterSection>
+
+              <div className="space-y-4">
+                <h2 className="font-display text-2xl font-semibold tracking-tight">Group 1: Understanding the coverage change</h2>
+                <PosterSection title="How long does Medicare usually pay for rehab?" className="pt-0">
+                  <div className="space-y-3">
+                    <p>Medicare rehab coverage is a limited skilled-care benefit. Families often hear day ranges such as days 1–20 and days 21–100, but those ranges are only part of the picture.</p>
+                    <p>Coverage can change before day 100 if skilled-care criteria are no longer being met. That can happen even when a person still needs significant daily help.</p>
+                  </div>
+                </PosterSection>
+                <PosterSection title="What is the difference between rehab coverage and long-term care?" className="pt-0">
+                  <p>Short-term skilled rehab coverage and ongoing custodial long-term care are not the same thing. A person may still need substantial care even when Medicare rehab coverage is ending.</p>
+                </PosterSection>
+                <PosterSection title="Does Medicare ending automatically mean Medicaid is next?" className="pt-0">
+                  <p>Not automatically. Medicaid may become relevant when long-term care is now being discussed, but Medicare ending alone does not decide every care or payment step.</p>
+                </PosterSection>
+              </div>
+
+              <div className="space-y-4">
+                <h2 className="font-display text-2xl font-semibold tracking-tight">Group 2: Common next-step situations</h2>
+                <PosterSection title="Medicare rehab is ending and we do not know what happens next" className="pt-0">
+                  <div className="space-y-3">
+                    <p><span className="font-medium">What this usually means:</span> Coverage, discharge timing, next care setting, and payment may all now be in play at once.</p>
+                    <p><span className="font-medium">What to clarify first:</span> Start by separating those questions so your family is not reacting to all of them at once.</p>
+                  </div>
+                </PosterSection>
+                <PosterSection title="They are saying the patient is not improving, has plateaued, is not participating, or is no longer skilled" className="pt-0">
+                  <div className="space-y-3">
+                    <p>These phrases usually relate to Medicare skilled-coverage criteria, not necessarily to whether the person still needs care.</p>
+                    <p>Families often hear this language as abandonment or forced discharge. It helps to slow down and clarify what decision is actually being made.</p>
+                    <ul className="list-disc space-y-2 pl-6">
+                      <li>Has a last covered day been given?</li>
+                      <li>Is discharge being discussed?</li>
+                      <li>What setting is being proposed next?</li>
+                      <li>Is appeal being mentioned?</li>
+                      <li>Is long-term care now the real issue?</li>
+                    </ul>
+                  </div>
+                </PosterSection>
+                <PosterSection title="They say discharge is being discussed, but the person cannot come home" className="pt-0">
+                  <p>Coverage changing does not answer whether home is realistic. The immediate issue may be safe placement and the next care setting.</p>
+                </PosterSection>
+                <PosterSection title="We are being told private pay starts next" className="pt-0">
+                  <p>This often comes up when rehab coverage is ending while care needs continue. A private-pay discussion may be important, but it does not automatically answer every broader planning question.</p>
+                </PosterSection>
+                <PosterSection title="We need to understand whether long-term care is now the issue" className="pt-0">
+                  <p>Sometimes the real transition is from short-term rehab into ongoing custodial care. That shifts both the care conversation and the payment conversation.</p>
+                </PosterSection>
+              </div>
+
+              <div className="space-y-4">
+                <h2 className="font-display text-2xl font-semibold tracking-tight">Group 3: Adjacent but important questions</h2>
+                <PosterSection title="We want to know whether appeal is possible" className="pt-0">
+                  <p>Appeal may be mentioned, and timing may matter. Appeal discussions focus on the coverage determination, while families may still need to plan broader care and payment next steps in parallel.</p>
+                </PosterSection>
+                <PosterSection title="We are being told to switch plans and do not know whether that matters" className="pt-0">
+                  <p>Plan type can affect authorizations, networks, and how coverage questions arise. Families sometimes hear about switching to traditional Medicare in facility care, but that is only one part of the larger transition.</p>
+                </PosterSection>
+              </div>
+
+              <PosterSection title="Guardrails" className="pt-0">
+                <ul className="list-disc space-y-2 pl-6">
+                  <li>Do not assume Medicare ending means there is no next step.</li>
+                  <li>Do not assume one phrase like plateaued or no longer skilled explains the whole situation.</li>
+                  <li>Do not confuse the coverage issue with the full care plan.</li>
+                  <li>Do not wait so long to clarify care setting or payor questions that confusion becomes crisis.</li>
+                </ul>
+              </PosterSection>
+
+              <PosterSection title="Sorting the Transition Clearly" className="pt-0">
+                <p>Families are often hearing coverage language, discharge language, care-setting questions, and payment concerns at the same time. Not every question has the same answer or timing, so the situation usually needs to be sorted in sequence.</p>
+              </PosterSection>
+
+              <PosterSection title="When Talking With Someone Helps" className="pt-0 mt-6">
+                <div className="space-y-6 pt-2">
+                  <p>A conversation can help clarify whether the immediate issue is coverage, discharge, long-term care, payment, or some combination.</p>
                   <Link
                     href="/talk/"
                     className="inline-flex items-center justify-center rounded-xl border px-6 py-3 no-underline"
