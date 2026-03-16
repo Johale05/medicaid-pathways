@@ -29,6 +29,7 @@ export default function PathwayPage({ params }: Props) {
   const pathway = getPathway(params.slug);
   if (!pathway) return notFound();
   const talkHelp = pathway;
+  const isMedicareEnding = pathway.slug === "medicare-ending";
 
   const backgroundImage = PATHWAY_HERO_IMAGE_BY_SLUG[pathway.slug];
   const backgroundPositionDesktop = PATHWAY_HERO_POSITION_BY_SLUG[pathway.slug] ?? "center";
@@ -45,7 +46,13 @@ export default function PathwayPage({ params }: Props) {
         backgroundSizeMobile={HOMEPAGE_HERO_SIZE_MOBILE}
       />
       <PosterSection
-        title={pathway.slug === "too-late" ? "What “Too Late” Usually Means" : "Core Concept"}
+        title={
+          pathway.slug === "too-late"
+            ? "What “Too Late” Usually Means"
+            : isMedicareEnding
+              ? "Why Families Are Often Caught Off Guard"
+              : "Core Concept"
+        }
         className="pt-0"
       >
         <div className="space-y-3">
@@ -62,7 +69,7 @@ export default function PathwayPage({ params }: Props) {
       )}
 
       <PosterSection
-        title={pathway.slug === "medicare-ending" ? "Why This Is Often Confusing" : "Why This Is Often Misunderstood"}
+        title={isMedicareEnding ? "What Medicare Rehab Coverage Usually Means" : "Why This Is Often Misunderstood"}
         className="pt-0"
       >
         <ul className="list-disc space-y-2 pl-6">
@@ -72,10 +79,7 @@ export default function PathwayPage({ params }: Props) {
         </ul>
       </PosterSection>
 
-      <PosterSection
-        title="What This Means for Your Family"
-        className={pathway.slug === "too-late" ? "pt-4 md:pt-6" : "pt-0"}
-      >
+      <PosterSection title={isMedicareEnding ? "What Changes When Medicare Ends" : "What This Means for Your Family"} className={pathway.slug === "too-late" ? "pt-4 md:pt-6" : "pt-0"}>
         {pathway.slug === "too-late" && pathway.steps ? (
           <div className="space-y-10">
             {pathway.means.length > 0 && (
@@ -96,6 +100,23 @@ export default function PathwayPage({ params }: Props) {
               </div>
             ))}
           </div>
+        ) : isMedicareEnding ? (
+          <div className="space-y-3">
+            {pathway.means.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
+            <div className="space-y-2 pt-2">
+              <p className="font-medium">As coverage shifts, families often move from:</p>
+              <p>“Is rehab still covered?”</p>
+              <p className="font-medium">to questions like:</p>
+              <ul className="list-disc space-y-2 pl-6">
+                <li>What care setting comes next?</li>
+                <li>Can the person safely go home?</li>
+                <li>Is long-term care now the issue?</li>
+                <li>What payment source may matter next?</li>
+              </ul>
+            </div>
+          </div>
         ) : (
           <div className="space-y-3">
             {pathway.means.map((p, i) => (
@@ -104,6 +125,36 @@ export default function PathwayPage({ params }: Props) {
           </div>
         )}
       </PosterSection>
+
+      {isMedicareEnding && pathway.steps && (
+        <PosterSection title="What This Means for Your Family" className="pt-0">
+          <div className="space-y-8">
+            {pathway.steps.map((step, i) => (
+              <div key={i} className="space-y-3">
+                <h3>{step.label}</h3>
+                <ul className="list-disc space-y-2 pl-6">
+                  {step.bullets.map((bullet, j) => (
+                    <li key={j}>{bullet}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </PosterSection>
+      )}
+
+      {isMedicareEnding && (
+        <PosterSection title="Common Questions When Coverage Is Changing" className="pt-0">
+          <ul className="list-disc space-y-2 pl-6">
+            <li>How long does Medicare usually pay for rehab?</li>
+            <li>What does “not improving,” “plateaued,” “not participating,” or “no longer skilled” usually mean?</li>
+            <li>What if discharge is being discussed but the person cannot come home?</li>
+            <li>Does Medicare ending automatically mean Medicaid is next?</li>
+            <li>Is appeal possible when coverage is ending?</li>
+            <li>Does plan type matter in how this conversation unfolds?</li>
+          </ul>
+        </PosterSection>
+      )}
 
       {pathway.slug === "too-late" && talkHelp.whatNotToDo && (
         <PosterSection title="What Not to Do" className="pt-0">
@@ -147,8 +198,8 @@ export default function PathwayPage({ params }: Props) {
               ? "Before You Sell or Transfer the House"
               : pathway.slug === "too-much-income"
                 ? "Before You Assume You Don’t Qualify"
-                : pathway.slug === "medicare-ending"
-                  ? "Before Medicare Coverage Ends"
+                  : pathway.slug === "medicare-ending"
+                    ? "Before Medicare Coverage Ends"
                 : pathway.slug === "qualify-medically"
                   ? "Before You Move Forward Financially"
                   : pathway.slug === "too-late"
@@ -205,7 +256,7 @@ export default function PathwayPage({ params }: Props) {
                   : pathway.slug === "too-much-income"
                     ? "Income limits are often misunderstood. In many situations, there are lawful strategies that allow families to move forward even when income appears too high at first glance."
                     : pathway.slug === "medicare-ending"
-                      ? "As rehabilitation days run out, families often face quick decisions about next steps. Reviewing options in advance can help you plan thoughtfully rather than react under pressure."
+                      ? "A short conversation can help your family sort whether the immediate issue is coverage, discharge, long-term care, payment, or some combination — and what to clarify first."
                     : pathway.slug === "qualify-medically"
                       ? "Medical necessity is not automatic. Financial planning and medical eligibility must be aligned to avoid unintended consequences. A brief review can help ensure both sides of the process are coordinated properly."
                   : pathway.when}
