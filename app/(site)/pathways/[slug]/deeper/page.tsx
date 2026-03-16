@@ -126,7 +126,7 @@ const TOO_LATE_SCENARIO_GROUPS: { heading: string; scenarios: TooLateScenario[] 
 ];
 
 const VIDEO_IDS: Record<string, string> = {
-  "medicare-ending": "dQw4w9WgXcQ",
+  "medicare-ending": "",
   "spend-everything": "dQw4w9WgXcQ",
   "too-much-income": "dQw4w9WgXcQ",
   "qualify-medically": "dQw4w9WgXcQ",
@@ -173,7 +173,15 @@ export default function DeeperPage({ params }: Props) {
 
           {pathway.slug !== "too-late" && (
             <PosterSection>
-              <YouTubeEmbed videoId={VIDEO_IDS[pathway.slug]} title={pathway.title} />
+              <YouTubeEmbed
+                videoId={VIDEO_IDS[pathway.slug]}
+                title={pathway.title}
+                placeholderText={
+                  pathway.slug === "medicare-ending"
+                    ? "A short overview for this pathway will be added here. It will explain common Medicare-ending conversations and what families may want to clarify first."
+                    : undefined
+                }
+              />
             </PosterSection>
           )}
 
@@ -284,15 +292,22 @@ export default function DeeperPage({ params }: Props) {
                 <h2 className="font-display text-2xl font-semibold tracking-tight">Group 1: Understanding the coverage change</h2>
                 <PosterSection title="How long does Medicare usually pay for rehab?" className="pt-0">
                   <div className="space-y-3">
-                    <p>Medicare rehab coverage is a limited skilled-care benefit. Families often hear day ranges such as days 1–20 and days 21–100, but those ranges are only part of the picture.</p>
-                    <p>Coverage can change before day 100 if skilled-care criteria are no longer being met. That can happen even when a person still needs significant daily help.</p>
+                    <p>Medicare rehab coverage is a limited skilled-care benefit. Families often hear day ranges like days 1–20 and days 21–100, but those ranges are only part of the story.</p>
+                    <p>Coverage can end before day 100 if Medicare says skilled criteria are no longer met. That can happen even when your family member still needs substantial daily help.</p>
+                    <p>So the key issue is not only how many days are left, but what coverage decision is being made now and what care plan is being recommended next.</p>
                   </div>
                 </PosterSection>
                 <PosterSection title="What is the difference between rehab coverage and long-term care?" className="pt-0">
-                  <p>Short-term skilled rehab coverage and ongoing custodial long-term care are not the same thing. A person may still need substantial care even when Medicare rehab coverage is ending.</p>
+                  <div className="space-y-3">
+                    <p>Short-term skilled rehab coverage and ongoing custodial long-term care are different conversations. Medicare rehab coverage is tied to skilled treatment criteria, while long-term care planning focuses on ongoing daily support needs.</p>
+                    <p>Families often hear "coverage is ending" and understandably worry that means "care is ending." Usually it means the payor category is changing, not that care needs have disappeared.</p>
+                  </div>
                 </PosterSection>
                 <PosterSection title="Does Medicare ending automatically mean Medicaid is next?" className="pt-0">
-                  <p>Not automatically. Medicaid may become relevant when long-term care is now being discussed, but Medicare ending alone does not decide every care or payment step.</p>
+                  <div className="space-y-3">
+                    <p>Not automatically. Medicare ending is a coverage transition, but it does not by itself decide where care will happen next or which payment source is best.</p>
+                    <p>Medicaid may become important when ongoing nursing care is now the issue, but some families still need to clarify discharge planning, home feasibility, plan details, or short-term payment timing first.</p>
+                  </div>
                 </PosterSection>
               </div>
 
@@ -321,20 +336,32 @@ export default function DeeperPage({ params }: Props) {
                   <p>Coverage changing does not answer whether home is realistic. The immediate issue may be safe placement and the next care setting.</p>
                 </PosterSection>
                 <PosterSection title="We are being told private pay starts next" className="pt-0">
-                  <p>This often comes up when rehab coverage is ending while care needs continue. A private-pay discussion may be important, but it does not automatically answer every broader planning question.</p>
+                  <div className="space-y-3">
+                    <p>This often comes up when rehab coverage is ending while care needs continue. Families may hear this before they feel clear on the full transition plan.</p>
+                    <p>It helps to confirm the amount, start date, and whether this is being framed as temporary while broader options are reviewed. A private-pay request can be important without being the entire long-term answer.</p>
+                  </div>
                 </PosterSection>
                 <PosterSection title="We need to understand whether long-term care is now the issue" className="pt-0">
-                  <p>Sometimes the real transition is from short-term rehab into ongoing custodial care. That shifts both the care conversation and the payment conversation.</p>
+                  <div className="space-y-3">
+                    <p>Sometimes the real transition is from short-term rehab into ongoing custodial care. That shift can be hard emotionally, especially when families were still hoping rehab coverage would continue longer.</p>
+                    <p>When this is the issue, it helps to separate care-setting decisions from payment-path decisions so both conversations can move with less confusion.</p>
+                  </div>
                 </PosterSection>
               </div>
 
               <div className="space-y-4">
                 <h2 className="font-display text-2xl font-semibold tracking-tight">Group 3: Adjacent but important questions</h2>
                 <PosterSection title="We want to know whether appeal is possible" className="pt-0">
-                  <p>Appeal may be mentioned, and timing may matter. Appeal discussions focus on the coverage determination, while families may still need to plan broader care and payment next steps in parallel.</p>
+                  <div className="space-y-3">
+                    <p>Appeal may be possible, and timing may matter. Families often ask about appeal because they need to understand whether coverage can continue while next steps are sorted.</p>
+                    <p>Even when appeal is on the table, it helps to plan care-setting and payment contingencies in parallel so the family is not relying on only one path.</p>
+                  </div>
                 </PosterSection>
                 <PosterSection title="We are being told to switch plans and do not know whether that matters" className="pt-0">
-                  <p>Plan type can affect authorizations, networks, and how coverage questions arise. Families sometimes hear about switching to traditional Medicare in facility care, but that is only one part of the larger transition.</p>
+                  <div className="space-y-3">
+                    <p>Plan type can affect authorizations, networks, and how coverage questions come up. So the advice to switch plans may matter, but it should be understood in context.</p>
+                    <p>Before making a plan change, families usually benefit from clarifying what problem the switch is intended to solve, what timing applies, and how it fits with the broader care transition.</p>
+                  </div>
                 </PosterSection>
               </div>
 

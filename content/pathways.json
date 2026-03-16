@@ -2,10 +2,11 @@
   {
     "slug": "medicare-ending",
     "title": "What Happens When Medicare Ends?",
-    "subheadline": "Whether you are planning ahead or hearing that coverage is ending now, this pathway explains how Medicare rehab coverage usually works and what questions often come next.",
+    "subheadline": "Whether you are planning ahead or already hearing that rehab coverage is ending, this pathway helps your family understand what is changing and what to clarify first.",
     "core": [
-      "Many families reasonably assume Medicare will keep paying as long as a loved one still needs care. That reaction is understandable, especially when recovery is uncertain.",
-      "In skilled nursing and rehab settings, Medicare coverage is tied to specific skilled-care criteria, not simply ongoing need for help. Because of that, coverage conversations can shift faster than families expect."
+      "Many families understandably believe Medicare will keep paying as long as a loved one still needs care. Most people are never told early on how quickly this conversation can change.",
+      "It is common to hear, \"we thought Medicare would keep paying,\" or \"they are saying rehab is ending and we do not know what that means.\" That uncertainty is real and often happens while families are also being asked to make next-step decisions.",
+      "In skilled nursing and rehab settings, Medicare coverage is tied to skilled-care criteria, not simply to ongoing need for help. Because of that, coverage can change even when day-to-day care needs remain substantial."
     ],
     "why": [
       "Medicare rehab coverage is generally short-term skilled nursing or rehabilitation coverage after a qualifying hospital stay.",
@@ -14,9 +15,9 @@
       "The benefit was designed for short-term skilled recovery, not for ongoing custodial long-term care."
     ],
     "means": [
-      "When families hear that Medicare is ending or expected to end soon, the conversation usually changes. The first question is no longer only whether rehab is covered.",
-      "Now families often need to sort several issues at once: what care setting is being recommended, whether home is realistic and safe, whether long-term nursing care is now the issue, and what payment source may matter next.",
-      "A Medicare ending notice is important, but it does not automatically answer every next-step question. It means the transition conversation has changed and needs clear structure."
+      "When families hear Medicare is ending, the conversation often shifts quickly. The question is no longer only whether rehab days are covered.",
+      "Families are usually trying to sort several practical concerns at once: what care setting is being recommended, whether home is realistic and safe, whether this is now a long-term care issue, and what payment source may matter next.",
+      "A Medicare ending notice is important, but it does not automatically mean the person must leave immediately, that home is feasible, or that one payment path is already decided. It means the transition conversation needs clear structure."
     ],
     "steps": [
       {
@@ -49,7 +50,7 @@
     "layer2Body": [
       "Families ask this question at different points\u2014before coverage changes, when a last covered day is given, or when discharge and long-term care planning begin. This page helps sort those conversations in plain English."
     ],
-    "supportingLine": "Review common Medicare-ending questions and what to clarify first."
+    "supportingLine": "Choose the question that sounds closest to what your family is hearing now, then start with what to clarify first."
   },
   {
     "slug": "spend-everything",
