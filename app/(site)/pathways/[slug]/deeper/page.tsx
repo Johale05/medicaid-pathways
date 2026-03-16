@@ -63,13 +63,13 @@ const TOO_LATE_SCENARIO_GROUPS: { heading: string; scenarios: TooLateScenario[] 
       {
         title: "We are being asked to private pay now",
         whatItUsuallyMeans:
-          "Payment is being addressed before the full Medicaid and long-term planning picture is clear.",
+          "The facility is addressing payment before the full Medicaid picture is clear.",
         mattersFirst:
-          "Confirm the amount, start date, and whether the request is temporary while Medicaid-pending status or Medicaid bed availability is being reviewed.",
+          "Confirm the amount, start date, and whether this is temporary while Medicaid-pending status or Medicaid bed availability is reviewed.",
         notToAssume:
-          "Do not assume a private-pay request settles what your family must commit to long term.",
+          "Do not assume a private-pay request decides your family’s long-term commitment.",
         whenConversationHelps:
-          "A quick review can clarify what is being requested right now, what can be deferred, and how to preserve flexibility.",
+          "A quick review can sort what is being requested now, what can wait, and how to preserve flexibility.",
       },
     ],
   },
@@ -81,30 +81,30 @@ const TOO_LATE_SCENARIO_GROUPS: { heading: string; scenarios: TooLateScenario[] 
         whatItUsuallyMeans:
           "This is often a preliminary screening view, not a full legal eligibility analysis.",
         mattersFirst:
-          "Ask what assumption is driving the conclusion and confirm that care-level, income, asset, and payor facts were all reviewed.",
-        notToAssume: "Do not assume one screening statement is the final answer on eligibility.",
+          "Ask what assumption is driving that conclusion and confirm care-level, income, asset, and payor facts were all reviewed.",
+        notToAssume: "Do not assume one screening statement is the final eligibility answer.",
         whenConversationHelps:
-          "Counsel can test the assumptions quickly and identify whether lawful options still remain.",
+          "Counsel can quickly test the assumptions and identify whether lawful options remain.",
       },
       {
         title: "We are being pushed to apply for Medicaid immediately",
         whatItUsuallyMeans:
-          "Timing may be important, but filing before authority and records are ready can create avoidable delays.",
+          "Timing may matter, but filing before authority and records are ready can create avoidable delays.",
         mattersFirst:
-          "Confirm who can apply, what records are still missing, and which care and coverage facts should be verified before filing.",
+          "Confirm who can apply, what records are missing, and which care and coverage facts should be verified before filing.",
         notToAssume: "Do not assume filing sooner helps if the application is incomplete or inaccurate.",
         whenConversationHelps:
-          "A focused conversation can sequence authority, records, and filing timing so the first submission is stronger.",
+          "A focused conversation can sequence authority, records, and timing so the first submission is stronger.",
       },
       {
         title: "We are worried past gifts or transfers made it too late",
         whatItUsuallyMeans:
           "Transfers matter, but outcomes depend on timing, documentation, and the full care and financial timeline.",
         mattersFirst:
-          "List what was transferred, when, to whom, and why, then evaluate those facts in sequence with current care and coverage needs.",
+          "List what was transferred, when, to whom, and why, then evaluate those facts against current care and coverage needs.",
         notToAssume: "Do not assume one transfer issue means every option is gone.",
         whenConversationHelps:
-          "Early legal analysis can identify the real risks and any practical steps that may still improve the path forward.",
+          "Early legal analysis can identify the real risks and practical steps that may still improve the path forward.",
       },
     ],
   },
