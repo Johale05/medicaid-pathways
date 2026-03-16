@@ -1,9 +1,26 @@
 type Props = {
-  videoId: string;
+  videoId?: string;
   title: string;
+  placeholderText?: string;
 };
 
-export default function YouTubeEmbed({ videoId, title }: Props) {
+export default function YouTubeEmbed({ videoId, title, placeholderText }: Props) {
+  if (!videoId) {
+    return (
+      <div className="w-full overflow-hidden rounded-2xl border border-slate-200 shadow-soft bg-white">
+        <div className="aspect-video w-full px-6 py-8 md:px-10 md:py-10">
+          <div className="flex h-full flex-col items-center justify-center text-center">
+            <p className="text-lg font-medium text-slate-800">Short Overview Video</p>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
+              {placeholderText ??
+                "A brief video overview will be added here to walk through this pathway and the first steps to take."}
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   const src = `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1`;
   return (
     <div className="w-full overflow-hidden rounded-2xl border border-slate-200 shadow-soft bg-white">
