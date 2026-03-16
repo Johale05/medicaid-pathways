@@ -29,7 +29,7 @@ const VIDEO_IDS: Record<string, string> = {
 export default function PathwayPage({ params }: Props) {
   const pathway = getPathway(params.slug);
   if (!pathway) return notFound();
-  const talkHelp = pathway as typeof pathway & { talkHelpLead?: string; talkHelpBullets?: string[] };
+  const talkHelp = pathway;
 
   const backgroundImage = PATHWAY_HERO_IMAGE_BY_SLUG[pathway.slug];
   const backgroundPositionDesktop = PATHWAY_HERO_POSITION_BY_SLUG[pathway.slug] ?? "center";
@@ -106,6 +106,16 @@ export default function PathwayPage({ params }: Props) {
         )}
       </PosterSection>
 
+      {pathway.slug === "too-late" && talkHelp.whatNotToDo && (
+        <PosterSection title="What Not to Do" className="pt-0">
+          <ul className="list-disc space-y-2 pl-6">
+            {talkHelp.whatNotToDo.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </PosterSection>
+      )}
+
       {pathway.slug === "too-late" && (
         <PosterSection>
           <YouTubeEmbed videoId={VIDEO_IDS[pathway.slug]} title={pathway.title} />
@@ -153,9 +163,8 @@ export default function PathwayPage({ params }: Props) {
               ))}
             </ul>
             <p>
-              When a loved one is already in a facility or private funds are running low, decisions can feel
-              immediate. With coordinated legal and planning guidance, families can move forward thoughtfully rather
-              than react under pressure.
+              A quick conversation can help sort what is urgent and what is not, then coordinate practical next steps
+              around care, coverage, and planning — without pressure.
             </p>
             <div className="space-y-4 pt-2">
               <Link
@@ -173,7 +182,7 @@ export default function PathwayPage({ params }: Props) {
                 <div className="mt-10">
                   <div>
                     <Link href={`/pathways/${pathway.slug}/deeper/`} className="text-base font-medium hover:underline md:text-lg">
-                      Want to see the most common situations behind this question?
+                      See the common crisis situations behind “too late”
                     </Link>
                   </div>
                   <div className="mt-1 text-sm text-muted-foreground md:text-base">{pathway.supportingLine}</div>
