@@ -18,7 +18,7 @@ import {
 type Props = { params: { slug: string } };
 
 const VIDEO_IDS: Record<string, string> = {
-  "medicare-ending": "dQw4w9WgXcQ",
+  "medicare-ending": "",
   "spend-everything": "dQw4w9WgXcQ",
   "too-much-income": "dQw4w9WgXcQ",
   "qualify-medically": "dQw4w9WgXcQ",
@@ -199,7 +199,7 @@ export default function PathwayPage({ params }: Props) {
               : pathway.slug === "too-much-income"
                 ? "Before You Assume You Don’t Qualify"
                   : pathway.slug === "medicare-ending"
-                    ? "Before Medicare Coverage Ends"
+                    ? "When You Need Help Sorting What Changes Next"
                 : pathway.slug === "qualify-medically"
                   ? "Before You Move Forward Financially"
                   : pathway.slug === "too-late"
@@ -242,7 +242,15 @@ export default function PathwayPage({ params }: Props) {
                   <div className="mt-1 text-sm text-muted-foreground md:text-base">{pathway.supportingLine}</div>
                 </div>
               ) : (
-                <Layer2LinkBlock href={`/pathways/${pathway.slug}/deeper/`} supportingLine={pathway.supportingLine} />
+                <Layer2LinkBlock
+                  href={`/pathways/${pathway.slug}/deeper/`}
+                  supportingLine={pathway.supportingLine}
+                  linkText={
+                    pathway.slug === "medicare-ending"
+                      ? "Choose the question that sounds closest to what your family is hearing now"
+                      : undefined
+                  }
+                />
               )}
             </div>
           </div>
@@ -256,7 +264,7 @@ export default function PathwayPage({ params }: Props) {
                   : pathway.slug === "too-much-income"
                     ? "Income limits are often misunderstood. In many situations, there are lawful strategies that allow families to move forward even when income appears too high at first glance."
                     : pathway.slug === "medicare-ending"
-                      ? "A short conversation can help your family sort whether the immediate issue is coverage, discharge, long-term care, payment, or some combination — and what to clarify first."
+                      ? "A short conversation can help your family sort whether the immediate issue is coverage, discharge, long-term care, payment, or some combination — and what to clarify first before decisions feel rushed."
                     : pathway.slug === "qualify-medically"
                       ? "Medical necessity is not automatic. Financial planning and medical eligibility must be aligned to avoid unintended consequences. A brief review can help ensure both sides of the process are coordinated properly."
                   : pathway.when}
@@ -272,7 +280,15 @@ export default function PathwayPage({ params }: Props) {
             >
               Talk With a Medicaid Planning Attorney
             </Link>
-            <Layer2LinkBlock href={`/pathways/${pathway.slug}/deeper/`} supportingLine={pathway.supportingLine} />
+            <Layer2LinkBlock
+              href={`/pathways/${pathway.slug}/deeper/`}
+              supportingLine={pathway.supportingLine}
+              linkText={
+                pathway.slug === "medicare-ending"
+                  ? "Choose the question that sounds closest to what your family is hearing now"
+                  : undefined
+              }
+            />
           </div>
         )}
       </PosterSection>
