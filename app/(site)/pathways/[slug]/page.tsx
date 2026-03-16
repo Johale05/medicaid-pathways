@@ -23,7 +23,6 @@ const VIDEO_IDS: Record<string, string> = {
   "too-much-income": "dQw4w9WgXcQ",
   "qualify-medically": "dQw4w9WgXcQ",
   "sell-the-house": "dQw4w9WgXcQ",
-  "too-late": "dQw4w9WgXcQ",
 };
 
 export default function PathwayPage({ params }: Props) {
@@ -118,7 +117,11 @@ export default function PathwayPage({ params }: Props) {
 
       {pathway.slug === "too-late" && (
         <PosterSection>
-          <YouTubeEmbed videoId={VIDEO_IDS[pathway.slug]} title={pathway.title} />
+          <YouTubeEmbed
+            videoId={VIDEO_IDS[pathway.slug]}
+            title={pathway.title}
+            placeholderText="A brief Too Late overview video will be added here. For now, use the triage steps above to steady the immediate care and payment decisions in front of you."
+          />
         </PosterSection>
       )}
 
@@ -182,7 +185,7 @@ export default function PathwayPage({ params }: Props) {
                 <div className="mt-10">
                   <div>
                     <Link href={`/pathways/${pathway.slug}/deeper/`} className="text-base font-medium hover:underline md:text-lg">
-                      See the common crisis situations behind “too late”
+                      Choose the situation that sounds closest to yours
                     </Link>
                   </div>
                   <div className="mt-1 text-sm text-muted-foreground md:text-base">{pathway.supportingLine}</div>

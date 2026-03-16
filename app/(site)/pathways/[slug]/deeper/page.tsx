@@ -63,22 +63,13 @@ const TOO_LATE_SCENARIO_GROUPS: { heading: string; scenarios: TooLateScenario[] 
       {
         title: "We are being asked to private pay now",
         whatItUsuallyMeans:
-          "A facility is trying to secure payment while eligibility and long-term planning questions are still unresolved.",
+          "Payment is being addressed before the full Medicaid and long-term planning picture is clear.",
         mattersFirst:
-          "Clarify what amount is being requested, when it starts, and what is being discussed about Medicaid-pending or Medicaid bed availability.",
-        notToAssume: "Do not assume payment pressure is the same as a final legal answer on Medicaid options.",
+          "Confirm the amount, start date, and whether the request is temporary while Medicaid-pending status or Medicaid bed availability is being reviewed.",
+        notToAssume:
+          "Do not assume a private-pay request settles what your family must commit to long term.",
         whenConversationHelps:
-          "A quick review can help families avoid commitments that reduce flexibility before facts are organized.",
-      },
-      {
-        title: "We are being pushed to sign papers before we understand the situation",
-        whatItUsuallyMeans:
-          "Families are being asked to sign admissions or financial documents during a stressful transition with limited context.",
-        mattersFirst:
-          "Confirm who is signing, in what capacity, and which items require immediate action versus later follow-up.",
-        notToAssume: "Do not assume every document placed in front of you must be signed immediately.",
-        whenConversationHelps:
-          "A short conversation can help identify what needs attention now and what should be reviewed first.",
+          "A quick review can clarify what is being requested right now, what can be deferred, and how to preserve flexibility.",
       },
     ],
   },
@@ -88,32 +79,32 @@ const TOO_LATE_SCENARIO_GROUPS: { heading: string; scenarios: TooLateScenario[] 
       {
         title: "The facility says we do not qualify for Medicaid",
         whatItUsuallyMeans:
-          "Someone is sharing a preliminary view based on limited financial information, not necessarily a complete legal evaluation.",
+          "This is often a preliminary screening view, not a full legal eligibility analysis.",
         mattersFirst:
-          "Clarify what assumption is driving that statement and whether care-level and payor facts have all been verified.",
-        notToAssume: "Do not assume one staff statement is the final word on eligibility.",
+          "Ask what assumption is driving the conclusion and confirm that care-level, income, asset, and payor facts were all reviewed.",
+        notToAssume: "Do not assume one screening statement is the final answer on eligibility.",
         whenConversationHelps:
-          "Counsel can help test the assumptions and identify whether lawful options still exist.",
+          "Counsel can test the assumptions quickly and identify whether lawful options still remain.",
       },
       {
         title: "We are being pushed to apply for Medicaid immediately",
         whatItUsuallyMeans:
-          "The process may need to move quickly, but rushed applications without complete facts can create avoidable problems.",
+          "Timing may be important, but filing before authority and records are ready can create avoidable delays.",
         mattersFirst:
-          "Confirm authority to apply, identify missing records, and gather core financial and coverage information before filing.",
-        notToAssume: "Do not assume faster is always better if the application is incomplete or inaccurate.",
+          "Confirm who can apply, what records are still missing, and which care and coverage facts should be verified before filing.",
+        notToAssume: "Do not assume filing sooner helps if the application is incomplete or inaccurate.",
         whenConversationHelps:
-          "A focused conversation can help sequence document gathering, authority issues, and filing timing.",
+          "A focused conversation can sequence authority, records, and filing timing so the first submission is stronger.",
       },
       {
         title: "We are worried past gifts or transfers made it too late",
         whatItUsuallyMeans:
-          "Prior transfers do matter, but outcomes depend on timing, context, documentation, and the rest of the case facts.",
+          "Transfers matter, but outcomes depend on timing, documentation, and the full care and financial timeline.",
         mattersFirst:
-          "List what was transferred, when, and why, then evaluate it within the full care and financial timeline.",
-        notToAssume: "Do not assume a transfer issue means all remaining options are gone.",
+          "List what was transferred, when, to whom, and why, then evaluate those facts in sequence with current care and coverage needs.",
+        notToAssume: "Do not assume one transfer issue means every option is gone.",
         whenConversationHelps:
-          "Early legal analysis can clarify which risks are real and which steps may still improve the situation.",
+          "Early legal analysis can identify the real risks and any practical steps that may still improve the path forward.",
       },
     ],
   },
@@ -189,7 +180,8 @@ export default function DeeperPage({ params }: Props) {
                   <li>Is discharge or transfer actually happening, and when?</li>
                   <li>What is the current payor source, and when may it change?</li>
                   <li>Is a nursing facility, Medicaid bed, or Medicaid-pending placement being discussed?</li>
-                  <li>Who has legal authority to sign or decide?</li>
+                  <li>Who has legal authority to sign or decide, and in what role?</li>
+                  <li>What exactly is your family being asked to sign or commit to right now?</li>
                   <li>Has a Medicaid application already started?</li>
                   <li>Has any money or property already been moved?</li>
                 </ul>
