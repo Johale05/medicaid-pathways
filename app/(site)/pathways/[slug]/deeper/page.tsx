@@ -167,12 +167,13 @@ export default function DeeperPage({ params }: Props) {
             ) : isQualifyMedically ? (
               <>
                 <p>
-                  Families often ask this question after hearing a loved one may not qualify medically, even when the
-                  need for care feels obvious.
+                  Families often reach this question after hearing a loved one may not qualify medically, even when
+                  the day-to-day care need feels obvious.
                 </p>
                 <p>
-                  It can arise around dementia, medication-management concerns, safety risks, functional decline, or
-                  records that are too thin to show the full picture.
+                  It may arise around dementia, medication-management concerns, safety risks, functional decline, or
+                  records that are too thin to show the full picture. This page helps you sort whether the central
+                  issue is medical necessity, documentation, financial sequencing, or some combination.
                 </p>
               </>
             ) : (
@@ -192,8 +193,8 @@ export default function DeeperPage({ params }: Props) {
                   pathway.slug === "medicare-ending"
                     ? "A short overview for this pathway will be added here. It will explain common Medicare-ending conversations and what families may want to clarify first."
                     : pathway.slug === "qualify-medically"
-                      ? "A short video for this pathway is coming soon. It will explain how families can sort medical-necessity concerns, documentation gaps, and next-step sequencing before major decisions are made."
-                    : undefined
+                      ? "A short pathway overview is coming soon. It will walk through how families can separate medical-necessity concerns, documentation gaps, and financial timing questions before major decisions are made."
+                      : undefined
                 }
               />
             </PosterSection>
@@ -429,14 +430,14 @@ export default function DeeperPage({ params }: Props) {
                 <h2 className="font-display text-2xl font-semibold tracking-tight">Group 1: Understanding the standard</h2>
                 <PosterSection title="What does “qualify medically” usually mean?" className="pt-0">
                   <p>
-                    It usually means whether available records and evaluations show the person meets a formal care
+                    It usually means whether current records and evaluations show that the person meets a formal care
                     standard for the setting being discussed.
                   </p>
                 </PosterSection>
                 <PosterSection title="Why is needing help not always enough?" className="pt-0">
                   <p>
-                    Family burden and obvious day-to-day needs are real, but formal standards often focus on specific
-                    documented limitations and care requirements.
+                    Family burden and daily care strain are real. But formal standards usually focus on documented
+                    functional limits, clinical risk, and care needs tied to specific criteria.
                   </p>
                 </PosterSection>
                 <PosterSection
@@ -445,7 +446,8 @@ export default function DeeperPage({ params }: Props) {
                 >
                   <p>
                     Sometimes the issue is medical necessity. Sometimes it is primarily financial eligibility,
-                    admissions policy, or timing. Clarifying that early prevents expensive missteps.
+                    admissions policy, or timing. Sorting that distinction early helps families avoid expensive
+                    decisions in the wrong order.
                   </p>
                 </PosterSection>
               </div>
@@ -454,14 +456,14 @@ export default function DeeperPage({ params }: Props) {
                 <h2 className="font-display text-2xl font-semibold tracking-tight">Group 2: Common practical situations</h2>
                 <PosterSection title="They say he does not qualify medically" className="pt-0">
                   <p>
-                    Start by asking who said it, in what context, and whether this was an informal screening comment or
-                    a formal finding.
+                    Start by clarifying who said it, in what context, and whether it was an informal screening comment
+                    or a formal finding. Those are not the same thing.
                   </p>
                 </PosterSection>
                 <PosterSection title="He clearly needs help, so why is that not enough?" className="pt-0">
                   <p>
-                    The challenge is often how the need is documented, not whether the need exists. Records may need to
-                    connect the daily reality to the formal criteria.
+                    The problem is often how the need is documented, not whether the need exists. Records may need to
+                    connect daily realities to the formal criteria being applied.
                   </p>
                 </PosterSection>
                 <PosterSection title="What if dementia is part of the issue?" className="pt-0">
@@ -472,26 +474,26 @@ export default function DeeperPage({ params }: Props) {
                 </PosterSection>
                 <PosterSection title="What if medication management is part of the issue?" className="pt-0">
                   <p>
-                    Medication concerns are often important when they show ongoing risk, complexity, or nursing-related
-                    needs that cannot be safely managed without support.
+                    Medication concerns matter most when records show ongoing risk, complexity, or nursing-related
+                    needs that cannot be managed safely without support.
                   </p>
                 </PosterSection>
                 <PosterSection title="What if the records do not show enough?" className="pt-0">
                   <p>
-                    Thin documentation can make serious needs look less clear than they are. Updated evaluations and
-                    better-organized records can change how the situation is understood.
+                    Thin documentation can make serious needs look less clear than they are. Updated evaluations,
+                    clearer daily examples, and better-organized records can change how the situation is understood.
                   </p>
                 </PosterSection>
                 <PosterSection title="Who is saying we do not qualify medically?" className="pt-0">
                   <p>
                     A facility screener, treating clinician, case manager, or formal reviewer may each be answering a
-                    different question. The speaker and setting matter.
+                    different question. The role, setting, and process stage all matter.
                   </p>
                 </PosterSection>
                 <PosterSection title="Should we start financial planning before medical necessity is clear?" className="pt-0">
                   <p>
-                    Usually, families benefit from clarifying the medical side first so financial decisions are made in
-                    the right sequence.
+                    In most cases, families benefit from clarifying the medical side first so financial planning can be
+                    timed and sequenced with fewer avoidable mistakes.
                   </p>
                 </PosterSection>
               </div>
@@ -500,24 +502,25 @@ export default function DeeperPage({ params }: Props) {
                 <h2 className="font-display text-2xl font-semibold tracking-tight">Group 3: Process and next steps</h2>
                 <PosterSection title="Who decides whether the person qualifies medically?" className="pt-0">
                   <p>
-                    Decision-making can involve facility-level assessment, treating providers, managed-care review, or
-                    state-level standards depending on the care setting and payor pathway.
+                    Depending on the care setting and payor pathway, decision-making may involve facility assessment,
+                    treating providers, managed-care review, and state-level criteria. It is often a sequence, not a
+                    single yes-or-no moment.
                   </p>
                 </PosterSection>
                 <PosterSection title="What happens if medical necessity is denied?" className="pt-0">
                   <p>
-                    A denial often means the family needs to clarify the reason, identify what documentation is missing,
-                    and map practical next options before making major commitments.
+                    A denial usually means the family should clarify the exact reason, identify what documentation may
+                    be missing, and map practical next options before making major commitments.
                   </p>
                 </PosterSection>
               </div>
 
               <PosterSection title="Guardrails" className="pt-0">
                 <ul className="list-disc space-y-2 pl-6">
-                  <li>Do not assume financial planning should start before the medical side is clear.</li>
-                  <li>Do not assume one informal statement settles the issue.</li>
-                  <li>Do not assume the records tell the full story without review.</li>
-                  <li>Do not assume obvious family burden automatically answers the formal standard.</li>
+                  <li>Do not assume financial planning should begin before the medical side is clear.</li>
+                  <li>Do not treat one informal statement as a final determination.</li>
+                  <li>Do not assume current records tell the full story without careful review.</li>
+                  <li>Do not assume obvious family burden automatically satisfies a formal standard.</li>
                 </ul>
               </PosterSection>
 
@@ -527,15 +530,16 @@ export default function DeeperPage({ params }: Props) {
                   anxiety about Medicaid planning all at once.
                 </p>
                 <p>
-                  In that setting, the issue usually needs to be clarified carefully before major decisions are made.
+                  In that setting, calm sequencing matters: clarify what standard applies, strengthen the record where
+                  needed, and then make major decisions with better footing.
                 </p>
               </PosterSection>
 
               <PosterSection title="When Talking With Someone Helps" className="pt-0 mt-6">
                 <div className="space-y-6 pt-2">
                   <p>
-                    A conversation can help clarify whether the issue is medical necessity, documentation, financial
-                    sequencing, or some combination.
+                    A conversation can help your family clarify whether the issue is medical necessity,
+                    documentation, financial sequencing, or some combination — and what to address first.
                   </p>
                   <Link
                     href="/talk/"
