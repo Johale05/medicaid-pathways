@@ -129,7 +129,7 @@ const VIDEO_IDS: Record<string, string> = {
   "medicare-ending": "",
   "spend-everything": "dQw4w9WgXcQ",
   "too-much-income": "dQw4w9WgXcQ",
-  "qualify-medically": "dQw4w9WgXcQ",
+  "qualify-medically": "",
   "sell-the-house": "dQw4w9WgXcQ",
   "too-late": "dQw4w9WgXcQ",
 };
@@ -140,6 +140,7 @@ export default function DeeperPage({ params }: Props) {
 
   const backHref = `/pathways/${pathway.slug}/`;
   const isMedicareEnding = pathway.slug === "medicare-ending";
+  const isQualifyMedically = pathway.slug === "qualify-medically";
 
   return (
     <div className="py-14" style={{ backgroundColor: "#fffdfa" }}>
@@ -163,6 +164,17 @@ export default function DeeperPage({ params }: Props) {
                 <p>Families ask “what happens when Medicare ends?” at different points: before coverage changes, when a last covered day is mentioned, when discharge is being discussed, or when phrases like plateaued, not participating, or no longer skilled are used.</p>
                 <p>This page helps you sort what those conversations usually mean and what to clarify first.</p>
               </>
+            ) : isQualifyMedically ? (
+              <>
+                <p>
+                  Families often ask this question after hearing a loved one may not qualify medically, even when the
+                  need for care feels obvious.
+                </p>
+                <p>
+                  It can arise around dementia, medication-management concerns, safety risks, functional decline, or
+                  records that are too thin to show the full picture.
+                </p>
+              </>
             ) : (
               <>
                 <p>This page offers a deeper explanation of why this question is often complicated.</p>
@@ -179,6 +191,8 @@ export default function DeeperPage({ params }: Props) {
                 placeholderText={
                   pathway.slug === "medicare-ending"
                     ? "A short overview for this pathway will be added here. It will explain common Medicare-ending conversations and what families may want to clarify first."
+                    : pathway.slug === "qualify-medically"
+                      ? "A short video for this pathway is coming soon. It will explain how families can sort medical-necessity concerns, documentation gaps, and next-step sequencing before major decisions are made."
                     : undefined
                 }
               />
@@ -381,6 +395,148 @@ export default function DeeperPage({ params }: Props) {
               <PosterSection title="When Talking With Someone Helps" className="pt-0 mt-6">
                 <div className="space-y-6 pt-2">
                   <p>A conversation can help clarify whether the immediate issue is coverage, discharge, long-term care, payment, or some combination.</p>
+                  <Link
+                    href="/talk/"
+                    className="inline-flex items-center justify-center rounded-xl border px-6 py-3 no-underline"
+                    style={{
+                      backgroundColor: designTokens.colors.warmPaper,
+                      borderColor: designTokens.colors.subtleBorder,
+                      color: designTokens.colors.ink,
+                    }}
+                  >
+                    Talk With a Medicaid Planning Attorney
+                  </Link>
+                </div>
+              </PosterSection>
+            </div>
+          ) : isQualifyMedically ? (
+            <div className="mx-auto space-y-8">
+              <PosterSection title="What to Clarify First" className="pt-0">
+                <ul className="list-disc space-y-2 pl-6">
+                  <li>Is the concern financial eligibility, medical necessity, or both?</li>
+                  <li>Has anyone actually said the person does not qualify medically?</li>
+                  <li>Is this a facility concern, an early assessment issue, or a formal determination?</li>
+                  <li>What diagnoses and limitations are already documented?</li>
+                  <li>Do the records clearly show cognitive, medication, nursing, or safety-related needs?</li>
+                  <li>Has a recent physician, specialist, or facility evaluation been done?</li>
+                  <li>Is another eligibility problem being mixed into this question?</li>
+                  <li>Has there already been a denial or medical-necessity finding?</li>
+                  <li>Are financial strategies being considered before the medical side is clear?</li>
+                </ul>
+              </PosterSection>
+
+              <div className="space-y-4">
+                <h2 className="font-display text-2xl font-semibold tracking-tight">Group 1: Understanding the standard</h2>
+                <PosterSection title="What does “qualify medically” usually mean?" className="pt-0">
+                  <p>
+                    It usually means whether available records and evaluations show the person meets a formal care
+                    standard for the setting being discussed.
+                  </p>
+                </PosterSection>
+                <PosterSection title="Why is needing help not always enough?" className="pt-0">
+                  <p>
+                    Family burden and obvious day-to-day needs are real, but formal standards often focus on specific
+                    documented limitations and care requirements.
+                  </p>
+                </PosterSection>
+                <PosterSection
+                  title="Is this really a medical-necessity issue, or is a different eligibility problem being confused with it?"
+                  className="pt-0"
+                >
+                  <p>
+                    Sometimes the issue is medical necessity. Sometimes it is primarily financial eligibility,
+                    admissions policy, or timing. Clarifying that early prevents expensive missteps.
+                  </p>
+                </PosterSection>
+              </div>
+
+              <div className="space-y-4">
+                <h2 className="font-display text-2xl font-semibold tracking-tight">Group 2: Common practical situations</h2>
+                <PosterSection title="They say he does not qualify medically" className="pt-0">
+                  <p>
+                    Start by asking who said it, in what context, and whether this was an informal screening comment or
+                    a formal finding.
+                  </p>
+                </PosterSection>
+                <PosterSection title="He clearly needs help, so why is that not enough?" className="pt-0">
+                  <p>
+                    The challenge is often how the need is documented, not whether the need exists. Records may need to
+                    connect the daily reality to the formal criteria.
+                  </p>
+                </PosterSection>
+                <PosterSection title="What if dementia is part of the issue?" className="pt-0">
+                  <p>
+                    Dementia can drive real supervision and safety needs, but records should clearly describe how
+                    cognition affects day-to-day functioning and risk.
+                  </p>
+                </PosterSection>
+                <PosterSection title="What if medication management is part of the issue?" className="pt-0">
+                  <p>
+                    Medication concerns are often important when they show ongoing risk, complexity, or nursing-related
+                    needs that cannot be safely managed without support.
+                  </p>
+                </PosterSection>
+                <PosterSection title="What if the records do not show enough?" className="pt-0">
+                  <p>
+                    Thin documentation can make serious needs look less clear than they are. Updated evaluations and
+                    better-organized records can change how the situation is understood.
+                  </p>
+                </PosterSection>
+                <PosterSection title="Who is saying we do not qualify medically?" className="pt-0">
+                  <p>
+                    A facility screener, treating clinician, case manager, or formal reviewer may each be answering a
+                    different question. The speaker and setting matter.
+                  </p>
+                </PosterSection>
+                <PosterSection title="Should we start financial planning before medical necessity is clear?" className="pt-0">
+                  <p>
+                    Usually, families benefit from clarifying the medical side first so financial decisions are made in
+                    the right sequence.
+                  </p>
+                </PosterSection>
+              </div>
+
+              <div className="space-y-4">
+                <h2 className="font-display text-2xl font-semibold tracking-tight">Group 3: Process and next steps</h2>
+                <PosterSection title="Who decides whether the person qualifies medically?" className="pt-0">
+                  <p>
+                    Decision-making can involve facility-level assessment, treating providers, managed-care review, or
+                    state-level standards depending on the care setting and payor pathway.
+                  </p>
+                </PosterSection>
+                <PosterSection title="What happens if medical necessity is denied?" className="pt-0">
+                  <p>
+                    A denial often means the family needs to clarify the reason, identify what documentation is missing,
+                    and map practical next options before making major commitments.
+                  </p>
+                </PosterSection>
+              </div>
+
+              <PosterSection title="Guardrails" className="pt-0">
+                <ul className="list-disc space-y-2 pl-6">
+                  <li>Do not assume financial planning should start before the medical side is clear.</li>
+                  <li>Do not assume one informal statement settles the issue.</li>
+                  <li>Do not assume the records tell the full story without review.</li>
+                  <li>Do not assume obvious family burden automatically answers the formal standard.</li>
+                </ul>
+              </PosterSection>
+
+              <PosterSection title="Sorting a Difficult Medical-Eligibility Conversation" className="pt-0">
+                <p>
+                  Many families are balancing real care burden, unclear standards, incomplete documentation, and
+                  anxiety about Medicaid planning all at once.
+                </p>
+                <p>
+                  In that setting, the issue usually needs to be clarified carefully before major decisions are made.
+                </p>
+              </PosterSection>
+
+              <PosterSection title="When Talking With Someone Helps" className="pt-0 mt-6">
+                <div className="space-y-6 pt-2">
+                  <p>
+                    A conversation can help clarify whether the issue is medical necessity, documentation, financial
+                    sequencing, or some combination.
+                  </p>
                   <Link
                     href="/talk/"
                     className="inline-flex items-center justify-center rounded-xl border px-6 py-3 no-underline"
