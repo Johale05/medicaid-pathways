@@ -32,6 +32,7 @@ export default function PathwayPage({ params }: Props) {
   const isMedicareEnding = pathway.slug === "medicare-ending";
   const isQualifyMedically = pathway.slug === "qualify-medically";
   const isTooMuchIncome = pathway.slug === "too-much-income";
+  const isSpendEverything = pathway.slug === "spend-everything";
 
   const backgroundImage = PATHWAY_HERO_IMAGE_BY_SLUG[pathway.slug];
   const backgroundPositionDesktop = PATHWAY_HERO_POSITION_BY_SLUG[pathway.slug] ?? "center";
@@ -47,7 +48,17 @@ export default function PathwayPage({ params }: Props) {
         backgroundSizeDesktop={HOMEPAGE_HERO_SIZE_DESKTOP}
         backgroundSizeMobile={HOMEPAGE_HERO_SIZE_MOBILE}
       />
-      {!isQualifyMedically && !isTooMuchIncome && (
+      {isSpendEverything && (
+        <PosterSection className="pt-0">
+          <div className="space-y-3">
+            <p>Having substantial assets does not automatically put Medicaid planning out of reach. Families are often surprised by how much may still be protected when planning starts early and decisions are made carefully.</p>
+            <p>The real question is not whether everything must be lost. The better question is whether assets can be protected, repositioned, or converted lawfully with the right planning and timing.</p>
+            <p>Before you give money away, sell property, move funds, or rule yourself out too early, it helps to understand what options may actually be available.</p>
+          </div>
+        </PosterSection>
+      )}
+
+      {!isQualifyMedically && !isTooMuchIncome && !isSpendEverything && (
         <PosterSection
           title={
             pathway.slug === "too-late"
@@ -66,13 +77,13 @@ export default function PathwayPage({ params }: Props) {
         </PosterSection>
       )}
 
-      {pathway.slug !== "too-late" && !isQualifyMedically && !isTooMuchIncome && (
+      {pathway.slug !== "too-late" && !isQualifyMedically && !isTooMuchIncome && !isSpendEverything && (
         <PosterSection>
           <YouTubeEmbed videoId={VIDEO_IDS[pathway.slug]} title={pathway.title} />
         </PosterSection>
       )}
 
-      {!isQualifyMedically && !isTooMuchIncome && (
+      {!isQualifyMedically && !isTooMuchIncome && !isSpendEverything && (
         <PosterSection
           title={isMedicareEnding ? "What Medicare Rehab Coverage Usually Means" : "Why This Is Often Misunderstood"}
           className="pt-0"
@@ -85,7 +96,7 @@ export default function PathwayPage({ params }: Props) {
         </PosterSection>
       )}
 
-      {!isQualifyMedically && !isTooMuchIncome && (
+      {!isQualifyMedically && !isTooMuchIncome && !isSpendEverything && (
         <PosterSection title={isMedicareEnding ? "What Changes When Medicare Ends" : "What This Means for Your Family"} className={pathway.slug === "too-late" ? "pt-4 md:pt-6" : "pt-0"}>
         {pathway.slug === "too-late" && pathway.steps ? (
           <div className="space-y-10">
@@ -410,24 +421,81 @@ export default function PathwayPage({ params }: Props) {
         </PosterSection>
       )}
 
-      {pathway.slug === "spend-everything" && (
-        <PosterSection>
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="font-display text-2xl font-semibold tracking-tight md:text-3xl">
-              You don’t have to spend everything.
-            </h2>
-            <p className="mt-4 text-lg leading-relaxed">
-              Medicaid planning is rarely as simple as it sounds online. The right strategy depends on timing, assets,
-              income, and family goals.
-            </p>
-          </div>
-        </PosterSection>
+      {isSpendEverything && (
+        <>
+          <PosterSection title="Why “spend everything” is often the wrong framework" className="pt-0">
+            <div className="space-y-3">
+              <p>Families often hear phrases like “you have to spend everything down” or “they will not qualify until it is all gone.”</p>
+              <p>That is too simplistic.</p>
+              <p>The issue is often not whether all value must disappear. The issue is whether an asset is being viewed in its current form, whether it is counted the same way as other assets, and whether lawful planning may improve the situation before applying.</p>
+              <p>That is why families who assume they must simply drain accounts, sell assets, or start giving things away can make costly mistakes.</p>
+            </div>
+          </PosterSection>
+
+          <PosterSection title="Families should not rule themselves out too early" className="pt-0">
+            <div className="space-y-3">
+              <p>Many families assume that meaningful savings, land, investment accounts, or other substantial assets automatically make Medicaid planning impossible.</p>
+              <p>That is often not true.</p>
+              <p>Good planning is often about understanding what can be preserved, what may need to be repositioned, and what steps may help avoid unnecessary loss. Some assets may already be treated more favorably than a family expects. In other situations, the way an asset is held, used, or prioritized may matter a great deal.</p>
+              <p>The earlier a family gets clear advice, the more likely it is that avoidable loss can be prevented.</p>
+            </div>
+          </PosterSection>
+
+          <PosterSection title="Preserving value is not always the same as losing value" className="pt-0">
+            <div className="space-y-3">
+              <p>One reason families get confused is that they hear the phrase “spend down” and assume that means money must simply vanish.</p>
+              <p>That is not always what happens.</p>
+              <p>Sometimes a resource may need to be changed in form rather than lost altogether. For example, if someone has excess cash but still needs an irrevocable prepaid funeral plan, using funds for that purpose does not simply mean the value disappeared. It may mean the asset was redirected into something the person legitimately needed and the rules may treat differently.</p>
+              <p>That does not mean a family should start making moves without advice. It does mean that “losing everything” is often not an accurate way to think about the process.</p>
+            </div>
+          </PosterSection>
+
+          <PosterSection title="Where families can accidentally lose options" className="pt-0">
+            <div className="space-y-5">
+              <p>Families often get into trouble when they act too quickly or rely on incomplete advice.</p>
+              <ul className="list-disc space-y-2 pl-6">
+                <li>giving money away without understanding the consequences</li>
+                <li>moving assets based on informal advice</li>
+                <li>selling or cashing out assets too quickly</li>
+                <li>assuming all assets are treated the same way</li>
+                <li>waiting until after avoidable decisions have already been made</li>
+              </ul>
+              <p>By the time a family realizes the rules are more complicated than they thought, some of their best options may already have narrowed.</p>
+            </div>
+          </PosterSection>
+
+          <PosterSection title="Timing matters before financial moves are made" className="pt-0">
+            <div className="space-y-5">
+              <p>Earlier planning often creates more room to protect what matters and avoid unnecessary mistakes.</p>
+              <p>That is especially true before a family starts:</p>
+              <ul className="list-disc space-y-2 pl-6">
+                <li>giving assets away</li>
+                <li>retitling property</li>
+                <li>cashing out accounts</li>
+                <li>making major financial decisions based on assumptions instead of guidance</li>
+              </ul>
+              <p>Even when things feel urgent, it is usually better to pause before making financial moves and get clear advice first.</p>
+            </div>
+          </PosterSection>
+
+          <PosterSection title="See how this works in real situations" className="pt-0">
+            <div className="space-y-5">
+              <p>Many families do not need a long legal explanation first. They need help understanding why the phrase “spend everything” is often misleading and what the process may actually look like.</p>
+              <p>Our next page explains what “spend down” often means in practical terms, why losing value is not always the same as repositioning value, and why timing matters so much.</p>
+              <Layer2LinkBlock
+                href={`/pathways/${pathway.slug}/deeper/`}
+                supportingLine={pathway.supportingLine}
+                linkText="Read: What “Spend Down” Really Means"
+              />
+            </div>
+          </PosterSection>
+        </>
       )}
 
       <PosterSection
         title={
-          pathway.slug === "spend-everything"
-            ? "Before You Make a Financial Decision"
+          isSpendEverything
+            ? "Talk With a Medicaid Planning Attorney"
             : pathway.slug === "sell-the-house"
               ? "Before You Sell or Transfer the House"
               : pathway.slug === "too-much-income"
@@ -493,8 +561,8 @@ export default function PathwayPage({ params }: Props) {
         ) : (
           <div className="space-y-5">
             <p>
-              {pathway.slug === "spend-everything"
-                ? "Decisions about spending down assets can have long-term consequences. A brief conversation can clarify your options and help you avoid steps that limit flexibility later."
+              {isSpendEverything
+                ? "Before giving assets away, moving money, selling property, or making major financial decisions, it helps to understand what options may be available under the law."
                 : pathway.slug === "sell-the-house"
                   ? "Selling or transferring property can permanently affect Medicaid eligibility and family finances. A short conversation can help you understand your options before taking steps that may limit flexibility later."
                   : pathway.slug === "too-much-income"
@@ -505,6 +573,9 @@ export default function PathwayPage({ params }: Props) {
                       ? "A short conversation can help your family sort whether the issue is medical necessity, documentation, financial sequencing, or a combination — and what to clarify first."
                   : pathway.when}
             </p>
+            {isSpendEverything && (
+              <p>The Hale Law Firm helps families evaluate Medicaid planning options based on their actual facts, timing, and family situation.</p>
+            )}
             <Link
               href="/talk/"
               className="inline-flex items-center justify-center rounded-xl border px-6 py-3 no-underline"
@@ -516,19 +587,21 @@ export default function PathwayPage({ params }: Props) {
             >
               Talk With a Medicaid Planning Attorney
             </Link>
-            <Layer2LinkBlock
-              href={`/pathways/${pathway.slug}/deeper/`}
-              supportingLine={pathway.supportingLine}
-              linkText={
-                pathway.slug === "medicare-ending"
-                  ? "Choose the question that sounds closest to what your family is hearing now"
-                  : pathway.slug === "qualify-medically"
-                    ? "Choose the question that sounds closest to what your family is hearing now, then review the deeper guidance"
-                    : pathway.slug === "too-much-income"
-                      ? "Choose the question that sounds closest to what you are hearing now"
-                      : undefined
-              }
-            />
+            {!isSpendEverything && (
+              <Layer2LinkBlock
+                href={`/pathways/${pathway.slug}/deeper/`}
+                supportingLine={pathway.supportingLine}
+                linkText={
+                  pathway.slug === "medicare-ending"
+                    ? "Choose the question that sounds closest to what your family is hearing now"
+                    : pathway.slug === "qualify-medically"
+                      ? "Choose the question that sounds closest to what your family is hearing now, then review the deeper guidance"
+                      : pathway.slug === "too-much-income"
+                        ? "Choose the question that sounds closest to what you are hearing now"
+                        : undefined
+                }
+              />
+            )}
           </div>
         )}
       </PosterSection>
