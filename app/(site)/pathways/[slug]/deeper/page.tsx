@@ -127,7 +127,7 @@ const TOO_LATE_SCENARIO_GROUPS: { heading: string; scenarios: TooLateScenario[] 
 
 const VIDEO_IDS: Record<string, string> = {
   "medicare-ending": "",
-  "spend-everything": "dQw4w9WgXcQ",
+  "spend-everything": "",
   "too-much-income": "",
   "qualify-medically": "",
   "sell-the-house": "dQw4w9WgXcQ",
