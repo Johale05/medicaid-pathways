@@ -197,7 +197,7 @@ export default function DeeperPage({ params }: Props) {
             )}
           </header>
 
-          {pathway.slug !== "too-late" && !isSpendEverything && (
+          {pathway.slug !== "too-late" && (
             <PosterSection>
               <YouTubeEmbed
                 videoId={VIDEO_IDS[pathway.slug]}
@@ -328,10 +328,10 @@ export default function DeeperPage({ params }: Props) {
 
               <PosterSection title="Why some families have more options than they think" className="pt-0">
                 <div className="space-y-5">
-                  <p>Many families assume that having savings, land, investment accounts, or other substantial assets means Medicaid planning is impossible.</p>
-                  <p>That is often not true.</p>
-                  <p>Some assets may already be treated more favorably than a family expects. Some situations depend heavily on how assets are owned or who is involved. In some cases, planning must account for a spouse at home. In others, the issue is not only assets, but income too. Sometimes the most important work involves correcting a misunderstanding before the family makes an avoidable mistake.</p>
-                  <p>That is why families should be careful not to rule themselves out too early.</p>
+                  <p>Families often reach this page after already hearing that Medicaid planning may not be worth exploring because the asset picture looks too large at first glance.</p>
+                  <p>That is often not the right takeaway.</p>
+                  <p>What matters here is spotting the facts that change the analysis: how assets are owned, whether a spouse is involved, whether income is part of the problem too, and whether earlier transfers or sales are already part of the picture.</p>
+                  <p>That is why a deeper review starts with the fact pattern, not with a blanket assumption that there are no options.</p>
                 </div>
               </PosterSection>
 

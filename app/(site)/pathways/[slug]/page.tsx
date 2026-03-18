@@ -49,13 +49,19 @@ export default function PathwayPage({ params }: Props) {
         backgroundSizeMobile={HOMEPAGE_HERO_SIZE_MOBILE}
       />
       {isSpendEverything && (
-        <PosterSection className="pt-0">
-          <div className="space-y-3">
-            <p>Having substantial assets does not automatically put Medicaid planning out of reach. Families are often surprised by how much may still be protected when planning starts early and decisions are made carefully.</p>
-            <p>The real question is not whether everything must be lost. The better question is whether assets can be protected, repositioned, or converted lawfully with the right planning and timing.</p>
-            <p>Before you give money away, sell property, move funds, or rule yourself out too early, it helps to understand what options may actually be available.</p>
-          </div>
-        </PosterSection>
+        <>
+          <PosterSection className="pt-0">
+            <div className="space-y-3">
+              <p>Having substantial assets does not automatically put Medicaid planning out of reach. Families are often surprised by how much may still be protected when planning starts early and decisions are made carefully.</p>
+              <p>The real question is not whether everything must be lost. The better question is whether assets can be protected, repositioned, or converted lawfully with the right planning and timing.</p>
+              <p>Before you give money away, sell property, move funds, or rule yourself out too early, it helps to understand what options may actually be available.</p>
+            </div>
+          </PosterSection>
+
+          <PosterSection>
+            <YouTubeEmbed videoId={VIDEO_IDS[pathway.slug]} title={pathway.title} />
+          </PosterSection>
+        </>
       )}
 
       {!isQualifyMedically && !isTooMuchIncome && !isSpendEverything && (
