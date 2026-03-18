@@ -142,13 +142,14 @@ export default function DeeperPage({ params }: Props) {
   const isMedicareEnding = pathway.slug === "medicare-ending";
   const isQualifyMedically = pathway.slug === "qualify-medically";
   const isTooMuchIncome = pathway.slug === "too-much-income";
+  const isSpendEverything = pathway.slug === "spend-everything";
 
   return (
     <div className="py-14" style={{ backgroundColor: "#fffdfa" }}>
       <Container>
         <div className="mx-auto space-y-10" style={{ maxWidth: designTokens.maxReadingWidth }}>
           <header className="space-y-2">
-            <h1 className="font-display text-4xl font-semibold tracking-tight leading-snug">{pathway.title}</h1>
+            <h1 className="font-display text-4xl font-semibold tracking-tight leading-snug">{isSpendEverything ? "What “Spend Down” Really Means" : pathway.title}</h1>
             {pathway.slug === "too-late" ? (
               <>
                 <p>
@@ -177,6 +178,12 @@ export default function DeeperPage({ params }: Props) {
                   issue is medical necessity, documentation, financial sequencing, or some combination.
                 </p>
               </>
+            ) : isSpendEverything ? (
+              <>
+                <p>“Spend down” is a phrase families hear all the time, but it often leaves out the part that matters most.</p>
+                <p>When a family hears “you have to spend everything,” they may assume there is no point asking questions, no point planning, and no real way to protect what matters. That is often where avoidable mistakes begin.</p>
+                <p>The better question is not simply whether assets must be spent. The better question is what assets exist, how they are owned, who is involved, what timing issues exist, and what planning options may still be available.</p>
+              </>
             ) : isTooMuchIncome ? (
               <>
                 <p>Families ask this question when someone says the monthly income is over the limit, a trust is mentioned, the real concern is how much must be paid to the facility each month, or there is a spouse at home and no one is sure whose income is being counted.</p>
@@ -190,7 +197,7 @@ export default function DeeperPage({ params }: Props) {
             )}
           </header>
 
-          {pathway.slug !== "too-late" && (
+          {pathway.slug !== "too-late" && !isSpendEverything && (
             <PosterSection>
               <YouTubeEmbed
                 videoId={VIDEO_IDS[pathway.slug]}
@@ -282,6 +289,91 @@ export default function DeeperPage({ params }: Props) {
                     If you’re hearing any of the situations above, a short conversation can help sort what is urgent,
                     what is not, and what coordinated next steps make sense.
                   </p>
+                  <Link
+                    href="/talk/"
+                    className="inline-flex items-center justify-center rounded-xl border px-6 py-3 no-underline"
+                    style={{
+                      backgroundColor: designTokens.colors.warmPaper,
+                      borderColor: designTokens.colors.subtleBorder,
+                      color: designTokens.colors.ink,
+                    }}
+                  >
+                    Talk With a Medicaid Planning Attorney
+                  </Link>
+                </div>
+              </PosterSection>
+            </div>
+          ) : isSpendEverything ? (
+            <div className="mx-auto space-y-8">
+              <PosterSection title="What a Medicaid planning conversation is actually looking at" className="pt-0">
+                <div className="space-y-5">
+                  <p>When a family asks whether they have to spend everything, the answer usually depends on more than the total amount of money or property involved.</p>
+                  <div className="space-y-4">
+                    <p>A real planning conversation may look at questions like:</p>
+                    <ul className="list-disc space-y-2 pl-6">
+                      <li>What assets are involved?</li>
+                      <li>How are those assets owned?</li>
+                      <li>Is the person married?</li>
+                      <li>Is a spouse still living at home?</li>
+                      <li>Have any assets already been transferred, gifted, or sold?</li>
+                      <li>Is the issue only assets, or income too?</li>
+                      <li>Has the person already entered a facility?</li>
+                      <li>How urgent is the situation?</li>
+                      <li>Are legal documents already in place?</li>
+                    </ul>
+                  </div>
+                  <p>That is why two families can seem similar from the outside and still have very different planning options.</p>
+                </div>
+              </PosterSection>
+
+              <PosterSection title="Why some families have more options than they think" className="pt-0">
+                <div className="space-y-5">
+                  <p>Many families assume that having savings, land, investment accounts, or other substantial assets means Medicaid planning is impossible.</p>
+                  <p>That is often not true.</p>
+                  <p>Some assets may already be treated more favorably than a family expects. Some situations depend heavily on how assets are owned or who is involved. In some cases, planning must account for a spouse at home. In others, the issue is not only assets, but income too. Sometimes the most important work involves correcting a misunderstanding before the family makes an avoidable mistake.</p>
+                  <p>That is why families should be careful not to rule themselves out too early.</p>
+                </div>
+              </PosterSection>
+
+              <PosterSection title="Why the details change the answer" className="pt-0">
+                <div className="space-y-5">
+                  <p>This is one reason the phrase “spend down” can be so misleading.</p>
+                  <p>It makes the situation sound like every family faces the same simple choice: spend assets until they are gone, then apply.</p>
+                  <p>In reality, the answer may change depending on the type of asset, the family structure, what has already been done, and how soon care is needed. Even when two families have similar amounts, the legal and practical options may look very different.</p>
+                  <p>For example, if someone has excess cash but still needs an irrevocable prepaid funeral plan, using funds for that purpose does not simply mean the money was wasted or lost. It may mean the asset was shifted into a different form that serves a real need and may be treated differently under the rules.</p>
+                  <p>That does not mean families should start making decisions on their own. It means the right answer usually depends on facts, not assumptions.</p>
+                </div>
+              </PosterSection>
+
+              <PosterSection title="Why the wrong move can shrink options" className="pt-0">
+                <div className="space-y-5">
+                  <p>Families often get into trouble when they act before the facts are reviewed carefully.</p>
+                  <div className="space-y-4">
+                    <p>That may include:</p>
+                    <ul className="list-disc space-y-2 pl-6">
+                      <li>giving money away too early</li>
+                      <li>retitling assets without advice</li>
+                      <li>selling or cashing out property too quickly</li>
+                      <li>assuming all assets are treated the same way</li>
+                      <li>relying on a solution that helped someone else in a different situation</li>
+                    </ul>
+                  </div>
+                  <p>A step that seems sensible in one case may create problems in another. That is why families should be careful about making major financial moves before they understand how the rules apply to them.</p>
+                </div>
+              </PosterSection>
+
+              <PosterSection title="How to get a clearer answer for your family" className="pt-0">
+                <div className="space-y-5">
+                  <p>The most helpful next step is usually not guessing. It is getting a fact-based answer.</p>
+                  <p>That means looking at the actual assets, how they are owned, whether a spouse is involved, whether care has already started, whether income is part of the problem, and what decisions have already been made.</p>
+                  <p>A family does not need to understand every rule before reaching out. They need to understand enough to avoid unnecessary mistakes and get clear guidance before options narrow.</p>
+                </div>
+              </PosterSection>
+
+              <PosterSection title="Talk With a Medicaid Planning Attorney" className="pt-0 mt-6">
+                <div className="space-y-6 pt-2">
+                  <p>Before giving money away, transferring property, selling assets, or making major financial decisions, it helps to get a clear picture of what options may still be available.</p>
+                  <p>The Hale Law Firm helps families understand Medicaid planning options based on the real facts of their case, so they can avoid unnecessary loss and make informed decisions at the right time.</p>
                   <Link
                     href="/talk/"
                     className="inline-flex items-center justify-center rounded-xl border px-6 py-3 no-underline"
