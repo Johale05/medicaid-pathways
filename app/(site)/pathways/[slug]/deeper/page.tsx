@@ -128,7 +128,7 @@ const TOO_LATE_SCENARIO_GROUPS: { heading: string; scenarios: TooLateScenario[] 
 const VIDEO_IDS: Record<string, string> = {
   "medicare-ending": "",
   "spend-everything": "dQw4w9WgXcQ",
-  "too-much-income": "dQw4w9WgXcQ",
+  "too-much-income": "",
   "qualify-medically": "",
   "sell-the-house": "dQw4w9WgXcQ",
   "too-late": "dQw4w9WgXcQ",
@@ -141,6 +141,7 @@ export default function DeeperPage({ params }: Props) {
   const backHref = `/pathways/${pathway.slug}/`;
   const isMedicareEnding = pathway.slug === "medicare-ending";
   const isQualifyMedically = pathway.slug === "qualify-medically";
+  const isTooMuchIncome = pathway.slug === "too-much-income";
 
   return (
     <div className="py-14" style={{ backgroundColor: "#fffdfa" }}>
@@ -176,6 +177,11 @@ export default function DeeperPage({ params }: Props) {
                   issue is medical necessity, documentation, financial sequencing, or some combination.
                 </p>
               </>
+            ) : isTooMuchIncome ? (
+              <>
+                <p>Families ask this question when someone says the monthly income is over the limit, a trust is mentioned, the real concern is how much must be paid to the facility each month, or there is a spouse at home and no one is sure whose income is being counted.</p>
+                <p>This page helps you separate eligibility, Qualified Income Trust questions, spouse income allocation or diversion, and monthly Medicaid copayment before you assume the answer is no.</p>
+              </>
             ) : (
               <>
                 <p>This page offers a deeper explanation of why this question is often complicated.</p>
@@ -194,7 +200,9 @@ export default function DeeperPage({ params }: Props) {
                     ? "A short overview for this pathway will be added here. It will explain common Medicare-ending conversations and what families may want to clarify first."
                     : pathway.slug === "qualify-medically"
                       ? "A short pathway overview is coming soon. It will walk through how families can separate medical-necessity concerns, documentation gaps, and financial timing questions before major decisions are made."
-                      : undefined
+                      : pathway.slug === "too-much-income"
+                        ? "A short pathway overview is coming soon. It will explain what to clarify first when the issue may involve gross income, a Qualified Income Trust, spouse income allocation, or monthly Medicaid copayment."
+                        : undefined
                 }
               />
             </PosterSection>
@@ -396,6 +404,152 @@ export default function DeeperPage({ params }: Props) {
               <PosterSection title="When Talking With Someone Helps" className="pt-0 mt-6">
                 <div className="space-y-6 pt-2">
                   <p>A conversation can help clarify whether the immediate issue is coverage, discharge, long-term care, payment, or some combination.</p>
+                  <Link
+                    href="/talk/"
+                    className="inline-flex items-center justify-center rounded-xl border px-6 py-3 no-underline"
+                    style={{
+                      backgroundColor: designTokens.colors.warmPaper,
+                      borderColor: designTokens.colors.subtleBorder,
+                      color: designTokens.colors.ink,
+                    }}
+                  >
+                    Talk With a Medicaid Planning Attorney
+                  </Link>
+                </div>
+              </PosterSection>
+            </div>
+          ) : isTooMuchIncome ? (
+            <div className="mx-auto space-y-8">
+              <PosterSection title="What to Clarify First" className="pt-0">
+                <ul className="list-disc space-y-2 pl-6">
+                  <li>Is the concern about eligibility, monthly copayment, or both?</li>
+                  <li>What income sources are actually being counted?</li>
+                  <li>Is the number being discussed gross income or net income?</li>
+                  <li>Is the issue being confused with an asset problem?</li>
+                  <li>Has anyone said a Qualified Income Trust is needed?</li>
+                  <li>Is there a spouse at home?</li>
+                  <li>Is one spouse applying, or are both spouses applying?</li>
+                  <li>Is the facility talking about monthly copayment or about eligibility itself?</li>
+                  <li>Are the current Texas 2026 figures being used accurately?</li>
+                </ul>
+              </PosterSection>
+
+              <div className="space-y-4">
+                <h2 className="font-display text-2xl font-semibold tracking-tight">Group 1: Understanding the income issue</h2>
+                <PosterSection title="What does “too much income” usually mean?" className="pt-0">
+                  <div className="space-y-3">
+                    <p>It usually means someone believes the monthly income is over an applicable Medicaid income limit or is worried that the monthly payment toward care will be too high.</p>
+                    <p>Income limits matter, but “over income” is not always the end of the story. Sometimes the issue needs more careful review, including whether a Qualified Income Trust may be part of the answer.</p>
+                  </div>
+                </PosterSection>
+                <PosterSection title="Is income different from assets for Medicaid?" className="pt-0">
+                  <div className="space-y-3">
+                    <p>Yes. Income and assets are separate Medicaid questions, even though families often blend them together.</p>
+                    <p>A monthly income issue is different from an asset-limit problem, a spend-down issue, or a transfer question.</p>
+                  </div>
+                </PosterSection>
+                <PosterSection title="Is Medicaid based on gross income or net income?" className="pt-0">
+                  <p>For this analysis, the focus is gross income, not the take-home number after deductions.</p>
+                </PosterSection>
+                <PosterSection title="What counts as income and what does not?" className="pt-0">
+                  <div className="space-y-3">
+                    <p>Not every money-related item is treated the same way, which is one reason families should be careful before relying on a quick verbal answer.</p>
+                    <p>Required minimum distributions can count as income. Rent can count as income. Interest and dividend income are treated differently, so the source and character of the money still matter.</p>
+                  </div>
+                </PosterSection>
+                <PosterSection title="What is the 2026 income limit?" className="pt-0">
+                  <div className="space-y-3">
+                    <p>For Texas in 2026, the gross monthly income limit is <span className="font-medium">$2,982 for one applicant</span> and <span className="font-medium">$5,964 combined if both spouses are applying</span>.</p>
+                    <p>These figures can change over time, and being over the number does not always end the case.</p>
+                  </div>
+                </PosterSection>
+                <PosterSection title="What is a Qualified Income Trust?" className="pt-0">
+                  <div className="space-y-3">
+                    <p>A Qualified Income Trust is often the legal response to an over-income problem when the person is otherwise a Medicaid candidate.</p>
+                    <p>It becomes relevant when the issue is that counted gross income is above the cap. It does not solve every other Medicaid issue by itself, and it should not be treated casually.</p>
+                  </div>
+                </PosterSection>
+              </div>
+
+              <div className="space-y-4">
+                <h2 className="font-display text-2xl font-semibold tracking-tight">Group 2: Practical family questions</h2>
+                <PosterSection title="If we are over income, does that automatically mean Medicaid is impossible?" className="pt-0">
+                  <p>No, not automatically. Sometimes the issue points to a Qualified Income Trust problem or to another income-analysis question that still needs to be clarified.</p>
+                </PosterSection>
+                <PosterSection title="How much income can the Medicaid recipient keep?" className="pt-0">
+                  <div className="space-y-3">
+                    <p>The Medicaid recipient does not usually keep all income. The monthly copayment analysis often allows a personal-needs allowance and other permitted deductions.</p>
+                    <p>For Texas in 2026, the personal-needs allowance is <span className="font-medium">$75 per month</span>.</p>
+                  </div>
+                </PosterSection>
+                <PosterSection title="If there is a spouse at home, whose income is counted?" className="pt-0">
+                  <div className="space-y-3">
+                    <p>Medicaid generally follows the name-on-the-check rule in deciding whose income it is.</p>
+                    <p>Families often assume all spousal income is automatically pooled for this part of the analysis, but that is not how it usually works.</p>
+                  </div>
+                </PosterSection>
+                <PosterSection title="Can income be diverted to the spouse at home?" className="pt-0">
+                  <div className="space-y-3">
+                    <p>Yes, in some cases. If the community spouse does not already have enough gross income to reach the monthly needs allowance, some of the institutionalized spouse’s income may be diverted to her.</p>
+                    <p>For Texas in 2026, that spousal monthly needs allowance is <span className="font-medium">$4,066.50 per month</span>, and diversion can reduce the Medicaid copayment dollar-for-dollar.</p>
+                  </div>
+                </PosterSection>
+                <PosterSection title="What is the Medicaid copayment / applied income?" className="pt-0">
+                  <p>It is the amount generally paid toward care each month after permitted deductions and allowances are applied. That question is separate from whether the person qualifies in the first place.</p>
+                </PosterSection>
+                <PosterSection title="How is the Medicaid copayment calculated?" className="pt-0">
+                  <p>At a high level, the analysis starts with counted gross income, applies allowable deductions and retained amounts, and what remains is generally owed toward care.</p>
+                </PosterSection>
+                <PosterSection title="Can the Medicaid copayment be reduced?" className="pt-0">
+                  <p>In some cases, yes. Health-insurance premiums, the personal-needs allowance, and diversion to a spouse at home may affect the result.</p>
+                </PosterSection>
+                <PosterSection title="Can the Medicaid copayment increase?" className="pt-0">
+                  <p>Yes. It can increase if income changes or if deductions and allowances change.</p>
+                </PosterSection>
+                <PosterSection title="If the facility says the income is too high, is that final?" className="pt-0">
+                  <div className="space-y-3">
+                    <p>A facility comment may be practical and experience-based, but it is not always the final legal answer.</p>
+                    <p>The issue may still require review of income type, Qualified Income Trust needs, income allocation between spouses, and monthly copayment questions.</p>
+                  </div>
+                </PosterSection>
+              </div>
+
+              <div className="space-y-4">
+                <h2 className="font-display text-2xl font-semibold tracking-tight">Group 3: Process and next steps</h2>
+                <PosterSection title="Do we need the Qualified Income Trust before applying?" className="pt-0">
+                  <div className="space-y-3">
+                    <p>Timing matters. If a Qualified Income Trust is needed, that issue should be clarified early rather than treated as an afterthought.</p>
+                    <p>Families should not treat trust setup casually, because the details matter.</p>
+                  </div>
+                </PosterSection>
+                <PosterSection title="What income problem should we clarify first?" className="pt-0">
+                  <p>First separate eligibility from monthly copayment. Then separate income from assets. Then identify whether a Qualified Income Trust, income diversion, or confusion about counted income is really driving the concern.</p>
+                </PosterSection>
+                <PosterSection title="When does income diversion to the spouse at home matter most?" className="pt-0">
+                  <p>It matters most when the institutionalized spouse’s income and the spouse’s needs at home both affect the picture. In those cases, diversion can change both the monthly copayment and the broader planning analysis.</p>
+                </PosterSection>
+              </div>
+
+              <PosterSection title="Guardrails" className="pt-0">
+                <ul className="list-disc space-y-2 pl-6">
+                  <li>Do not assume “over income” means no options exist.</li>
+                  <li>Do not confuse income and asset issues.</li>
+                  <li>Do not assume net income is the right number.</li>
+                  <li>Do not assume eligibility and monthly copayment are the same question.</li>
+                  <li>Do not ignore income-diversion issues if a spouse is still living at home.</li>
+                </ul>
+              </PosterSection>
+
+              <PosterSection title="Closing synthesis" className="pt-0">
+                <div className="space-y-3">
+                  <p>Families are often dealing with income limits, trust questions, support for a spouse at home, and monthly copayment concerns all at once.</p>
+                  <p>Not every rule has to be solved in one moment. Usually the real progress comes from separating the issue into the right questions before anyone concludes the family is out of options.</p>
+                </div>
+              </PosterSection>
+
+              <PosterSection title="When Talking With Someone Helps" className="pt-0 mt-6">
+                <div className="space-y-6 pt-2">
+                  <p>A conversation can help clarify what counts as income, whether the issue is eligibility or monthly copayment, whether a Qualified Income Trust may be needed, and whether income can be diverted to support a spouse at home and reduce the copayment.</p>
                   <Link
                     href="/talk/"
                     className="inline-flex items-center justify-center rounded-xl border px-6 py-3 no-underline"

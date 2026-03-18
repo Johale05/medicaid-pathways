@@ -20,7 +20,7 @@ type Props = { params: { slug: string } };
 const VIDEO_IDS: Record<string, string> = {
   "medicare-ending": "",
   "spend-everything": "dQw4w9WgXcQ",
-  "too-much-income": "dQw4w9WgXcQ",
+  "too-much-income": "",
   "qualify-medically": "",
   "sell-the-house": "dQw4w9WgXcQ",
 };
@@ -31,6 +31,7 @@ export default function PathwayPage({ params }: Props) {
   const talkHelp = pathway;
   const isMedicareEnding = pathway.slug === "medicare-ending";
   const isQualifyMedically = pathway.slug === "qualify-medically";
+  const isTooMuchIncome = pathway.slug === "too-much-income";
 
   const backgroundImage = PATHWAY_HERO_IMAGE_BY_SLUG[pathway.slug];
   const backgroundPositionDesktop = PATHWAY_HERO_POSITION_BY_SLUG[pathway.slug] ?? "center";
@@ -46,7 +47,7 @@ export default function PathwayPage({ params }: Props) {
         backgroundSizeDesktop={HOMEPAGE_HERO_SIZE_DESKTOP}
         backgroundSizeMobile={HOMEPAGE_HERO_SIZE_MOBILE}
       />
-      {!isQualifyMedically && (
+      {!isQualifyMedically && !isTooMuchIncome && (
         <PosterSection
           title={
             pathway.slug === "too-late"
@@ -65,13 +66,13 @@ export default function PathwayPage({ params }: Props) {
         </PosterSection>
       )}
 
-      {pathway.slug !== "too-late" && !isQualifyMedically && (
+      {pathway.slug !== "too-late" && !isQualifyMedically && !isTooMuchIncome && (
         <PosterSection>
           <YouTubeEmbed videoId={VIDEO_IDS[pathway.slug]} title={pathway.title} />
         </PosterSection>
       )}
 
-      {!isQualifyMedically && (
+      {!isQualifyMedically && !isTooMuchIncome && (
         <PosterSection
           title={isMedicareEnding ? "What Medicare Rehab Coverage Usually Means" : "Why This Is Often Misunderstood"}
           className="pt-0"
@@ -84,7 +85,7 @@ export default function PathwayPage({ params }: Props) {
         </PosterSection>
       )}
 
-      {!isQualifyMedically && (
+      {!isQualifyMedically && !isTooMuchIncome && (
         <PosterSection title={isMedicareEnding ? "What Changes When Medicare Ends" : "What This Means for Your Family"} className={pathway.slug === "too-late" ? "pt-4 md:pt-6" : "pt-0"}>
         {pathway.slug === "too-late" && pathway.steps ? (
           <div className="space-y-10">
@@ -260,6 +261,105 @@ export default function PathwayPage({ params }: Props) {
         </>
       )}
 
+
+      {isTooMuchIncome && (
+        <>
+          <PosterSection title="Why Families Panic When They Hear “Too Much Income”" className="pt-0">
+            <div className="space-y-3">
+              <p>One comment about income often sounds final, especially when a family is already under pressure to sort out care and payment decisions.</p>
+              <p>Facilities may raise practical screening concerns based on experience, but families often hear those comments as permanent legal conclusions.</p>
+              <p>The real issue may involve gross income, a Qualified Income Trust, spouse-at-home income allocation or diversion, monthly copayment, or some combination of those questions.</p>
+            </div>
+          </PosterSection>
+
+          <PosterSection>
+            <YouTubeEmbed
+              videoId={VIDEO_IDS[pathway.slug]}
+              title={pathway.title}
+              placeholderText="A short pathway overview is coming soon. It will explain why over-income conversations often need calmer review of gross income, Qualified Income Trusts, spouse income allocation, and monthly Medicaid copayment."
+            />
+          </PosterSection>
+
+          <PosterSection title="Income Is Not the Same as Assets" className="pt-0">
+            <div className="space-y-3">
+              <p>Income and assets are different Medicaid questions, even though families understandably blend them together.</p>
+              <p>A monthly income issue is different from an asset-limit issue or a spend-down question, and the solution is not always the same.</p>
+            </div>
+          </PosterSection>
+
+          <PosterSection title="What “Too Much Income” Usually Means" className="pt-0">
+            <div className="space-y-3">
+              <p>Income limits are real, and Medicaid looks at gross income rather than net income.</p>
+              <p>For Texas in 2026, the gross monthly income limit is <span className="font-medium">$2,982 for one applicant</span> and <span className="font-medium">$5,964 combined if both spouses are applying</span>.</p>
+              <p>Being over those numbers does not always end the conversation. In some situations, a Qualified Income Trust becomes part of the answer.</p>
+            </div>
+          </PosterSection>
+
+          <PosterSection title="Why the Copayment Question Is Separate" className="pt-0">
+            <div className="space-y-3">
+              <p>Eligibility is one question. Monthly applied income, sometimes called the Medicaid copayment, is another.</p>
+              <p>A person may qualify and still owe most of their income toward care after permitted deductions and allowances are applied.</p>
+            </div>
+          </PosterSection>
+
+          <PosterSection title="When a Spouse at Home Changes the Income Picture" className="pt-0">
+            <div className="space-y-3">
+              <p>Medicaid generally follows the name-on-the-check rule to determine whose income is being counted.</p>
+              <p>If the spouse at home does not already have enough gross income to reach the Texas 2026 spousal monthly needs allowance of <span className="font-medium">$4,066.50 per month</span>, some of the institutionalized spouse’s income may be diverted to her.</p>
+              <p>That diversion can reduce the Medicaid copayment dollar-for-dollar, which is why the spouse-at-home question is often about both support and monthly payment.</p>
+            </div>
+          </PosterSection>
+
+          <PosterSection title="What This Means for Your Family" className="pt-0">
+            <div className="space-y-8">
+              <div className="space-y-3">
+                <h3>Step 1: Clarify what income issue is actually being raised</h3>
+                <ul className="list-disc space-y-2 pl-6">
+                  <li>Is the concern about eligibility, monthly copayment, or both?</li>
+                  <li>What income sources are being counted?</li>
+                  <li>Is one spouse applying, or are both spouses applying?</li>
+                  <li>Is the issue being confused with an asset problem?</li>
+                </ul>
+              </div>
+              <div className="space-y-3">
+                <h3>Step 2: Separate the income-limit question from the monthly-payment question</h3>
+                <ul className="list-disc space-y-2 pl-6">
+                  <li>Is the family actually over the income limit?</li>
+                  <li>Is a Qualified Income Trust relevant?</li>
+                  <li>Is the real concern the monthly copayment?</li>
+                  <li>If there is a spouse at home, does income diversion matter?</li>
+                </ul>
+              </div>
+              <div className="space-y-3">
+                <h3>Step 3: Avoid assuming one income figure settles the whole case</h3>
+                <ul className="list-disc space-y-2 pl-6">
+                  <li>One gross number does not always tell the whole story.</li>
+                  <li>Qualified Income Trusts, monthly copayment, and income diversion may all matter.</li>
+                  <li>Families should not panic based on one statement.</li>
+                </ul>
+              </div>
+            </div>
+          </PosterSection>
+
+          <PosterSection title="Common Questions About Income and Medicaid" className="pt-0">
+            <ul className="list-disc space-y-2 pl-6">
+              <li>What counts as income and what does not?</li>
+              <li>Is Medicaid based on gross income or net income?</li>
+              <li>What is the 2026 income limit?</li>
+              <li>What is a Qualified Income Trust?</li>
+              <li>If we are over income, does that mean Medicaid is impossible?</li>
+              <li>How much income can the Medicaid recipient keep?</li>
+              <li>If there is a spouse at home, whose income is counted?</li>
+              <li>Can income be diverted to the spouse at home?</li>
+              <li>How is the Medicaid copayment calculated?</li>
+              <li>Can the copayment be reduced?</li>
+              <li>Can it increase?</li>
+              <li>If the facility says income is too high, is that final?</li>
+            </ul>
+          </PosterSection>
+        </>
+      )}
+
       {isMedicareEnding && pathway.steps && (
         <PosterSection title="What This Means for Your Family" className="pt-0">
           <div className="space-y-8">
@@ -382,7 +482,9 @@ export default function PathwayPage({ params }: Props) {
                   linkText={
                     pathway.slug === "medicare-ending"
                       ? "Choose the question that sounds closest to what your family is hearing now"
-                      : undefined
+                      : pathway.slug === "too-much-income"
+                        ? "Choose the question that sounds closest to what you are hearing now"
+                        : undefined
                   }
                 />
               )}
@@ -396,7 +498,7 @@ export default function PathwayPage({ params }: Props) {
                 : pathway.slug === "sell-the-house"
                   ? "Selling or transferring property can permanently affect Medicaid eligibility and family finances. A short conversation can help you understand your options before taking steps that may limit flexibility later."
                   : pathway.slug === "too-much-income"
-                    ? "Income limits are often misunderstood. In many situations, there are lawful strategies that allow families to move forward even when income appears too high at first glance."
+                    ? "A conversation can help clarify what counts as income, whether the issue is eligibility or monthly copayment, whether a Qualified Income Trust may be needed, and whether income can be diverted to support a spouse at home and reduce the copayment."
                     : pathway.slug === "medicare-ending"
                       ? "A short conversation can help your family sort whether the immediate issue is coverage, discharge, long-term care, payment, or some combination — and what to clarify first before decisions feel rushed."
                     : pathway.slug === "qualify-medically"
@@ -422,7 +524,9 @@ export default function PathwayPage({ params }: Props) {
                   ? "Choose the question that sounds closest to what your family is hearing now"
                   : pathway.slug === "qualify-medically"
                     ? "Choose the question that sounds closest to what your family is hearing now, then review the deeper guidance"
-                  : undefined
+                    : pathway.slug === "too-much-income"
+                      ? "Choose the question that sounds closest to what you are hearing now"
+                      : undefined
               }
             />
           </div>
