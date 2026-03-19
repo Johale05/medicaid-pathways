@@ -611,28 +611,19 @@ export default function PathwayPage({ params }: Props) {
               >
                 Talk With a Medicaid Planning Attorney
               </Link>
-              {pathway.slug === "too-late" ? (
-                <div className="mt-10">
-                  <div>
-                    <Link href={`/pathways/${pathway.slug}/deeper/`} className="text-base font-medium hover:underline md:text-lg">
-                      Choose the scenario that sounds closest to your situation
-                    </Link>
-                  </div>
-                  <div className="mt-1 text-sm text-muted-foreground md:text-base">{pathway.supportingLine}</div>
-                </div>
-              ) : (
-                <Layer2LinkBlock
-                  href={`/pathways/${pathway.slug}/deeper/`}
-                  supportingLine={pathway.supportingLine}
-                  linkText={
-                    pathway.slug === "medicare-ending"
+              <Layer2LinkBlock
+                href={`/pathways/${pathway.slug}/deeper/`}
+                supportingLine={pathway.supportingLine}
+                linkText={
+                  pathway.slug === "too-late"
+                    ? "Choose the scenario that sounds closest to your situation"
+                    : pathway.slug === "medicare-ending"
                       ? "Choose the question that sounds closest to what your family is hearing now"
                       : pathway.slug === "too-much-income"
                         ? "Choose the question that sounds closest to what you are hearing now"
                         : undefined
-                  }
-                />
-              )}
+                }
+              />
             </div>
           </div>
         ) : (
