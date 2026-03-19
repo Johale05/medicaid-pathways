@@ -65,6 +65,15 @@ export default function PathwayPage({ params }: Props) {
         </>
       )}
 
+      {isHome && (
+        <PosterSection className="pt-0">
+          <div className="space-y-3">
+            <p>Families often hear one true sentence — that the home may be excluded — without hearing the harder part: whether the property actually qualifies, what happens if it does not, and what issues still matter even when it does.</p>
+            <p>That is why the home question is rarely answered just by hearing that a house is "exempt." The real analysis turns on what the property is, how it is being used, and what consequences may follow either way.</p>
+          </div>
+        </PosterSection>
+      )}
+
       {!isQualifyMedically && !isTooMuchIncome && !isSpendEverything && (
         <PosterSection
           title={
@@ -142,7 +151,7 @@ export default function PathwayPage({ params }: Props) {
               <p>Our next page explains why “the home” and “the house” are not always the same thing, what facts may change the answer, why MERP and property decisions still matter even when a property is treated favorably for eligibility, and why one move can solve one problem and create another.</p>
               <Layer2LinkBlock
                 href={`/pathways/${pathway.slug}/deeper/`}
-                supportingLine={pathway.supportingLine}
+                supportingLine="Open the deeper page for the full home-analysis framework."
                 linkText="Read: What Counts as the Home — and What Still Matters Next"
               />
             </div>
