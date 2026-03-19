@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Container from "./Container";
-import { allPathways } from "@/lib/pathways";
+import { orderedPathways } from "@/lib/pathways";
 
 export default function SiteHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -40,7 +40,7 @@ export default function SiteHeader() {
             <div className="relative group">
               <span className="cursor-default">Pathways</span>
               <div className="invisible absolute right-0 z-10 mt-2 w-72 rounded-2xl border border-[#d8ccb7] bg-[#fdf8f1] p-2 opacity-0 transition group-hover:visible group-hover:opacity-100">
-                {allPathways.map((p) => (
+                {orderedPathways.map((p) => (
                   <Link
                     key={p.slug}
                     href={`/pathways/${p.slug}/`}
@@ -91,7 +91,7 @@ export default function SiteHeader() {
           </button>
         </div>
         <div className="mt-5 space-y-2">
-          {allPathways.map((p) => (
+          {orderedPathways.map((p) => (
             <Link
               key={p.slug}
               href={`/pathways/${p.slug}/`}
