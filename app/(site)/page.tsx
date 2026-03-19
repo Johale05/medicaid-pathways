@@ -10,7 +10,7 @@ export default function HomePage() {
     "medicare-ending",
     "qualify-medically",
     "spend-everything",
-    "sell-the-house",
+    "home",
     "too-much-income",
     "too-late",
   ];
