@@ -130,6 +130,7 @@ const VIDEO_IDS: Record<string, string> = {
   "spend-everything": "",
   "too-much-income": "",
   "qualify-medically": "",
+  home: "",
   "sell-the-house": "dQw4w9WgXcQ",
   "too-late": "dQw4w9WgXcQ",
 };
@@ -143,13 +144,19 @@ export default function DeeperPage({ params }: Props) {
   const isQualifyMedically = pathway.slug === "qualify-medically";
   const isTooMuchIncome = pathway.slug === "too-much-income";
   const isSpendEverything = pathway.slug === "spend-everything";
+  const isHome = pathway.slug === "home";
+  const pageTitle = isSpendEverything
+    ? "What “Spend Down” Really Means"
+    : isHome
+      ? "What Counts as the Home — and What Still Matters Next"
+      : pathway.title;
 
   return (
     <div className="py-14" style={{ backgroundColor: "#fffdfa" }}>
       <Container>
         <div className="mx-auto space-y-10" style={{ maxWidth: designTokens.maxReadingWidth }}>
           <header className="space-y-2">
-            <h1 className="font-display text-4xl font-semibold tracking-tight leading-snug">{isSpendEverything ? "What “Spend Down” Really Means" : pathway.title}</h1>
+            <h1 className="font-display text-4xl font-semibold tracking-tight leading-snug">{pageTitle}</h1>
             {pathway.slug === "too-late" ? (
               <>
                 <p>
@@ -178,6 +185,13 @@ export default function DeeperPage({ params }: Props) {
                   issue is medical necessity, documentation, financial sequencing, or some combination.
                 </p>
               </>
+            ) : isHome ? (
+              <>
+                <p>Families often hear that the home is treated differently under Medicaid rules and feel some immediate relief.</p>
+                <p>But that is usually only the beginning of the real analysis.</p>
+                <p>The first question is not just whether there is a house. The first question is whether the property is actually being treated as the home for Medicaid purposes. The next question is what still needs to be decided even if it is.</p>
+                <p>That is why families can get into trouble when they hear one true sentence about the home and assume every property question has already been answered.</p>
+              </>
             ) : isSpendEverything ? (
               <>
                 <p>“Spend down” is a phrase families hear all the time, but it often leaves out the part that matters most.</p>
@@ -201,7 +215,7 @@ export default function DeeperPage({ params }: Props) {
             <PosterSection>
               <YouTubeEmbed
                 videoId={VIDEO_IDS[pathway.slug]}
-                title={pathway.title}
+                title={pageTitle}
                 placeholderText={
                   pathway.slug === "medicare-ending"
                     ? "A short overview for this pathway will be added here. It will explain common Medicare-ending conversations and what families may want to clarify first."
@@ -209,6 +223,8 @@ export default function DeeperPage({ params }: Props) {
                       ? "A short pathway overview is coming soon. It will walk through how families can separate medical-necessity concerns, documentation gaps, and financial timing questions before major decisions are made."
                       : pathway.slug === "too-much-income"
                         ? "A short pathway overview is coming soon. It will explain what to clarify first when the issue may involve gross income, a Qualified Income Trust, spouse income allocation, or monthly Medicaid copayment."
+                      : isHome
+                        ? "A short pathway overview is coming soon. It will explain what a real home analysis is reviewing, what still matters even if a property is treated as the home, and why title, transfer, occupancy, and record issues should be handled carefully."
                         : undefined
                 }
               />
@@ -289,6 +305,99 @@ export default function DeeperPage({ params }: Props) {
                     If you’re hearing any of the situations above, a short conversation can help sort what is urgent,
                     what is not, and what coordinated next steps make sense.
                   </p>
+                  <Link
+                    href="/talk/"
+                    className="inline-flex items-center justify-center rounded-xl border px-6 py-3 no-underline"
+                    style={{
+                      backgroundColor: designTokens.colors.warmPaper,
+                      borderColor: designTokens.colors.subtleBorder,
+                      color: designTokens.colors.ink,
+                    }}
+                  >
+                    Talk With a Medicaid Planning Attorney
+                  </Link>
+                </div>
+              </PosterSection>
+            </div>
+          ) : isHome ? (
+            <div className="mx-auto space-y-8">
+              <PosterSection title="What a real home analysis is actually looking at" className="pt-0">
+                <div className="space-y-5">
+                  <p>When a family asks what happens to the house, the answer usually depends on more than the property itself.</p>
+                  <div className="space-y-4">
+                    <p>A real home analysis may look at questions like:</p>
+                    <ul className="list-disc space-y-2 pl-6">
+                      <li>Is this property actually the applicant’s home for Medicaid purposes?</li>
+                      <li>If there is more than one property, which one is being treated as the home?</li>
+                      <li>Who owns it?</li>
+                      <li>How is title held?</li>
+                      <li>Is the property owned by a trust?</li>
+                      <li>Is a spouse still living there?</li>
+                      <li>Is return-home intent part of the position being taken?</li>
+                      <li>Does the record support that position?</li>
+                      <li>Is there a mortgage or reverse mortgage?</li>
+                      <li>Is the property vacant?</li>
+                      <li>In some cases, does the value of the property create another issue?</li>
+                      <li>Has anyone already sold, leased, deeded, or transferred something?</li>
+                    </ul>
+                  </div>
+                  <p>That is why two families can both say “this is the house” and still have very different Medicaid-planning issues.</p>
+                </div>
+              </PosterSection>
+
+              <PosterSection title="Why “the home may be excluded” is only part of the story" className="pt-0">
+                <div className="space-y-5">
+                  <p>Even when a property is treated favorably for Medicaid eligibility purposes, the analysis does not stop there.</p>
+                  <div className="space-y-4">
+                    <p>Families may still need to think about:</p>
+                    <ul className="list-disc space-y-2 pl-6">
+                      <li>Medicaid Estate Recovery Program issues after death</li>
+                      <li>whether the property should be sold</li>
+                      <li>whether it can or should be leased</li>
+                      <li>how it will be maintained while the owner is in care</li>
+                      <li>whether probate or non-probate transfer planning matters</li>
+                      <li>whether trust ownership, loan terms, or vacancy creates another layer of risk</li>
+                    </ul>
+                  </div>
+                  <p>That is why hearing that “the home may be excluded” is helpful, but not enough by itself.</p>
+                </div>
+              </PosterSection>
+
+              <PosterSection title="Why one property move can solve one problem and create another" className="pt-0">
+                <div className="space-y-5">
+                  <p>This is where families often get tripped up.</p>
+                  <div className="space-y-3">
+                    <p>A sale may solve one concern and create another.</p>
+                    <p>A transfer may feel protective and still create a penalty issue.</p>
+                    <p>A lease may seem practical and still affect the larger Medicaid picture.</p>
+                    <p>A trust or title change may help in one respect and complicate another.</p>
+                  </div>
+                  <p>That does not mean families have no good options. It means property decisions should be made as part of the larger Medicaid analysis, not as isolated moves.</p>
+                </div>
+              </PosterSection>
+
+              <PosterSection title="Why the facts and the record matter" className="pt-0">
+                <div className="space-y-5">
+                  <p>When a family is taking the position that a property is the applicant’s home, the facts and the record presented to HHSC need to support that position.</p>
+                  <div className="space-y-4">
+                    <p>That can involve:</p>
+                    <ul className="list-disc space-y-2 pl-6">
+                      <li>whether the person lived there while owning it</li>
+                      <li>whether a spouse is still there</li>
+                      <li>whether return-home intent is part of the case</li>
+                      <li>how the property is described in the record</li>
+                      <li>whether earlier statements or actions point in a different direction</li>
+                    </ul>
+                  </div>
+                  <p>Families sometimes create avoidable problems when the record suggests one story but the legal position depends on another.</p>
+                  <p>That is one reason the home issue should be handled carefully from the beginning.</p>
+                </div>
+              </PosterSection>
+
+              <PosterSection title="Talk With a Medicaid Planning Attorney" className="pt-0 mt-6">
+                <div className="space-y-6 pt-2">
+                  <p>Before you sell, transfer, lease, retitle, or make major decisions about a house or other property, it helps to get a clear answer based on the actual facts.</p>
+                  <p>The Hale Law Firm helps families evaluate home, title, transfer, and Medicaid-planning issues so they can avoid unnecessary mistakes and make informed decisions at the right time.</p>
                   <Link
                     href="/talk/"
                     className="inline-flex items-center justify-center rounded-xl border px-6 py-3 no-underline"
