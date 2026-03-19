@@ -10,7 +10,7 @@ export const PATHWAY_HERO_IMAGE_BY_SLUG: Record<string, string> = {
   "qualify-medically": "/assets/Pathway_Qualify_Medically_Bedroom_NoText.png",
   "spend-everything": "/assets/Pathway_Spend_Everything_Kitchen_Table_NoText.png",
   "too-much-income": "/assets/Pathway_Too_Much_Income_Mailbox_NoText.png",
-  "sell-the-house": "/assets/Pathway_Keep_Home_2_15.png",
+  "home": "/assets/Pathway_Keep_Home_2_15.png",
   "too-late": "/assets/Pathway_Too_Late_Window_NoText.png",
 };
 
@@ -19,6 +19,6 @@ export const PATHWAY_HERO_POSITION_BY_SLUG: Record<string, string> = {
   "qualify-medically": "center 35%",
   "spend-everything": "center 30%",
   "too-much-income": "18% 55%",
-  "sell-the-house": "70% 20%",
+  "home": "70% 20%",
   "too-late": "50% 34%",
 };

@@ -22,7 +22,7 @@ const VIDEO_IDS: Record<string, string> = {
   "spend-everything": "",
   "too-much-income": "",
   "qualify-medically": "",
-  "sell-the-house": "dQw4w9WgXcQ",
+  "home": "",
 };
 
 export default function PathwayPage({ params }: Props) {
@@ -33,6 +33,7 @@ export default function PathwayPage({ params }: Props) {
   const isQualifyMedically = pathway.slug === "qualify-medically";
   const isTooMuchIncome = pathway.slug === "too-much-income";
   const isSpendEverything = pathway.slug === "spend-everything";
+  const isHome = pathway.slug === "home";
 
   const backgroundImage = PATHWAY_HERO_IMAGE_BY_SLUG[pathway.slug];
   const backgroundPositionDesktop = PATHWAY_HERO_POSITION_BY_SLUG[pathway.slug] ?? "center";
@@ -71,7 +72,9 @@ export default function PathwayPage({ params }: Props) {
               ? "What “Too Late” Usually Means"
               : isMedicareEnding
                 ? "Why Families Are Often Caught Off Guard"
-                : "Core Concept"
+                : isHome
+                  ? "Why “the home” and “the house” are not always the same thing"
+                  : "Core Concept"
           }
           className="pt-0"
         >
@@ -89,7 +92,65 @@ export default function PathwayPage({ params }: Props) {
         </PosterSection>
       )}
 
-      {!isQualifyMedically && !isTooMuchIncome && !isSpendEverything && (
+      {isHome && (
+        <>
+          <PosterSection title="Why hearing “the home is exempt” does not end the analysis" className="pt-0">
+            <div className="space-y-5">
+              <p>Even when a property is treated favorably for Medicaid eligibility purposes, that does not answer everything the family needs to know.</p>
+              <div className="space-y-3">
+                <p>Families may still need to think about:</p>
+                <ul className="list-disc space-y-2 pl-6">
+                  {pathway.why.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+              <p>In other words, hearing that “the home may be excluded” does not tell the family what they should do next.</p>
+            </div>
+          </PosterSection>
+
+          <PosterSection title="Where families accidentally create property problems" className="pt-0">
+            <div className="space-y-5">
+              <p>Families often make avoidable mistakes when they act too quickly after hearing a partial rule.</p>
+              <div className="space-y-3">
+                <p>Common examples include:</p>
+                <ul className="list-disc space-y-2 pl-6">
+                  <li>rushing to deed the property</li>
+                  <li>rushing to sell</li>
+                  <li>assuming a Lady Bird Deed or Transfer on Death Deed solves every issue</li>
+                  <li>assuming a lease is neutral</li>
+                  <li>assuming trust ownership makes the analysis easier</li>
+                  <li>assuming one sentence from a friend, facility, or online source answers the whole question</li>
+                </ul>
+              </div>
+              <p>What feels like a simple property move can affect Medicaid eligibility, future recovery risk, transfer issues, or the family’s flexibility later.</p>
+            </div>
+          </PosterSection>
+
+          <PosterSection title="The facts and the record both matter" className="pt-0">
+            <div className="space-y-3">
+              <p>The home issue is not only about the property itself. It is also about whether the facts and the record presented to Medicaid support the position the family is trying to take.</p>
+              <p>That may include questions about who lived there, whether a spouse still lives there, whether return-home intent is part of the analysis, how the property is titled, and what has already been said or done.</p>
+              <p>Families can create problems for themselves when the property story sounds one way at home but a different way in the record presented to HHSC.</p>
+              <p>That is one more reason not to rush into property decisions, title changes, or casual statements about what is going to happen next.</p>
+            </div>
+          </PosterSection>
+
+          <PosterSection title="See how this analysis actually works" className="pt-0">
+            <div className="space-y-5">
+              <p>Most families do not just want to hear that the home issue is “complicated.” They want to understand what a real home analysis is actually looking at.</p>
+              <p>Our next page explains why “the home” and “the house” are not always the same thing, what facts may change the answer, why MERP and property decisions still matter even when a property is treated favorably for eligibility, and why one move can solve one problem and create another.</p>
+              <Layer2LinkBlock
+                href={`/pathways/${pathway.slug}/deeper/`}
+                supportingLine={pathway.supportingLine}
+                linkText="Read: What Counts as the Home — and What Still Matters Next"
+              />
+            </div>
+          </PosterSection>
+        </>
+      )}
+
+      {!isHome && !isQualifyMedically && !isTooMuchIncome && !isSpendEverything && (
         <PosterSection
           title={isMedicareEnding ? "What Medicare Rehab Coverage Usually Means" : "Why This Is Often Misunderstood"}
           className="pt-0"
@@ -102,7 +163,7 @@ export default function PathwayPage({ params }: Props) {
         </PosterSection>
       )}
 
-      {!isQualifyMedically && !isTooMuchIncome && !isSpendEverything && (
+      {!isHome && !isQualifyMedically && !isTooMuchIncome && !isSpendEverything && (
         <PosterSection title={isMedicareEnding ? "What Changes When Medicare Ends" : "What This Means for Your Family"} className={pathway.slug === "too-late" ? "pt-4 md:pt-6" : "pt-0"}>
         {pathway.slug === "too-late" && pathway.steps ? (
           <div className="space-y-10">
@@ -502,8 +563,8 @@ export default function PathwayPage({ params }: Props) {
         title={
           isSpendEverything
             ? "Talk With a Medicaid Planning Attorney"
-            : pathway.slug === "sell-the-house"
-              ? "Before You Sell or Transfer the House"
+            : isHome
+              ? "Talk With a Medicaid Planning Attorney"
               : pathway.slug === "too-much-income"
                 ? "Before You Assume You Don’t Qualify"
                   : pathway.slug === "medicare-ending"
@@ -569,8 +630,8 @@ export default function PathwayPage({ params }: Props) {
             <p>
               {isSpendEverything
                 ? "Before giving assets away, moving money, selling property, or making major financial decisions, it helps to understand what options may be available under the law."
-                : pathway.slug === "sell-the-house"
-                  ? "Selling or transferring property can permanently affect Medicaid eligibility and family finances. A short conversation can help you understand your options before taking steps that may limit flexibility later."
+                : isHome
+                  ? "Before you sell, transfer, lease, retitle, or make major decisions about a house or other property, it helps to get clear guidance on how the property fits into the larger Medicaid picture."
                   : pathway.slug === "too-much-income"
                     ? "A conversation can help clarify what counts as income, whether the issue is eligibility or monthly copayment, whether a Qualified Income Trust may be needed, and whether income can be diverted to support a spouse at home and reduce the copayment."
                     : pathway.slug === "medicare-ending"
@@ -579,8 +640,8 @@ export default function PathwayPage({ params }: Props) {
                       ? "A short conversation can help your family sort whether the issue is medical necessity, documentation, financial sequencing, or a combination — and what to clarify first."
                   : pathway.when}
             </p>
-            {isSpendEverything && (
-              <p>The Hale Law Firm helps families evaluate Medicaid planning options based on their actual facts, timing, and family situation.</p>
+            {(isSpendEverything || isHome) && (
+              <p>{isHome ? "The Hale Law Firm helps families evaluate property, title, transfer, and Medicaid-planning questions based on the actual facts of the case, so they can avoid unnecessary mistakes and make informed decisions at the right time." : "The Hale Law Firm helps families evaluate Medicaid planning options based on their actual facts, timing, and family situation."}</p>
             )}
             <Link
               href="/talk/"
@@ -593,7 +654,7 @@ export default function PathwayPage({ params }: Props) {
             >
               Talk With a Medicaid Planning Attorney
             </Link>
-            {!isSpendEverything && (
+            {!isSpendEverything && !isHome && (
               <Layer2LinkBlock
                 href={`/pathways/${pathway.slug}/deeper/`}
                 supportingLine={pathway.supportingLine}

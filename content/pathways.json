@@ -139,35 +139,38 @@
     "supportingLine": "Start with the question that sounds closest to what your family is being told, then clarify the records and sequence before major financial moves."
   },
   {
-    "slug": "sell-the-house",
+    "slug": "home",
     "title": "Do We Have to Sell the House?",
-    "subheadline": "The family home is often one of the biggest sources of fear when families consider Medicaid.",
+    "subheadline": "Usually, no. Under Medicaid rules, the home is generally treated as an excluded resource.",
     "core": [
-      "Under Medicaid rules, the home is often treated differently from other assets.",
-      "In many situations, the house does not need to be sold in order to qualify for Medicaid nursing home benefits."
+      "But it is a mistake to assume that any house, land, or property a family is worried about will automatically qualify as the home under Medicaid law. That question depends on the facts.",
+      "Families often hear one true sentence — that the home may be excluded — without hearing the harder part: whether the property actually qualifies, what happens if it does not, and what problems can still arise even when it does.",
+      "Before you sell, transfer, lease, or make other property decisions, it helps to understand what role the property is actually playing in the Medicaid analysis."
     ],
     "why": [
-      "Families assume Medicaid requires liquidation of assets",
-      "The rules around the home are rarely explained",
-      "Fear leads to rushed decisions"
+      "Medicaid Estate Recovery Program concerns after death",
+      "whether the property should be sold",
+      "whether it should be leased",
+      "how it will be maintained while the owner is in care",
+      "whether title, trust ownership, or other legal structure creates another issue",
+      "whether loan or occupancy problems could create pressure from a lender"
     ],
     "means": [
-      "Without guidance, families may sell a home unnecessarily or miss opportunities to preserve options.",
-      "With proper guidance, many families are able to protect the home or plan thoughtfully for the future.",
-      "Questions about the home don\u2019t always end at eligibility, which is another reason guidance matters."
+      "Without careful review, families may make property decisions too quickly after hearing only part of the rule.",
+      "The better course is to understand how the property fits into the Medicaid analysis before making title, sale, lease, or transfer decisions."
     ],
-    "when": "If the home is a concern, guidance can help explain how Medicaid treats it and what options may exist.",
+    "when": "Before you sell, transfer, lease, retitle, or make major decisions about a house or other property, it helps to get clear guidance on how the property fits into the larger Medicaid picture.",
     "layer2Title": "Do We Have to Sell the House?",
     "layer2Body": [
       "The family home carries emotional weight, and the idea of losing it is often one of the most distressing aspects of long-term care planning. Families frequently ask whether Medicaid requires the home to be sold.",
-      "The answer is not a simple yes or no. Medicaid treats the home differently at different stages and for different purposes. What happens during a person\u2019s lifetime is not always the same as what happens afterward.",
+      "The answer is not a simple yes or no. Medicaid treats the home differently at different stages and for different purposes. What happens during a person’s lifetime is not always the same as what happens afterward.",
       "This complexity exists because Medicaid rules distinguish between eligibility and estate recovery. A home may be treated one way while someone is alive and another way after death. These distinctions are often collapsed into a single, frightening assumption.",
       "Families often hear about concepts such as exempt homes, intent to return, estate recovery, and transfer rules. Without context, these ideas can sound contradictory or alarming.",
       "Misunderstanding arises because families assume that if a home is mentioned in Medicaid rules, it must be sold. In reality, the rules are more conditional and timing-sensitive than that assumption suggests.",
       "Timing and family circumstances matter. Who lives in the home, when decisions are made, and how ownership is structured can all affect outcomes. These factors are rarely obvious at first glance.",
       "When families want to understand how the home is treated in their specific situation, many choose to speak with an experienced Medicaid planning attorney who can explain how eligibility rules and estate recovery considerations interact."
     ],
-    "supportingLine": "Learn more about why the rules around the home are often confusing."
+    "supportingLine": "Our next page explains why “the home” and “the house” are not always the same thing, what facts may change the answer, why MERP and property decisions still matter, and why one move can solve one problem and create another."
   },
   {
     "slug": "too-late",
