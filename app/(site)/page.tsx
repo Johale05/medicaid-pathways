@@ -7,12 +7,12 @@ import { HOMEPAGE_HERO_IMAGE } from "@/lib/heroImages";
 
 export default function HomePage() {
   const tileOrder = [
+    "too-late",
     "medicare-ending",
-    "qualify-medically",
     "spend-everything",
     "home",
     "too-much-income",
-    "too-late",
+    "qualify-medically",
   ];
 
   const orderedTiles = tileOrder
