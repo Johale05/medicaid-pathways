@@ -23,6 +23,7 @@ const VIDEO_IDS: Record<string, string> = {
   "too-much-income": "",
   "qualify-medically": "",
   "home": "",
+  "too-late": "",
 };
 
 export default function PathwayPage({ params }: Props) {

@@ -131,8 +131,6 @@ const VIDEO_IDS: Record<string, string> = {
   "too-much-income": "",
   "qualify-medically": "",
   home: "",
-  "sell-the-house": "dQw4w9WgXcQ",
-  "too-late": "dQw4w9WgXcQ",
 };
 
 export default function DeeperPage({ params }: Props) {
