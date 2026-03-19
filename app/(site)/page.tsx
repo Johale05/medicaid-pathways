@@ -4,18 +4,10 @@ import PlacardTile from "@/components/PlacardTile";
 import PosterSection from "@/components/PosterSection";
 import { designTokens } from "@/lib/designTokens";
 import { HOMEPAGE_HERO_IMAGE } from "@/lib/heroImages";
+import { pathwayOrder } from "@/lib/pathways";
 
 export default function HomePage() {
-  const tileOrder = [
-    "too-late",
-    "medicare-ending",
-    "spend-everything",
-    "home",
-    "too-much-income",
-    "qualify-medically",
-  ];
-
-  const orderedTiles = tileOrder
+  const orderedTiles = pathwayOrder
     .map((slug) => homepage.tiles.find((tile) => tile.slug === slug))
     .filter((tile): tile is (typeof homepage.tiles)[number] => Boolean(tile));
 

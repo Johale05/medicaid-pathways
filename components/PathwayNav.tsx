@@ -1,12 +1,12 @@
 import Link from "next/link";
-import { allPathways } from "@/lib/pathways";
+import { orderedPathways } from "@/lib/pathways";
 
 export default function PathwayNav({ currentSlug }: { currentSlug: string }) {
   return (
     <div>
       <h2 className="font-display text-xl font-semibold">Explore Other Common Questions</h2>
       <ul className="mt-4 space-y-2">
-        {allPathways.map((p) => (
+        {orderedPathways.map((p) => (
           <li key={p.slug}>
             <Link
               href={`/pathways/${p.slug}/`}
