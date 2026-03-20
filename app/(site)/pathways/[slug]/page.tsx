@@ -17,6 +17,67 @@ import {
 
 type Props = { params: { slug: string } };
 
+type RelatedPathwayLink = {
+  slug: string;
+  label: string;
+  context: string;
+};
+
+const RELATED_PATHWAY_LINKS: Record<string, RelatedPathwayLink[]> = {
+  "too-late": [
+    {
+      slug: "medicare-ending",
+      label: "What Happens When Medicare Ends?",
+      context: "If the pressure started because rehab coverage is ending or discharge is being pushed, see",
+    },
+  ],
+  "medicare-ending": [
+    {
+      slug: "too-late",
+      label: "Is It Too Late to Get Help?",
+      context: "If coverage is ending and the bigger problem now feels urgent or time-sensitive, start with",
+    },
+  ],
+  "too-much-income": [
+    {
+      slug: "spend-everything",
+      label: "Do We Have to Spend Everything?",
+      context: "If the bigger concern is assets rather than monthly income, see",
+    },
+  ],
+  "spend-everything": [
+    {
+      slug: "too-much-income",
+      label: "What If We Have Too Much Income?",
+      context: "If the main issue is monthly income, a trust, or copayment instead of assets, see",
+    },
+    {
+      slug: "home",
+      label: "Do We Have to Sell the House?",
+      context: "If the biggest concern is the house or other property, see",
+    },
+  ],
+  "home": [
+    {
+      slug: "spend-everything",
+      label: "Do We Have to Spend Everything?",
+      context: "If the bigger question is protecting savings or other countable assets, see",
+    },
+  ],
+  "qualify-medically": [
+    {
+      slug: "too-late",
+      label: "Is It Too Late to Get Help?",
+      context: "If the medical question is arriving during an urgent care or payment transition, start with",
+    },
+    {
+      slug: "medicare-ending",
+      label: "What Happens When Medicare Ends?",
+      context: "If the issue began because rehab coverage is ending, see",
+    },
+  ],
+};
+
 const VIDEO_IDS: Record<string, string> = {
   "medicare-ending": "",
   "spend-everything": "",
@@ -38,6 +99,7 @@ export default function PathwayPage({ params }: Props) {
 
   const backgroundImage = PATHWAY_HERO_IMAGE_BY_SLUG[pathway.slug];
   const backgroundPositionDesktop = PATHWAY_HERO_POSITION_BY_SLUG[pathway.slug] ?? "center";
+  const relatedPathwayLinks = RELATED_PATHWAY_LINKS[pathway.slug] ?? [];
 
   return (
     <div className="poster-page-bg pb-14">
@@ -685,6 +747,22 @@ export default function PathwayPage({ params }: Props) {
               boxShadow: designTokens.shadows.softShadow,
             }}
           >
+            {relatedPathwayLinks.length > 0 && (
+              <div className="mb-5 space-y-2 text-sm leading-relaxed text-slate-700">
+                <p className="font-medium text-slate-900">You may also want to see:</p>
+                <ul className="space-y-2">
+                  {relatedPathwayLinks.map((link) => (
+                    <li key={link.slug}>
+                      {link.context}{" "}
+                      <Link href={`/pathways/${link.slug}/`} className="font-medium text-slate-900 underline underline-offset-4">
+                        {link.label}
+                      </Link>
+                      .
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
             <PathwayNav currentSlug={pathway.slug} />
           </div>
         </div>
