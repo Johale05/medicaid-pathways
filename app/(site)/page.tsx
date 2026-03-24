@@ -39,6 +39,9 @@ export default function HomePage() {
                 {homepage.heroLines[0]} <em>{homepage.heroLines[1]}</em>
               </p>
               <p className="mt-8 font-display text-lg italic text-[#454545] md:text-[1.35rem]">{homepage.startLine}</p>
+              <p className="mt-3 font-display text-base text-[#4a4a4a] [text-shadow:0_1px_10px_rgba(255,255,255,0.48)] md:text-lg">
+                Start with the question that sounds closest to what your family is hearing.
+              </p>
             </div>
 
             <div className="relative mt-6 sm:mt-8 lg:mt-5 lg:translate-y-4 w-full max-w-6xl mx-auto">
