@@ -300,8 +300,8 @@ export default function DeeperPage({ params }: Props) {
               <PosterSection title="When Talking With Someone Helps" className="pt-0 mt-6">
                 <div className="space-y-6 pt-2">
                   <p>
-                    If you’re hearing any of the situations above, a short conversation can help sort what is urgent,
-                    what is not, and what coordinated next steps make sense.
+                    If you’re hearing any of the situations above, at this point a short conversation can help you
+                    confirm what to clarify first and what coordinated next steps make sense.
                   </p>
                   <Link
                     href="/talk/"
@@ -394,7 +394,7 @@ export default function DeeperPage({ params }: Props) {
 
               <PosterSection title="Talk With a Medicaid Planning Attorney" className="pt-0 mt-6">
                 <div className="space-y-6 pt-2">
-                  <p>Before you sell, transfer, lease, retitle, or make major decisions about a house or other property, it helps to get a clear answer based on the actual facts.</p>
+                  <p>Before finalizing a sale, transfer, lease, or title change, it helps to confirm how those moves fit the full Medicaid analysis for your specific facts.</p>
                   <p>The Hale Law Firm helps families evaluate home, title, transfer, and Medicaid-planning issues so they can avoid unnecessary mistakes and make informed decisions at the right time.</p>
                   <Link
                     href="/talk/"
@@ -479,7 +479,7 @@ export default function DeeperPage({ params }: Props) {
 
               <PosterSection title="Talk With a Medicaid Planning Attorney" className="pt-0 mt-6">
                 <div className="space-y-6 pt-2">
-                  <p>Before making major financial decisions, it helps to get a clear picture of what options may still be available.</p>
+                  <p>At this stage, before finalizing transfers, sales, or account moves, it helps to confirm which options remain available under the law.</p>
                   <p>The Hale Law Firm helps families understand Medicaid planning options based on the real facts of their case, so they can avoid unnecessary loss and make informed decisions at the right time.</p>
                   <Link
                     href="/talk/"
@@ -589,8 +589,8 @@ export default function DeeperPage({ params }: Props) {
 
               <PosterSection title="Guardrails" className="pt-0">
                 <ul className="list-disc space-y-2 pl-6">
-                  <li>Do not assume Medicare ending means there is no next step.</li>
-                  <li>Do not assume one phrase like plateaued or no longer skilled explains the whole situation.</li>
+                  <li>Medicare ending does not by itself mean there is no next step.</li>
+                  <li>One phrase like plateaued or no longer skilled rarely explains the whole situation.</li>
                   <li>Do not confuse the coverage issue with the full care plan.</li>
                   <li>Do not wait so long to clarify care setting or payor questions that confusion becomes crisis.</li>
                 </ul>
@@ -602,7 +602,7 @@ export default function DeeperPage({ params }: Props) {
 
               <PosterSection title="When Talking With Someone Helps" className="pt-0 mt-6">
                 <div className="space-y-6 pt-2">
-                  <p>A conversation can help clarify whether the immediate issue is coverage, discharge, long-term care, payment, or some combination.</p>
+                  <p>Before discharge or payment commitments are made, a conversation can help your family clarify whether the immediate issue is coverage, discharge, long-term care, payment, or some combination.</p>
                   <Link
                     href="/talk/"
                     className="inline-flex items-center justify-center rounded-xl border px-6 py-3 no-underline"
@@ -742,13 +742,13 @@ export default function DeeperPage({ params }: Props) {
               <PosterSection title="Closing synthesis" className="pt-0">
                 <div className="space-y-3">
                   <p>Families are often dealing with income limits, trust questions, support for a spouse at home, and monthly copayment concerns all at once.</p>
-                  <p>Not every rule has to be solved in one moment. Usually the real progress comes from separating the issue into the right questions before anyone concludes the family is out of options.</p>
+                  <p>Not every rule has to be solved in one moment. Usually the real progress comes from clarifying the right questions first before anyone concludes the family is out of options.</p>
                 </div>
               </PosterSection>
 
               <PosterSection title="When Talking With Someone Helps" className="pt-0 mt-6">
                 <div className="space-y-6 pt-2">
-                  <p>A conversation can help clarify what counts as income, whether the issue is eligibility or monthly copayment, whether a Qualified Income Trust may be needed, and whether income can be diverted to support a spouse at home and reduce the copayment.</p>
+                  <p>At this point, a conversation can help your family clarify what counts as income first, then confirm whether the issue is eligibility or monthly copayment, whether a Qualified Income Trust may be needed, and whether income can be diverted to support a spouse at home.</p>
                   <Link
                     href="/talk/"
                     className="inline-flex items-center justify-center rounded-xl border px-6 py-3 no-underline"
@@ -891,8 +891,8 @@ export default function DeeperPage({ params }: Props) {
               <PosterSection title="When Talking With Someone Helps" className="pt-0 mt-6">
                 <div className="space-y-6 pt-2">
                   <p>
-                    A conversation can help your family clarify whether the issue is medical necessity,
-                    documentation, financial sequencing, or some combination — and what to address first.
+                    At this point, a conversation can help your family clarify whether the issue is medical necessity,
+                    documentation, financial sequencing, or some combination — and what to clarify first.
                   </p>
                   <Link
                     href="/talk/"
