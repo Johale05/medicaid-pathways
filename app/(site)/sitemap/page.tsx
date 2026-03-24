@@ -1,6 +1,6 @@
 import Container from "@/components/Container";
 import Link from "next/link";
-import { allPathways } from "@/lib/pathways";
+import { orderedPathways } from "@/lib/pathways";
 
 export const metadata = { title: "Sitemap | Medicaid Pathways" };
 
@@ -20,7 +20,7 @@ export default function SitemapPage() {
             <li>
               <span className="font-semibold">Pathways</span>
               <ul className="list-disc pl-6 mt-2 space-y-2">
-                {allPathways.map((p) => (
+                {orderedPathways.map((p) => (
                   <li key={p.slug}>
                     <Link href={`/pathways/${p.slug}/`} className="hover:underline">{p.title}</Link>{" "}
                     <span className="text-slate-600">(Deeper: <Link href={`/pathways/${p.slug}/deeper/`} className="hover:underline">optional</Link>)</span>

@@ -27,7 +27,7 @@ const RELATED_PATHWAY_LINKS: Record<string, RelatedPathwayLink[]> = {
   "too-late": [
     {
       slug: "medicare-ending",
-      label: "What Happens When Medicare Ends?",
+      label: "Medicare Is Ending — What Happens Next?",
       context: "If the pressure started because rehab coverage is ending or discharge is being pushed, see",
     },
   ],
@@ -53,7 +53,7 @@ const RELATED_PATHWAY_LINKS: Record<string, RelatedPathwayLink[]> = {
     },
     {
       slug: "home",
-      label: "Do We Have to Sell the House?",
+      label: "Do We Have to Sell the Home?",
       context: "If the biggest concern is the house or other property, see",
     },
   ],
@@ -72,7 +72,7 @@ const RELATED_PATHWAY_LINKS: Record<string, RelatedPathwayLink[]> = {
     },
     {
       slug: "medicare-ending",
-      label: "What Happens When Medicare Ends?",
+      label: "Medicare Is Ending — What Happens Next?",
       context: "If the issue began because rehab coverage is ending, see",
     },
   ],
