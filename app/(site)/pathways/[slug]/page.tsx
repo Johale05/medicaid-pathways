@@ -265,7 +265,7 @@ export default function PathwayPage({ params }: Props) {
             <div className="space-y-2 pt-2">
               <p className="font-medium">As coverage shifts, families often move from:</p>
               <p>“Is rehab still covered?”</p>
-              <p className="font-medium">to questions like:</p>
+              <p className="font-medium">to discharge and next-step questions that still need separate answers:</p>
               <ul className="list-disc space-y-2 pl-6">
                 <li>What care setting comes next?</li>
                 <li>Can the person safely go home?</li>
@@ -579,7 +579,7 @@ export default function PathwayPage({ params }: Props) {
             <li>How long does Medicare usually pay for rehab?</li>
             <li>What does “not improving,” “plateaued,” “not participating,” or “no longer skilled” usually mean?</li>
             <li>What if discharge is being discussed but the person cannot come home?</li>
-            <li>Does Medicare ending automatically mean Medicaid is next?</li>
+            <li>Does Medicare ending automatically decide where care has to happen next?</li>
             <li>Is appeal possible when coverage is ending?</li>
             <li>Does plan type matter in how this conversation unfolds?</li>
           </ul>
@@ -744,7 +744,7 @@ export default function PathwayPage({ params }: Props) {
                   : pathway.slug === "too-much-income"
                     ? "A conversation can help clarify what counts as income, whether the issue is eligibility or monthly copayment, whether a Qualified Income Trust may be needed, and whether income can be diverted to support a spouse at home and reduce the copayment."
                     : pathway.slug === "medicare-ending"
-                      ? "A short conversation can help your family sort whether the immediate issue is coverage, discharge, long-term care, payment, or some combination — and what to clarify first before decisions feel rushed."
+                      ? "A short conversation can help your family separate what coverage is changing, what discharge is actually being proposed, and what care-setting and payment questions still need to be clarified before decisions feel rushed."
                     : pathway.slug === "qualify-medically"
                       ? "A short conversation can help your family sort whether the issue is medical necessity, documentation, financial sequencing, or a combination — and what to clarify first."
                   : pathway.when}
