@@ -42,6 +42,10 @@ export default function FacilityResourcesPage() {
           to explain common eligibility misunderstandings in a clear, structured way so conversations can begin with
           better information, fewer assumptions, and less confusion.
         </p>
+        <p className="pt-2">
+          When families ask about Medicaid, staff can show them this page and let them start with the question that
+          sounds closest to what they are hearing.
+        </p>
       </PosterSection>
 
       <PosterSection title="How the Main Site Is Organized" className="pt-0">
@@ -50,6 +54,10 @@ export default function FacilityResourcesPage() {
           must be spent down, whether income is too high, and whether medical eligibility is required. Each pathway is
           intended to provide orientation first, so families can better understand the issue in front of them before
           deciding what kind of help may be needed.
+        </p>
+        <p className="pt-2">
+          This resource is designed so staff do not need to interpret Medicaid rules or give legal guidance
+          themselves.
         </p>
       </PosterSection>
 
@@ -89,6 +97,7 @@ export default function FacilityResourcesPage() {
           For quick reference, 2025 and 2026 figures are shown side by side. Figures should be confirmed before action
           is taken.
         </p>
+        <p className="pt-2">The home may be treated differently depending on the situation.</p>
 
         <h3 className="pt-6 text-lg font-semibold">Medicaid</h3>
         <div className="pt-2 overflow-x-auto">
@@ -135,11 +144,6 @@ export default function FacilityResourcesPage() {
                 <td className="py-1">Transfer Penalty Divisor</td>
                 <td className="py-1">$242.13/day</td>
                 <td className="py-1">$262.37/day</td>
-              </tr>
-              <tr>
-                <td className="py-1">Maximum Residence Value</td>
-                <td className="py-1">$730,000</td>
-                <td className="py-1">$752,000</td>
               </tr>
             </tbody>
           </table>
@@ -203,6 +207,25 @@ export default function FacilityResourcesPage() {
           Medicaid planning often involves legal, financial, medical, and administrative questions at the same time.
           Our team works in a coordinated way to maintain clear documentation, consistent communication, and steady
           follow-through throughout the process.
+        </p>
+        <p className="pt-4">In some situations, it may help to suggest speaking with a Medicaid planning attorney:</p>
+        <ul className="list-disc space-y-2 pl-6 pt-4">
+          <li>
+            Medicare coverage is ending or entering copay days, and the family may soon need to begin paying out of
+            pocket—especially if it does not appear the person will be able to safely return home
+          </li>
+          <li>
+            the family is considering long-term care for a loved one and has concerns about how care will be paid for
+          </li>
+          <li>
+            the family is expressing questions or concerns like those addressed in the Medicaid Pathways, such as
+            whether they have to spend everything, what happens when Medicare ends, or whether the person qualifies
+            medically
+          </li>
+        </ul>
+        <p className="pt-4">
+          In these situations, a short conversation can help the family understand what to clarify first and how to
+          avoid rushed or unnecessary decisions.
         </p>
       </PosterSection>
     </div>
