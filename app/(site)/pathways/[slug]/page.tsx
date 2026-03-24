@@ -704,7 +704,7 @@ export default function PathwayPage({ params }: Props) {
               ))}
             </ul>
             <p>
-              A quick conversation can help sort what is urgent and what is not, then coordinate practical next steps
+              A quick conversation can help identify what to clarify first, then coordinate practical next steps
               around care, coverage, and planning — without pressure.
             </p>
             <div className="space-y-4 pt-2">
