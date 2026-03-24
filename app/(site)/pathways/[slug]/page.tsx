@@ -289,12 +289,16 @@ export default function PathwayPage({ params }: Props) {
           <PosterSection title="Why Families Are Often Confused by This Question" className="pt-0">
             <div className="space-y-3">
               <p>
-                Families are often dealing with obvious day-to-day realities: help with routines, medication support,
-                supervision, and ongoing safety concerns.
+                Most families reach this page after hearing phrases like “they do not meet medical necessity” or
+                “they are not qualifying for this level of care.”
               </p>
               <p>
-                Those concerns are real and urgent at home, but they do not always line up neatly at first with how
-                medical qualification is formally evaluated.
+                That language is confusing because families can still see real care needs every day: help with
+                routines, mobility, medications, supervision, and safety.
+              </p>
+              <p>
+                In many situations, that statement is tied to a specific program or coverage category at a particular
+                point in time, not necessarily a final answer about longer-term care eligibility.
               </p>
             </div>
           </PosterSection>
@@ -314,23 +318,59 @@ export default function PathwayPage({ params }: Props) {
                 while medical qualification is still unclear.
               </p>
               <p>
-                In plain terms, the question is often whether documented condition and care needs support a
-                nursing-facility level of care under the applicable standard.
+                It is also not simply a question of whether someone needs help. The question is whether a medical
+                condition is causing enough impairment to require ongoing assistance or supervision under the
+                applicable standard.
               </p>
-              <p>Custodial need by itself is not always enough if the medical-necessity showing is still incomplete.</p>
+              <p>
+                Two people may both need help with daily activities, but the evaluation usually looks at the
+                underlying condition, how that condition affects functioning, and whether the resulting impairment
+                meets the required standard.
+              </p>
+            </div>
+          </PosterSection>
+
+          <PosterSection title="Medicare vs. Medicaid: Different Medical Standards" className="pt-0">
+            <div className="space-y-3">
+              <p>
+                “Medical necessity” can mean different things depending on which program is being discussed.
+              </p>
+              <p>
+                Medicare generally asks whether the person needs daily skilled nursing or therapy services that must
+                be provided or supervised by licensed professionals.
+              </p>
+              <p>
+                Medicaid long-term care generally asks whether a medical condition is causing enough functional
+                impairment that the person cannot safely function without ongoing assistance or supervision because of
+                that condition.
+              </p>
+              <p>
+                Because those standards are different, someone may no longer meet Medicare’s skilled-coverage standard
+                but still meet the medical criteria for long-term care under Medicaid.
+              </p>
             </div>
           </PosterSection>
 
           <PosterSection title="Why Needing Help Is Not Always the Same as Medical Necessity" className="pt-0">
             <div className="space-y-3">
               <p>
-                The burden on families can be very real. Needing substantial help never means the situation is minor.
+                Families understandably focus on the daily tasks that now require help: bathing, dressing, mobility,
+                and supervision.
               </p>
               <p>
-                At the same time, the formal standard may be asking a narrower question than families expect, based on
-                specific clinical and functional criteria.
+                The review, however, usually looks deeper at why that help is needed and what condition is driving the
+                safety and functioning concerns.
               </p>
-              <p>That gap is often where confusion starts, especially when daily care needs already feel overwhelming.</p>
+              <p>
+                For example, the key issue may be supervision tied to cognitive decline, hands-on support tied to a
+                physical or neurological condition, or additional support related to vision loss or another impairment.
+                The underlying condition and its impact on safety and functioning are what usually matter most.
+              </p>
+              <p>
+                Sometimes this same question comes up while discharge planning is also being discussed, especially when
+                Medicare coverage is ending. That pressure is real, but it is not always the same as a final long-term
+                care eligibility determination.
+              </p>
             </div>
           </PosterSection>
 
@@ -343,7 +383,7 @@ export default function PathwayPage({ params }: Props) {
                 That is why record review often matters more than families expect when this issue is raised.
               </p>
               <p>
-                Updated evaluations, specialist input, diagnosis detail, treatment planning, and facility
+                Updated evaluations, clearer diagnosis detail, specialist input, treatment planning, and facility
                 documentation can materially affect how the case is viewed.
               </p>
             </div>
@@ -356,8 +396,8 @@ export default function PathwayPage({ params }: Props) {
                 concern raised during review, and a formal determination.
               </p>
               <p>
-                Identifying who raised the issue, at what stage, and on what record basis helps families respond more
-                effectively and avoid unnecessary missteps.
+                Families should not assume those three stages mean the same thing. Identifying who raised the issue,
+                when, and on what record basis helps families respond more effectively and avoid unnecessary missteps.
               </p>
             </div>
           </PosterSection>
@@ -366,11 +406,12 @@ export default function PathwayPage({ params }: Props) {
             <div className="space-y-3">
               <p>Both medical and financial qualification matter, and both deserve deliberate handling.</p>
               <p>
-                Major financial strategy decisions are often premature when medical necessity is still unclear.
+                Major financial strategy decisions are often premature when the medical-necessity position is still
+                unclear.
               </p>
               <p>
-                In many situations, clarifying the records and medical position first leads to better financial
-                decisions and fewer avoidable reversals.
+                In many situations, clarifying the medical position and supporting records first leads to better
+                financial decisions later and fewer avoidable reversals.
               </p>
             </div>
           </PosterSection>
@@ -379,17 +420,20 @@ export default function PathwayPage({ params }: Props) {
             <div className="space-y-8">
               <div className="space-y-3">
                 <h3>Step 1: Clarify what concern is actually being raised</h3>
-                <p>Confirm whether the issue is an early concern, an active review point, or a formal determination.</p>
+                <p>
+                  Confirm whether the issue is a program-specific coverage comment, a records-based concern, or a
+                  formal determination.
+                </p>
               </div>
               <div className="space-y-3">
                 <h3>Step 2: Review what the records currently show</h3>
-                <p>Review how the records currently describe condition, function, safety risks, and care needs.</p>
+                <p>Review how the records currently describe condition, function, safety, and ongoing care needs.</p>
               </div>
               <div className="space-y-3">
                 <h3>Step 3: Identify what still needs to be clarified before moving ahead</h3>
                 <p>
-                  Pinpoint missing documentation or evaluations so next decisions are based on clear facts rather than
-                  assumptions.
+                  Pinpoint what documentation, evaluations, or clarifications are still missing before major next
+                  steps are taken.
                 </p>
               </div>
             </div>
@@ -398,12 +442,14 @@ export default function PathwayPage({ params }: Props) {
           <PosterSection title="Common Questions About Medical Qualification" className="pt-0">
             <ul className="list-disc space-y-2 pl-6">
               <li>What does “qualify medically” usually mean in practice?</li>
-              <li>Why is needing help not always enough?</li>
-              <li>They say he does not qualify medically — what does that actually mean?</li>
+              <li>Does “not medically necessary” mean no long-term care options are available?</li>
+              <li>They say my loved one does not qualify medically — what does that actually mean?</li>
+              <li>Why is needing help not always the full medical-necessity analysis?</li>
+              <li>Who is saying there is a problem, and is it a formal determination yet?</li>
               <li>What if dementia is part of the concern?</li>
               <li>What if medication management is part of the concern?</li>
               <li>What if the records do not show enough yet?</li>
-              <li>Who is saying there is no medical necessity?</li>
+              <li>How is this different from Medicare skilled coverage standards?</li>
               <li>Should we start financial planning before this is clear?</li>
               <li>What happens if medical necessity is denied?</li>
             </ul>
