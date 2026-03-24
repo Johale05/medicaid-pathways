@@ -23,6 +23,8 @@ type RelatedPathwayLink = {
   context: string;
 };
 
+const HOME_PATHWAY_TITLE = getPathway("home")?.title ?? "Do We Have to Sell the Home?";
+
 const RELATED_PATHWAY_LINKS: Record<string, RelatedPathwayLink[]> = {
   "too-late": [
     {
@@ -53,7 +55,7 @@ const RELATED_PATHWAY_LINKS: Record<string, RelatedPathwayLink[]> = {
     },
     {
       slug: "home",
-      label: "Do We Have to Sell the Home?",
+      label: HOME_PATHWAY_TITLE,
       context: "If the biggest concern is the house or other property, see",
     },
   ],
