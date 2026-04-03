@@ -17,7 +17,7 @@ const ABOUT_STORY_VIDEO_ID: string | null = null;
 const proofItems = [
   "Opened in 2006",
   "Helped thousands of families with Medicaid",
-  "Four attorneys",
+  "Three attorneys",
   "Two elder care coordinators",
   "Medicaid case developers supporting implementation",
   "Best of Ellis County — Best Law Firm for several years",
@@ -77,7 +77,6 @@ const teamMembers = [
   { name: "John D. Hale", title: "Attorney / Founder", image: "/assets/john-d-hale.png" },
   { name: "Jacob A. Hale", title: "Attorney", image: "/assets/jacob-a-hale.png" },
   { name: "Lindsey Cantu-Hughes", title: "Attorney", image: "/assets/lindsey-cantu-hughes.png" },
-  { name: "Reagan M. Smith", title: "Attorney", image: "/assets/reagan-m-smith.png" },
   {
     name: "Debbie Jones",
     title: "Elder Care Coordinator / Licensed Social Worker",
