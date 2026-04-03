@@ -12,7 +12,7 @@ export const metadata = {
 };
 
 const ABOUT_HERO_IMAGE = "/assets/about-hero-hale-law-office.png";
-const ABOUT_STORY_VIDEO_ID: string | null = null;
+const ABOUT_STORY_VIDEO_ID = "TRn02aQc3rw";
 
 const proofItems = [
   "Opened in 2006",
