@@ -32,6 +32,7 @@ export default function YouTubeEmbed({ videoId, title, placeholderText }: Props)
           className="h-full w-full"
           src={src}
           title={title}
+          referrerPolicy="strict-origin-when-cross-origin"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
         />
