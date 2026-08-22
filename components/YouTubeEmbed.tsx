@@ -21,10 +21,7 @@ export default function YouTubeEmbed({ videoId, title, placeholderText }: Props)
     );
   }
 
-  const src =
-    videoId === "5320WX00aqg"
-      ? "https://www.youtube.com/embed/5320WX00aqg?si=KnuUT11_5Q_MeaJx"
-      : `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1`;
+  const src = `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1`;
   return (
     <div className="w-full overflow-hidden rounded-2xl border border-slate-200 shadow-soft bg-white">
       <div className="aspect-video w-full">
@@ -32,7 +29,6 @@ export default function YouTubeEmbed({ videoId, title, placeholderText }: Props)
           className="h-full w-full"
           src={src}
           title={title}
-          referrerPolicy="strict-origin-when-cross-origin"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
         />
