@@ -21,7 +21,7 @@ export default function YouTubeEmbed({ videoId, title, placeholderText }: Props)
     );
   }
 
-  const src = `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1`;
+  const src = `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`;
   return (
     <div className="w-full overflow-hidden rounded-2xl border border-slate-200 shadow-soft bg-white">
       <div className="aspect-video w-full">
