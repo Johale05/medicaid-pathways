@@ -82,7 +82,7 @@ const RELATED_PATHWAY_LINKS: Record<string, RelatedPathwayLink[]> = {
 
 const VIDEO_IDS: Record<string, string> = {
   "medicare-ending": "",
-  "spend-everything": "",
+  "spend-everything": "5320WX00aqg",
   "too-much-income": "",
   "qualify-medically": "",
   "home": "",
