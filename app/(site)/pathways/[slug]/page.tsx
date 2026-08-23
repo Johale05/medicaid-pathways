@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import NativeVideoEmbed from "@/components/NativeVideoEmbed";
 import YouTubeEmbed from "@/components/YouTubeEmbed";
 import PathwayNav from "@/components/PathwayNav";
 import Layer2LinkBlock from "@/components/Layer2LinkBlock";
@@ -24,6 +25,8 @@ type RelatedPathwayLink = {
 };
 
 const HOME_PATHWAY_TITLE = getPathway("home")?.title ?? "Do We Have to Sell the Home?";
+const SPEND_EVERYTHING_VIDEO_URL =
+  "https://gl5q7lfrsujk9a5k.public.blob.vercel-storage.com/Do%20We%20Have%20to%20Spend%20Everything%20video.mp4";
 
 const RELATED_PATHWAY_LINKS: Record<string, RelatedPathwayLink[]> = {
   "too-late": [
@@ -82,7 +85,6 @@ const RELATED_PATHWAY_LINKS: Record<string, RelatedPathwayLink[]> = {
 
 const VIDEO_IDS: Record<string, string> = {
   "medicare-ending": "",
-  "spend-everything": "5MaJXEUqErw",
   "too-much-income": "",
   "qualify-medically": "",
   "home": "",
@@ -125,7 +127,7 @@ export default function PathwayPage({ params }: Props) {
           </PosterSection>
 
           <PosterSection>
-            <YouTubeEmbed videoId={VIDEO_IDS[pathway.slug]} title={pathway.title} />
+            <NativeVideoEmbed src={SPEND_EVERYTHING_VIDEO_URL} title={pathway.title} />
           </PosterSection>
         </>
       )}
