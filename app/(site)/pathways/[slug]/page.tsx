@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import NativeVideoEmbed from "@/components/NativeVideoEmbed";
 import YouTubeEmbed from "@/components/YouTubeEmbed";
 import PathwayNav from "@/components/PathwayNav";
 import Layer2LinkBlock from "@/components/Layer2LinkBlock";
@@ -24,6 +25,24 @@ type RelatedPathwayLink = {
 };
 
 const HOME_PATHWAY_TITLE = getPathway("home")?.title ?? "Do We Have to Sell the Home?";
+const SPEND_EVERYTHING_VIDEO_URL =
+  "https://gl5q7lfrsujk9a5k.public.blob.vercel-storage.com/Do%20We%20Have%20to%20Spend%20Everything%20video.mp4";
+const SPEND_EVERYTHING_CAPTIONS_URL =
+  "https://gl5q7lfrsujk9a5k.public.blob.vercel-storage.com/medicaid-pathways-spend-everything-captions.vtt";
+const SPEND_EVERYTHING_POSTER_URL =
+  "https://gl5q7lfrsujk9a5k.public.blob.vercel-storage.com/Medicaid_Pathways_Opening_Card%20%28Spend%20Everything%29.png";
+const SPEND_EVERYTHING_VIDEO_STRUCTURED_DATA = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: "Do We Have to Spend Everything to Qualify for Medicaid?",
+  description:
+    "Texas elder law attorney John D. Hale explains why families do not necessarily have to spend everything before qualifying for Medicaid and why understanding available planning options before moving, gifting, selling, or spending assets can matter.",
+  thumbnailUrl: SPEND_EVERYTHING_POSTER_URL,
+  contentUrl: SPEND_EVERYTHING_VIDEO_URL,
+  uploadDate: "2026-08-22",
+  duration: "PT1M2S",
+  url: "https://medicaidpathways.com/pathways/spend-everything/",
+};
 
 const RELATED_PATHWAY_LINKS: Record<string, RelatedPathwayLink[]> = {
   "too-late": [
@@ -82,7 +101,6 @@ const RELATED_PATHWAY_LINKS: Record<string, RelatedPathwayLink[]> = {
 
 const VIDEO_IDS: Record<string, string> = {
   "medicare-ending": "",
-  "spend-everything": "",
   "too-much-income": "",
   "qualify-medically": "",
   "home": "",
@@ -125,7 +143,16 @@ export default function PathwayPage({ params }: Props) {
           </PosterSection>
 
           <PosterSection>
-            <YouTubeEmbed videoId={VIDEO_IDS[pathway.slug]} title={pathway.title} />
+            <NativeVideoEmbed
+              src={SPEND_EVERYTHING_VIDEO_URL}
+              title={pathway.title}
+              poster={SPEND_EVERYTHING_POSTER_URL}
+              captions={{ src: SPEND_EVERYTHING_CAPTIONS_URL, srcLang: "en", label: "English" }}
+            />
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(SPEND_EVERYTHING_VIDEO_STRUCTURED_DATA) }}
+            />
           </PosterSection>
         </>
       )}
