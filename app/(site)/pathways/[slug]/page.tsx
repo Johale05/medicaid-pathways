@@ -43,6 +43,24 @@ const SPEND_EVERYTHING_VIDEO_STRUCTURED_DATA = {
   duration: "PT1M2S",
   url: "https://medicaidpathways.com/pathways/spend-everything/",
 };
+const TOO_MUCH_INCOME_VIDEO_URL =
+  "https://gl5q7lfrsujk9a5k.public.blob.vercel-storage.com/Medicaid_Pathways_Too_Much_Income_Final.mp4";
+const TOO_MUCH_INCOME_CAPTIONS_URL =
+  "https://gl5q7lfrsujk9a5k.public.blob.vercel-storage.com/medicaid-pathways-too-much-income-captions.vtt";
+const TOO_MUCH_INCOME_POSTER_URL =
+  "https://gl5q7lfrsujk9a5k.public.blob.vercel-storage.com/Too%20Much%20Income%20opening%20card.png";
+const TOO_MUCH_INCOME_VIDEO_STRUCTURED_DATA = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: "What If We Have Too Much Income for Medicaid?",
+  description:
+    "Texas elder law attorney John D. Hale explains why having income above the Medicaid income limit does not necessarily mean a person cannot qualify for nursing home Medicaid, including the potential role of a Qualified Income Trust and income diversion for a spouse living at home.",
+  thumbnailUrl: TOO_MUCH_INCOME_POSTER_URL,
+  contentUrl: TOO_MUCH_INCOME_VIDEO_URL,
+  uploadDate: "2026-08-23",
+  duration: "PT1M4S",
+  url: "https://medicaidpathways.com/pathways/too-much-income",
+};
 
 const RELATED_PATHWAY_LINKS: Record<string, RelatedPathwayLink[]> = {
   "too-late": [
@@ -498,10 +516,15 @@ export default function PathwayPage({ params }: Props) {
           </PosterSection>
 
           <PosterSection>
-            <YouTubeEmbed
-              videoId={VIDEO_IDS[pathway.slug]}
+            <NativeVideoEmbed
+              src={TOO_MUCH_INCOME_VIDEO_URL}
               title={pathway.title}
-              placeholderText="A short pathway overview is coming soon. It will explain why over-income conversations often need calmer review of gross income, Qualified Income Trusts, spouse income allocation, and monthly Medicaid copayment."
+              poster={TOO_MUCH_INCOME_POSTER_URL}
+              captions={{ src: TOO_MUCH_INCOME_CAPTIONS_URL, srcLang: "en", label: "English" }}
+            />
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(TOO_MUCH_INCOME_VIDEO_STRUCTURED_DATA) }}
             />
           </PosterSection>
 
