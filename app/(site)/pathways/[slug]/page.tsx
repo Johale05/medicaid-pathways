@@ -25,6 +25,24 @@ type RelatedPathwayLink = {
 };
 
 const HOME_PATHWAY_TITLE = getPathway("home")?.title ?? "Do We Have to Sell the Home?";
+const MEDICARE_ENDING_VIDEO_URL =
+  "https://gl5q7lfrsujk9a5k.public.blob.vercel-storage.com/Medicaid_Pathways_Medicare_Ending_Final.mp4";
+const MEDICARE_ENDING_CAPTIONS_URL =
+  "https://gl5q7lfrsujk9a5k.public.blob.vercel-storage.com/medicaid-pathways-medicare-ending-youtube-timed.vtt";
+const MEDICARE_ENDING_POSTER_URL =
+  "https://gl5q7lfrsujk9a5k.public.blob.vercel-storage.com/Medicaid_Pathways_Medicare_Ending_Opening_Card.png";
+const MEDICARE_ENDING_VIDEO_STRUCTURED_DATA = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: "What Happens When Medicare Ends?",
+  description:
+    "Texas elder law attorney John D. Hale explains what families should understand when Medicare coverage for skilled nursing or rehabilitation is ending, why the need for care may continue after Medicare stops paying, and why Medicaid may become an important option for longer-term nursing home care.",
+  thumbnailUrl: MEDICARE_ENDING_POSTER_URL,
+  contentUrl: MEDICARE_ENDING_VIDEO_URL,
+  uploadDate: "2026-08-23",
+  duration: "PT1M26S",
+  url: "https://medicaidpathways.com/pathways/medicare-ending",
+};
 const SPEND_EVERYTHING_VIDEO_URL =
   "https://gl5q7lfrsujk9a5k.public.blob.vercel-storage.com/Do%20We%20Have%20to%20Spend%20Everything%20video.mp4";
 const SPEND_EVERYTHING_CAPTIONS_URL =
@@ -205,7 +223,22 @@ export default function PathwayPage({ params }: Props) {
         </PosterSection>
       )}
 
-      {pathway.slug !== "too-late" && !isQualifyMedically && !isTooMuchIncome && !isSpendEverything && (
+      {isMedicareEnding && (
+        <PosterSection>
+          <NativeVideoEmbed
+            src={MEDICARE_ENDING_VIDEO_URL}
+            title={pathway.title}
+            poster={MEDICARE_ENDING_POSTER_URL}
+            captions={{ src: MEDICARE_ENDING_CAPTIONS_URL, srcLang: "en", label: "English" }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(MEDICARE_ENDING_VIDEO_STRUCTURED_DATA) }}
+          />
+        </PosterSection>
+      )}
+
+      {pathway.slug !== "too-late" && !isMedicareEnding && !isQualifyMedically && !isTooMuchIncome && !isSpendEverything && (
         <PosterSection>
           <YouTubeEmbed videoId={VIDEO_IDS[pathway.slug]} title={pathway.title} />
         </PosterSection>
