@@ -27,6 +27,8 @@ type RelatedPathwayLink = {
 const HOME_PATHWAY_TITLE = getPathway("home")?.title ?? "Do We Have to Sell the Home?";
 const SPEND_EVERYTHING_VIDEO_URL =
   "https://gl5q7lfrsujk9a5k.public.blob.vercel-storage.com/Do%20We%20Have%20to%20Spend%20Everything%20video.mp4";
+const SPEND_EVERYTHING_CAPTIONS_URL =
+  "https://gl5q7lfrsujk9a5k.public.blob.vercel-storage.com/medicaid-pathways-spend-everything-captions.vtt";
 
 const RELATED_PATHWAY_LINKS: Record<string, RelatedPathwayLink[]> = {
   "too-late": [
@@ -127,7 +129,11 @@ export default function PathwayPage({ params }: Props) {
           </PosterSection>
 
           <PosterSection>
-            <NativeVideoEmbed src={SPEND_EVERYTHING_VIDEO_URL} title={pathway.title} />
+            <NativeVideoEmbed
+              src={SPEND_EVERYTHING_VIDEO_URL}
+              title={pathway.title}
+              captions={{ src: SPEND_EVERYTHING_CAPTIONS_URL, srcLang: "en", label: "English" }}
+            />
           </PosterSection>
         </>
       )}
