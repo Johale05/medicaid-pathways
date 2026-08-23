@@ -1,6 +1,7 @@
 type Props = {
   src: string;
   title: string;
+  poster?: string;
   captions?: {
     src: string;
     srcLang: string;
@@ -8,7 +9,7 @@ type Props = {
   };
 };
 
-export default function NativeVideoEmbed({ src, title, captions }: Props) {
+export default function NativeVideoEmbed({ src, title, poster, captions }: Props) {
   return (
     <div className="w-full overflow-hidden rounded-2xl border border-slate-200 shadow-soft bg-white">
       <div className="aspect-video w-full">
@@ -16,6 +17,7 @@ export default function NativeVideoEmbed({ src, title, captions }: Props) {
           className="h-full w-full"
           src={src}
           title={title}
+          poster={poster}
           crossOrigin="anonymous"
           controls
           controlsList="nodownload"
