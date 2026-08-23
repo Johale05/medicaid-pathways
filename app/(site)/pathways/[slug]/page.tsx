@@ -46,7 +46,7 @@ const SPEND_EVERYTHING_VIDEO_STRUCTURED_DATA = {
 const TOO_MUCH_INCOME_VIDEO_URL =
   "https://gl5q7lfrsujk9a5k.public.blob.vercel-storage.com/Medicaid_Pathways_Too_Much_Income_Final.mp4";
 const TOO_MUCH_INCOME_CAPTIONS_URL =
-  "https://gl5q7lfrsujk9a5k.public.blob.vercel-storage.com/medicaid-pathways-too-much-income-captions.vtt";
+  "https://gl5q7lfrsujk9a5k.public.blob.vercel-storage.com/medicaid-pathways-too-much-income-youtube-timed.vtt";
 const TOO_MUCH_INCOME_POSTER_URL =
   "https://gl5q7lfrsujk9a5k.public.blob.vercel-storage.com/Too%20Much%20Income%20opening%20card.png";
 const TOO_MUCH_INCOME_VIDEO_STRUCTURED_DATA = {
