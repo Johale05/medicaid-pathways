@@ -25,6 +25,24 @@ type RelatedPathwayLink = {
 };
 
 const HOME_PATHWAY_TITLE = getPathway("home")?.title ?? "Do We Have to Sell the Home?";
+const SELL_THE_HOME_VIDEO_URL =
+  "https://gl5q7lfrsujk9a5k.public.blob.vercel-storage.com/Medicaid_Pathways_Sell_the_Home_Final_v2.mp4";
+const SELL_THE_HOME_CAPTIONS_URL =
+  "https://gl5q7lfrsujk9a5k.public.blob.vercel-storage.com/medicaid-pathways-sell-the-home-youtube-timed.vtt";
+const SELL_THE_HOME_POSTER_URL =
+  "https://gl5q7lfrsujk9a5k.public.blob.vercel-storage.com/Medicaid_Pathways_Sell_the_Home_Opening_Card_v2.png";
+const SELL_THE_HOME_VIDEO_STRUCTURED_DATA = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: "Do We Have to Sell the Home to Qualify for Medicaid?",
+  description:
+    "Texas elder law attorney John D. Hale explains why a home can often be treated as an excluded resource for nursing home Medicaid eligibility, why not every property is treated the same way, and why families should understand the Medicaid and estate-recovery consequences before selling, giving away, or changing title to the home.",
+  thumbnailUrl: SELL_THE_HOME_POSTER_URL,
+  contentUrl: SELL_THE_HOME_VIDEO_URL,
+  uploadDate: "2026-08-24",
+  duration: "PT1M23S",
+  url: "https://medicaidpathways.com/pathways/sell-the-home",
+};
 const MEDICARE_ENDING_VIDEO_URL =
   "https://gl5q7lfrsujk9a5k.public.blob.vercel-storage.com/Medicaid_Pathways_Medicare_Ending_Final.mp4";
 const MEDICARE_ENDING_CAPTIONS_URL =
@@ -144,7 +162,7 @@ const VIDEO_IDS: Record<string, string> = {
 };
 
 export default function PathwayPage({ params }: Props) {
-  const pathway = getPathway(params.slug);
+  const pathway = getPathway(params.slug === "sell-the-home" ? "home" : params.slug);
   if (!pathway) return notFound();
   const talkHelp = pathway;
   const isMedicareEnding = pathway.slug === "medicare-ending";
@@ -238,7 +256,22 @@ export default function PathwayPage({ params }: Props) {
         </PosterSection>
       )}
 
-      {pathway.slug !== "too-late" && !isMedicareEnding && !isQualifyMedically && !isTooMuchIncome && !isSpendEverything && (
+      {isHome && (
+        <PosterSection>
+          <NativeVideoEmbed
+            src={SELL_THE_HOME_VIDEO_URL}
+            title={pathway.title}
+            poster={SELL_THE_HOME_POSTER_URL}
+            captions={{ src: SELL_THE_HOME_CAPTIONS_URL, srcLang: "en", label: "English" }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(SELL_THE_HOME_VIDEO_STRUCTURED_DATA) }}
+          />
+        </PosterSection>
+      )}
+
+      {pathway.slug !== "too-late" && !isMedicareEnding && !isQualifyMedically && !isTooMuchIncome && !isSpendEverything && !isHome && (
         <PosterSection>
           <YouTubeEmbed videoId={VIDEO_IDS[pathway.slug]} title={pathway.title} />
         </PosterSection>
