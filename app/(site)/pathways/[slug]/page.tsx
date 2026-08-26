@@ -115,6 +115,24 @@ const QUALIFY_MEDICALLY_VIDEO_STRUCTURED_DATA = {
   duration: "PT1M32S",
   url: "https://medicaidpathways.com/pathways/qualify-medically",
 };
+const TOO_LATE_VIDEO_URL =
+  "https://gl5q7lfrsujk9a5k.public.blob.vercel-storage.com/Medicaid_Pathways_Too_Late_Final_v2.mp4";
+const TOO_LATE_CAPTIONS_URL =
+  "https://gl5q7lfrsujk9a5k.public.blob.vercel-storage.com/medicaid-pathways-too-late-youtube-timed.vtt";
+const TOO_LATE_POSTER_URL =
+  "https://gl5q7lfrsujk9a5k.public.blob.vercel-storage.com/Medicaid_Pathways_Too_Late_Opening_Card.png";
+const TOO_LATE_VIDEO_STRUCTURED_DATA = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: "Is It Too Late to Get Help with Nursing Home Medicaid?",
+  description:
+    "Families often begin looking for nursing home Medicaid information after a care or payment crisis has already started. Texas elder law attorney John D. Hale explains why urgent does not necessarily mean too late and why the available Medicaid planning pathway depends on each family's circumstances.",
+  thumbnailUrl: TOO_LATE_POSTER_URL,
+  contentUrl: TOO_LATE_VIDEO_URL,
+  uploadDate: "2026-08-26",
+  duration: "PT1M39S",
+  url: "https://medicaidpathways.com/pathways/too-late",
+};
 
 const RELATED_PATHWAY_LINKS: Record<string, RelatedPathwayLink[]> = {
   "too-late": [
@@ -256,6 +274,21 @@ export default function PathwayPage({ params }: Props) {
               <p key={i}>{p}</p>
             ))}
           </div>
+        </PosterSection>
+      )}
+
+      {pathway.slug === "too-late" && (
+        <PosterSection>
+          <NativeVideoEmbed
+            src={TOO_LATE_VIDEO_URL}
+            title={pathway.title}
+            poster={TOO_LATE_POSTER_URL}
+            captions={{ src: TOO_LATE_CAPTIONS_URL, srcLang: "en", label: "English" }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(TOO_LATE_VIDEO_STRUCTURED_DATA) }}
+          />
         </PosterSection>
       )}
 
